@@ -20,6 +20,8 @@ use windows::Win32::Storage::FileSystem::{FILE_FLAG_FIRST_PIPE_INSTANCE, PIPE_AC
 use windows::Win32::System::Pipes::{
     ConnectNamedPipe, CreateNamedPipeW, DisconnectNamedPipe, PIPE_READMODE_BYTE, PIPE_TYPE_BYTE,
     PIPE_UNLIMITED_INSTANCES, PIPE_WAIT,
+    PIPE_REJECT_REMOTE_CLIENTS,
+    GetNamedPipeClientSessionId,
 };
 use windows::core::{HRESULT, HSTRING};
 
@@ -139,7 +141,7 @@ fn create_instance(
         CreateNamedPipeW(
             name,
             open_mode,
-            PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT,
+            PIPE_TYPE_BYTE | PIPE_READMODE_BYTE | PIPE_WAIT | PIPE_REJECT_REMOTE_CLIENTS,
             PIPE_UNLIMITED_INSTANCES,
             BUFFER_SIZE,
             BUFFER_SIZE,
@@ -167,6 +169,23 @@ fn wait_client(stream: File) -> io::Result<File> {
 
 /// 服务一条连接：读消息 → 转给工人线程 → 写回，直到对端在帧边界关闭或出错。
 fn serve_connection(mut stream: File, sender: Sender<Work>) {
+    if qingjian_platform::product::IS_CIBAN {
+        // A session suffix isolates routing; this kernel check also prevents another
+        // logged-in user from guessing and accessing a different session's pipe.
+        #[link(name = "kernel32")]
+        unsafe extern "system" {
+            fn GetCurrentProcessId() -> u32;
+            fn ProcessIdToSessionId(process: u32, session: *mut u32) -> i32;
+        }
+        let (mut own, mut client) = (0, 0);
+        if unsafe { ProcessIdToSessionId(GetCurrentProcessId(), &mut own) } == 0
+            || unsafe { GetNamedPipeClientSessionId(HANDLE(stream.as_raw_handle()), &mut client) }.is_err()
+            || own != client
+        {
+            tracing::warn!("拒绝无法验证或不同登录会话的管道客户端");
+            return;
+        }
+    }
     let (reply_sender, reply_receiver) = mpsc::channel::<Option<ServerMessage>>();
     loop {
         let message = match read_message::<_, ClientMessage>(&mut stream) {

@@ -135,7 +135,15 @@ impl Router {
     }
 
     pub(super) fn commit_index(&mut self, index: usize) -> Option<String> {
-        let candidate = self.layout_candidate(index)?;
+        let mut candidate = self.layout_candidate(index)?;
+        if let Some(lexicon) = &self.learning_lexicon {
+            if self.config.learning_language == Some(lexicon.language()) {
+                let mut list = CandidateList { items: vec![candidate] };
+                self.engine.annotate(&mut list);
+                candidate = list.items.pop()?;
+                lexicon.annotate(&mut candidate);
+            }
+        }
         Some(self.engine.commit(&candidate))
     }
 
@@ -230,6 +238,11 @@ impl Router {
                     .collect();
                 let mut candidates = CandidateList { items };
                 self.engine.annotate(&mut candidates);
+                if let Some(lexicon) = &self.learning_lexicon {
+                    if self.config.learning_language == Some(lexicon.language()) {
+                        for candidate in &mut candidates.items { lexicon.annotate(candidate); }
+                    }
+                }
                 Frame {
                     preedit: preedit.clone(),
                     preedit_mode: self.config.preedit,

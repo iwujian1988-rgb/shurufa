@@ -42,6 +42,10 @@ impl Component for Settings {
 
     fn update(&mut self, message: Message, context: &ComponentContext<Self>) {
         match message {
+            Message::EnableInputMethod => match crate::setup::enable_profile() {
+                Ok(()) => self.notice.succeed("已在系统中启用词伴。按 Win + 空格选择本版本，再回到试打框。".into()),
+                Err(error) => self.notice.fail(error),
+            },
             Message::Navigate(Some(tag)) => {
                 self.page = tag;
                 // 上一页的导入提示不跟着过来
@@ -316,7 +320,7 @@ impl Component for Settings {
     }
 
     fn view(&self, _input: &(), context: &mut ViewContext<Self>) -> View {
-        context.window_title("青简设置");
+        context.window_title(format!("{}设置", qingjian_platform::product::NAME));
         let item = |tag: &str, label: &str, symbol| {
             KeyedView::new(
                 tag,
@@ -333,7 +337,7 @@ impl Component for Settings {
             )
         };
         let items = [
-            item("general", "通用", Symbol::Setting),
+            item("general", "开始使用", Symbol::Setting),
             item("candidates", "候选窗口", Symbol::View),
             item("shortcut", "快捷键", Symbol::Keyboard),
             item("cloud", "云服务", Symbol::World),
@@ -346,7 +350,7 @@ impl Component for Settings {
         ];
         NavigationView::new()
             .pane_display_mode(NavigationViewPaneDisplayMode::Left)
-            .pane_title("青简")
+            .pane_title(qingjian_platform::product::NAME)
             .open_pane_length(220.0)
             .is_pane_open(true)
             .is_pane_toggle_button_visible(false)

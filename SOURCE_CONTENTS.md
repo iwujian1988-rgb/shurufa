@@ -1,5 +1,7 @@
 # Demo 源码归档说明
 
+新增 Windows 0.1.0-demo.1 对应 Git 源码归档：包含完整可编辑 upstream、共享 ciban-lexicon、products/windows.json、desktop/windows/、脚本、语言数据与文档。此 Windows 归档不包含 .tools 编译器、.cache Cargo vendor 或预编译 runtime；依赖按两份 Cargo.lock 和 desktop/windows/BUILD.md 的固定官方恢复步骤取得，运行数据按 SHA-256 恢复。下面缓存/vendor 说明仅指此前官网 Android 源码归档。移动 english.rs/french.rs 现在是共享 crate 的兼容导出，真正实现在 upstream/crates/ciban-lexicon/src/。
+
 本页的 `.cache/source-vendor/` 和 `.cache/runtime-data/` 附带内容仅适用于官网提供的完整源码归档。GitHub 仓库不提交这些缓存：第三方 Rust 依赖按 mobile/native/Cargo.lock 恢复，运行数据通过 scripts/prepare-runtime-data.ps1 下载固定版本并校验 SHA-256。Git 中 upstream/ 为完整可编辑源码副本（包含本项目修改），不是子模块。协作步骤见 docs/COLLABORATION.md。
 
 本归档对应词伴 Android 0.5.0 demo 的双语言客户端与共享原生引擎，代码按 GPL-3.0-or-later。固定上游和本项目修改在 upstream/，移动客户端与 JNI 在 mobile/，九宫格在 mobile/native/src/t9/，法语读音查询在 mobile/native/src/french.rs，英语读音学习与保护在 mobile/native/src/english.rs；构建见 docs/BUILD.md。基础法语数据与其派生数据单独采用 CC BY-SA 3.0，不因源码归档而改标为 GPL。

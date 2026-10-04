@@ -25,7 +25,7 @@ use super::log::log;
 use super::service::SharedClient;
 use super::window_class::WindowClass;
 
-const CLASS_NAME: PCWSTR = w!("QingjianPollWindow");
+const CLASS_NAME: PCWSTR = PCWSTR(qingjian_platform::product::POLL_CLASS_W.as_ptr());
 static CLASS: WindowClass = WindowClass::new();
 
 const TIMER_ID: usize = 1;

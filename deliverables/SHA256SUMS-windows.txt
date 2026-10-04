@@ -1,0 +1,2 @@
+ce7ff2631e6c2b96be7a6b6f6aae26171cc57ee9f9bde7ee9e0e92433e7ffa59  ciban-english-0.1.0-demo.1-windows-x64-setup.exe
+c302bfdda8596d852c64d33381fa5435353a70cdf3db70d0805ad730b4869cfe  ciban-french-0.1.0-demo.1-windows-x64-setup.exe

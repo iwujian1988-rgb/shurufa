@@ -189,6 +189,16 @@ fn main() {
     dispatch::attach_cloud(&mut engine, &config.predict);
     let router_config = RouterConfig::from(&config);
     let mut router = Router::new(engine, router_config.clone());
+    if qingjian_platform::product::IS_CIBAN {
+        let product_language = qingjian_platform::product::LANGUAGE.parse().expect("product language");
+        match ciban_lexicon::LearningLexicon::load(product_language, &root.join("data/generated")) {
+            Ok(lexicon) => router.set_learning_lexicon(lexicon),
+            Err(error) => {
+                tracing::error!(%error, "词伴学习词库缺失或损坏，请重新安装");
+                std::process::exit(2);
+            }
+        }
+    }
     let model_path = dispatch::find_model(user_dir().as_deref(), &root);
     router.configure_local_model(model_path.clone(), &config.model);
     router.configure_code_table(dispatch::find_code_table(user_dir().as_deref(), &root));
@@ -269,7 +279,7 @@ fn serve(mut router: Router) {
         }
         Err(error) => tracing::error!(%error, "UI 线程启动失败，将不显示候选框 / 状态条"),
     }
-    if let Err(error) = pipe::serve_pipe(pipe::DEFAULT_PIPE_NAME, &mut router, work_tx, work_rx) {
+    if let Err(error) = pipe::serve_pipe(&qingjian_platform::protocol::default_pipe_name(), &mut router, work_tx, work_rx) {
         tracing::error!(%error, "命名管道服务退出");
         std::process::exit(1);
     }

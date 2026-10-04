@@ -5,18 +5,18 @@ use windows::Win32::System::Threading::CreateMutexW;
 use windows::Win32::UI::WindowsAndMessaging::{
     FindWindowW, IsIconic, SW_RESTORE, SetForegroundWindow, ShowWindow,
 };
-use windows::core::w;
+use windows::core::{HSTRING, PCWSTR};
 
 /// 已有实例在跑就唤起它并返回 `false`；这是第一个实例返回 `true`。
 ///
 /// 互斥体句柄故意不关，进程退出时由系统回收。
 pub(crate) fn acquire() -> bool {
-    let created = unsafe { CreateMutexW(None, false, w!("Local\\QingjianSettings")) };
+    let created = unsafe { CreateMutexW(None, false, PCWSTR(qingjian_platform::product::SETTINGS_MUTEX_W.as_ptr())) };
     if created.is_err() || unsafe { GetLastError() } != ERROR_ALREADY_EXISTS {
         return true;
     }
     // 第一个实例还没建出窗口（连点两下）就找不到，直接退出即可。
-    if let Ok(hwnd) = unsafe { FindWindowW(None, w!("青简设置")) } {
+    if let Ok(hwnd) = unsafe { FindWindowW(None, &HSTRING::from(format!("{}设置", qingjian_platform::product::NAME))) } {
         unsafe {
             if IsIconic(hwnd).as_bool() {
                 let _ = ShowWindow(hwnd, SW_RESTORE);

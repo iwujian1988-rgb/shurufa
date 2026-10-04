@@ -1,5 +1,7 @@
 # 词伴 PC 版交付方案
 
+实施更新 2026-10-04：已按此方案生成 0.1.0-demo.1 英法双安装器，Windows 11 x64 + x86 TSF。实际路径采用 upstream/crates/ciban-lexicon 和 products/windows.json，避免新增另一份工作区。Rust stable 1.95.0 已完成实际 release 编译。双产品核心/实际 pipe 回归已通过，安装注册、设置实屏、跨应用、升级卸载及正式签名未完成；本文件下方初始源码发现属于实施前记录，不能继续按“未编译”恢复。当前操作入口 ../desktop/windows/BUILD.md，证据 ../deliverables/Windows验收记录.md。
+
 日期：2026-10-04（Asia/Shanghai）。状态：已完成锁定源码检查与 Windows Cargo 工作区元数据检查，尚未编译、安装或验收词伴 Windows 成品。用户本轮要求继续规划 PC 开发，关注最少重复工作、开发效率、交互与交付质量。
 
 ## 建议结论

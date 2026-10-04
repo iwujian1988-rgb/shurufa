@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
+    "crates/ciban-lexicon",
     "crates/qingjian-core",
     "crates/qingjian-dictionary",
     "crates/qingjian-translate",

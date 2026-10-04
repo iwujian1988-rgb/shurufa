@@ -121,6 +121,9 @@ pub fn learning_language(config: &Config) -> Option<Language> {
     if config.general.learning_language_off() {
         return None;
     }
+    if qingjian_platform::product::IS_CIBAN {
+        return Some(qingjian_platform::product::LANGUAGE.parse().expect("product language"));
+    }
     let code = &config.general.learning_language;
     Some(code.parse().unwrap_or_else(|_| {
         tracing::warn!(code, "不认识的学习语言，按英文");

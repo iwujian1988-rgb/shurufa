@@ -12,6 +12,9 @@ mobile/android/app/src/french/assets/data/
 deliverables/*.zip
 deliverables/*.tar.gz
 deliverables/*.apk
+deliverables/*.exe
+deliverables/windows-staging/
+**/*.pdb
 
 # Private local state and signing material must never enter the public repository.
 **/.env

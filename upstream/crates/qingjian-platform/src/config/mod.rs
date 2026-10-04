@@ -361,7 +361,7 @@ impl Config {
         qingjian_core::custom_phrase::validate_phrases(phrases)?;
         let source = match std::fs::read_to_string(path) {
             Ok(s) => s,
-            Err(e) if e.kind() == std::io::ErrorKind::NotFound => TEMPLATE.to_owned(),
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => product_template(),
             Err(e) => return Err(e.to_string()),
         };
         let mut document: DocumentMut = source.parse::<DocumentMut>().map_err(|e| e.to_string())?;
@@ -467,7 +467,7 @@ impl Config {
     ) -> Result<(), ConfigError> {
         let source = match std::fs::read_to_string(path) {
             Ok(source) => source,
-            Err(source) if source.kind() == std::io::ErrorKind::NotFound => TEMPLATE.to_owned(),
+            Err(source) if source.kind() == std::io::ErrorKind::NotFound => product_template(),
             Err(source) => {
                 return Err(ConfigError::Read {
                     path: path.to_owned(),
@@ -498,7 +498,7 @@ impl Config {
     ) -> Result<(), ConfigError> {
         let source = match std::fs::read_to_string(path) {
             Ok(source) => source,
-            Err(source) if source.kind() == std::io::ErrorKind::NotFound => TEMPLATE.to_owned(),
+            Err(source) if source.kind() == std::io::ErrorKind::NotFound => product_template(),
             Err(source) => {
                 return Err(ConfigError::Read {
                     path: path.to_owned(),
@@ -526,9 +526,16 @@ impl Config {
         if path.exists() {
             return Ok(false);
         }
-        write_file(path, TEMPLATE)?;
+        write_file(path, &product_template())?;
         Ok(true)
     }
+}
+
+fn product_template() -> String {
+    if !crate::product::IS_CIBAN { return TEMPLATE.to_owned(); }
+    TEMPLATE.replace("learning_language = \"en\"", &format!("learning_language = {:?}", crate::product::LANGUAGE))
+        .replace("input_log = true", "input_log = false")
+        .replace("check = true", "check = false")
 }
 
 /// 原子写配置文件；数据目录还没有就先建（新账户第一次打开设置时输入法可能还没跑过）。
@@ -551,7 +558,7 @@ mod tests {
 
     #[test]
     fn template_parses_to_defaults() {
-        let config: Config = toml::from_str(TEMPLATE).unwrap();
+        let config: Config = toml::from_str(&product_template()).unwrap();
         assert_eq!(config, Config::default());
     }
 
@@ -583,7 +590,7 @@ mod tests {
         assert_eq!(config.general.theme, ThemeMode::Dark);
         assert_eq!(config.general.layout, LayoutMode::Horizontal);
         assert_eq!(config.general.preedit, PreeditMode::Window);
-        assert_eq!(config.general.learning_language, "en");
+        assert_eq!(config.general.learning_language, crate::product::LANGUAGE);
         assert!(config.general.english_candidates);
         assert!(!config.general.traditional);
         assert_eq!(config.general.shuangpin(), None);
@@ -640,7 +647,7 @@ mod tests {
         let path = dir.join("Qingjian").join("config.toml");
         assert!(Config::write_template_if_missing(&path).unwrap());
         assert!(!Config::write_template_if_missing(&path).unwrap());
-        assert_eq!(std::fs::read_to_string(&path).unwrap(), TEMPLATE);
+        assert_eq!(std::fs::read_to_string(&path).unwrap(), product_template());
         // 没有模板直接保存也行
         std::fs::remove_dir_all(&dir).unwrap();
         Config::set_bool(&path, "predict", "enabled", true).unwrap();

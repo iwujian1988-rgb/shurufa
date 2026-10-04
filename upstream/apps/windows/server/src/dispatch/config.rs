@@ -9,6 +9,7 @@ use super::RenderSettings;
 /// Router 要用的配置项，与 macOS 壳的 `Host` 字段对齐。
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct RouterConfig {
+    pub learning_language: Option<qingjian_core::Language>,
     /// 每页候选数（`[general] page_size`）。
     pub page_size: usize,
 
@@ -105,6 +106,7 @@ impl RouterConfig {
 impl From<&Config> for RouterConfig {
     fn from(config: &Config) -> Self {
         Self {
+            learning_language: super::super::assembly::learning_language(config),
             page_size: config.general.page_size(),
             cloud_slots: config.predict.slots,
             shift_letter_compose: config.general.shift_letter.compose(),

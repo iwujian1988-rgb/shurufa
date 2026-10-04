@@ -16,8 +16,8 @@ if (!$env:LIB) {
         if (!(Test-Path -LiteralPath $vswhere)) { throw 'Install Visual Studio C++ Build Tools or set CIBAN_MSVC_ROOT.' }
         $vsRoot = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
         if (!$vsRoot) { throw 'Visual Studio C++ x64 build tools were not found.' }
-        $version = Get-Content (Join-Path $vsRoot 'VC/Auxiliary/Build/Microsoft.VCToolsVersion.default.txt') -Raw
-        $msvcRoot = Join-Path $vsRoot "VC/Tools/MSVC/$($version.Trim())"
+        $msvcVersionText = Get-Content (Join-Path $vsRoot 'VC/Auxiliary/Build/Microsoft.VCToolsVersion.default.txt') -Raw
+        $msvcRoot = Join-Path $vsRoot "VC/Tools/MSVC/$($msvcVersionText.Trim())"
     }
     $sdkRoot = $env:CIBAN_WINDOWS_SDK_LIB
     if (!$sdkRoot) {
@@ -36,4 +36,11 @@ if (!$env:LIB) {
     if (!$sdkRoot) { throw 'Install Windows SDK or set CIBAN_WINDOWS_SDK_LIB to its Lib/<version> directory.' }
     $env:Path = "$(Join-Path $msvcRoot 'bin/Hostx64/x64');$env:Path"
     $env:LIB = "$(Join-Path $msvcRoot 'lib/x64');$(Join-Path $sdkRoot 'um/x64');$(Join-Path $sdkRoot 'ucrt/x64')"
+    $env:INCLUDE = "$(Join-Path $msvcRoot 'include')"
+    $includeRoot = Join-Path $projectRoot '.tools/windows-sdk-common/c/Include/10.0.26100.0'
+    if (Test-Path -LiteralPath $includeRoot) {
+        foreach ($part in @('ucrt','shared','um','winrt')) { $env:INCLUDE += ";$(Join-Path $includeRoot $part)" }
+    }
+    $sdkBin = Join-Path $projectRoot '.tools/windows-sdk-buildtools/bin/10.0.26100.0/x64'
+    if (Test-Path -LiteralPath $sdkBin) { $env:Path = "$sdkBin;$env:Path"; $env:CIBAN_SDK_BIN = $sdkBin }
 }

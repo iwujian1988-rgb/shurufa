@@ -16,10 +16,10 @@ use qingjian_platform::{Config, KeyCombo};
 use crate::com::log::log;
 
 /// 本保留键的标识，`OnPreservedKey` 按它认。
-pub(crate) const GUID_TRANSLATE: GUID = GUID::from_u128(0x5c0a7b12_3d4e_4f60_8a91_2b3c4d5e6f70);
+pub(crate) const GUID_TRANSLATE: GUID = GUID::from_u128(qingjian_platform::product::TRANSLATE_U128);
 
 /// Ctrl + Alt + Space 中英切换键的保留键标识。
-pub(crate) const GUID_SWITCH_MODE: GUID = GUID::from_u128(0x2f6b8c51_9a34_4e7d_b2c8_5d1e0f3a7b64);
+pub(crate) const GUID_SWITCH_MODE: GUID = GUID::from_u128(qingjian_platform::product::SWITCH_U128);
 
 /// msctf.h 的 `TF_MOD_LWIN`（windows crate 没导出）。
 const TF_MOD_LWIN: u32 = 0x08;

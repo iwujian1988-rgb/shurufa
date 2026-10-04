@@ -10,9 +10,9 @@ use crate::panel::{Message, Settings};
 /// QINGJIAN_VERSION 由 build.rs 给：-dev 版接 git 短哈希。
 pub(crate) const VERSION: &str = env!("QINGJIAN_VERSION");
 
-pub(crate) const WEBSITE_URL: &str = "https://qingjian.app";
+pub(crate) const WEBSITE_URL: &str = if qingjian_platform::product::IS_CIBAN { "https://maxnote.top/ciban/" } else { "https://qingjian.app" };
 
-pub(crate) const REPOSITORY_URL: &str = "https://github.com/qingjian-team";
+pub(crate) const REPOSITORY_URL: &str = if qingjian_platform::product::IS_CIBAN { "https://github.com/iwujian1988-rgb/shurufa" } else { "https://github.com/qingjian-team" };
 
 /// 与仓库根 `LICENSE` 一致。
 const LICENSE_NOTE: &str = "自由软件，GPL-3.0-or-later 许可证：可以自由使用、修改与再分发，修改后分发须同样开源。官方渠道免费。";
@@ -69,6 +69,22 @@ fn update_status(settings: &Settings) -> String {
 }
 
 pub(crate) fn view(settings: &Settings, context: &mut ViewContext<Settings>) -> View {
+    if qingjian_platform::product::IS_CIBAN {
+        return page("关于词伴", StackPanel::new().spacing(16.0).children([
+            TextBlock::new().text(format!("{} · Windows 测试版", qingjian_platform::product::NAME)).font_size(24.0).font_weight(FontWeight::SEMI_BOLD).into(),
+            note("打中文时顺手遇见英文或法文。候选译词用于辅助记忆，请结合完整词组和语境理解。"),
+            note("PC 0.1.0-demo.1，基于青简 GPL-3.0-or-later 源码。英语与法语独立安装，共享输入引擎与读音匹配词义。源码和构建步骤在项目 GitHub。"),
+            StackPanel::new().spacing(8.0).children([
+                Button::new().on_click(context.message(Message::OpenWebsite)).content("打开词伴官网"),
+                Button::new().on_click(context.message(Message::OpenRepository)).content("查看源码与反馈问题"),
+                Button::new().on_click(context.message(Message::OpenDataDir)).content("打开个人配置与学习数据"),
+                Button::new().on_click(context.message(Message::OpenLogDir)).content("打开诊断日志目录"),
+            ]),
+            note("中文词库、中文二元语言模型及英语基础释义沿用青简固定数据。法语基础词典为 CFDICT / Chine Informations / David Houstin 及贡献者，CC BY-SA 3.0；项目学习词与短语为 AI 整理，GPL-3.0-or-later，尚未独立语言编辑校审。所有随包许可见安装目录 licenses。"),
+            note("输入内容日志、云预测和自动更新默认关闭。输入习惯学习保存在本机，可在高级页关闭。若自行启用云服务，相关上下文会发到您指定的服务商。密码框不会学习。"),
+            note("当前测试包尚未签名；个别系统或商店应用可能遮挡候选窗口，管理员应用尚未完成兼容验收。任意新词组的整组翻译、完整法语纠错与变位尚未实现。"),
+        ]));
+    }
     let update = &settings.config.update;
     let available = Checker::available_in(&settings.update_state, VERSION, update).is_some();
     let mut update_buttons: Vec<View> = vec![

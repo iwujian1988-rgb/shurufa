@@ -7,7 +7,28 @@ use serde::Serialize;
 use serde::de::DeserializeOwned;
 
 /// 缺省命名管道名。Server 在这上面监听，DLL 用同名连上。放这里让两端共享同一个字面量。
-pub const DEFAULT_PIPE_NAME: &str = r"\\.\pipe\qingjian";
+pub const DEFAULT_PIPE_NAME: &str = crate::product::PIPE;
+
+/// Products cannot exchange composition across logged-in Windows sessions.
+pub fn default_pipe_name() -> String {
+    if !crate::product::IS_CIBAN { return DEFAULT_PIPE_NAME.to_owned(); }
+    #[cfg(windows)]
+    {
+        #[link(name = "kernel32")]
+        unsafe extern "system" {
+            fn GetCurrentProcessId() -> u32;
+            fn ProcessIdToSessionId(process: u32, session: *mut u32) -> i32;
+        }
+        let mut session = 0;
+        if unsafe { ProcessIdToSessionId(GetCurrentProcessId(), &mut session) } == 0 {
+            // Never silently fall back to a shared global pipe.
+            return format!("{DEFAULT_PIPE_NAME}-unavailable-{}", std::process::id());
+        }
+        format!("{DEFAULT_PIPE_NAME}-session-{session}")
+    }
+    #[cfg(not(windows))]
+    { DEFAULT_PIPE_NAME.to_owned() }
+}
 
 /// 单帧上限，挡住坏长度前缀导致的巨量分配。
 const MAX_FRAME: u32 = 16 * 1024 * 1024;

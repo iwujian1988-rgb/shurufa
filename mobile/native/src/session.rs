@@ -1,7 +1,7 @@
 //! 真实青简引擎的状态协议：候选身份随代次校验，不在平台层重排。
 use crate::t9::T9Index;
 use qingjian_core::{
-    Candidate, CandidateKind, CandidateList, Engine, Language, Sense, Translation,
+    Candidate, CandidateKind, CandidateList, Engine, Language,
 };
 use qingjian_dictionary::{Dictionary, WordList};
 use qingjian_learning::FrequencyLearner;
@@ -252,29 +252,9 @@ impl Session {
                 None
             };
             // Never retain a word-only legacy annotation for a mismatched reading.
-            candidate.translation =
-                detail
-                    .as_ref()
-                    .and_then(|d| d["short"].as_array())
-                    .map(|short| {
-                        Translation::new(
-                            if self.french.is_some() {
-                                Language::French
-                            } else {
-                                Language::English
-                            },
-                            short
-                                .iter()
-                                .filter_map(|s| s.as_str())
-                                .map(|text| Sense {
-                                    text: text.to_owned(),
-                                    part_of_speech: None,
-                                    reading: None,
-                                    fresh: false,
-                                })
-                                .collect(),
-                        )
-                    });
+            candidate.translation = ciban_lexicon::short_translation(
+                detail.as_ref(), if self.french.is_some() { Language::French } else { Language::English }
+            );
             self.details.push(detail);
         }
     }

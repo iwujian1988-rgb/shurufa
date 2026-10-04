@@ -42,6 +42,8 @@ const LEARNING_FLUSH_INTERVAL: Duration = Duration::from_secs(60);
 
 /// 同一时刻只有一个应用有键盘焦点，所以一个 Engine 持当前组句；焦点切到别的会话时先清掉上一个的残留。
 pub struct Router {
+    /// Product dictionary; kept outside the TSF DLL and shared with Android.
+    learning_lexicon: Option<ciban_lexicon::LearningLexicon>,
     /// 输入内核，进程内唯一。
     engine: Engine,
 
@@ -122,6 +124,7 @@ pub struct Router {
 impl Router {
     pub fn new(engine: Engine, config: RouterConfig) -> Self {
         Self {
+            learning_lexicon: None,
             engine,
             config: RouterConfig {
                 page_size: config.page_size.max(1),
@@ -181,6 +184,10 @@ impl Router {
     /// 直接碰 Engine：测试里改模式键这类启动时才设的开关。
     pub fn engine_mut(&mut self) -> &mut Engine {
         &mut self.engine
+    }
+
+    pub fn set_learning_lexicon(&mut self, lexicon: ciban_lexicon::LearningLexicon) {
+        self.learning_lexicon = Some(lexicon);
     }
 
     pub fn set_status_sink(&mut self, sink: Box<dyn StatusSink>) {

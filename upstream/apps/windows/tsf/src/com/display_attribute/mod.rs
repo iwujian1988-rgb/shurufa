@@ -22,7 +22,7 @@ use super::log::log;
 
 /// 青简的组句显示属性 GUID（自定义），与注册表里声明的显示属性提供者类别配套。
 pub(crate) const GUID_DISPLAY_ATTRIBUTE_INPUT: GUID =
-    GUID::from_u128(0xc47cb4c0_0ac9_4c8f_bdbf_8b6d21cc504f);
+    GUID::from_u128(qingjian_platform::product::ATTRIBUTE_U128);
 
 thread_local! {
     /// GUID 在类别管理器里的 atom，首次用时算出来缓存；0 = 还没算。

@@ -119,7 +119,7 @@ pub struct GeneralConfig {
 impl Default for GeneralConfig {
     fn default() -> Self {
         Self {
-            learning_language: "en".to_owned(),
+            learning_language: crate::product::LANGUAGE.to_owned(),
             page_size: MAX_PAGE_SIZE,
             page_keys: PAGE_KEY_OPTIONS[0].to_owned(),
             theme: ThemeMode::default(),
@@ -144,7 +144,7 @@ impl Default for GeneralConfig {
             shuangpin: None,
             zhuyin: None,
             log_level: LogLevel::default(),
-            input_log: true,
+            input_log: !crate::product::IS_CIBAN,
             learning: true,
             system_text_replacements: true,
         }

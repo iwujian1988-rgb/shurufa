@@ -1,0 +1,28 @@
+{
+  "english": {
+    "name": "词伴 · 英语",
+    "directory": "CibanEnglish",
+    "language": "en",
+    "server": "ciban-english-server.exe",
+    "settings": "ciban-english-settings.exe",
+    "clsid": "{D142037F-0AC3-48E8-98B6-738C3D92AAE1}",
+    "profile": "{7CD23EB0-9A53-4C11-9972-B0B833517421}",
+    "attribute": "{DBF93214-7B66-45C8-A861-F61D9F47A0E1}",
+    "translate": "{CE8A48C0-8AAE-4380-958B-038192C8B1A1}",
+    "switch": "{B70B80CA-3266-4C8F-B9D4-35B987AA19E1}",
+    "appId": "{BF7E75C4-41EB-46D8-879C-A6E15319CE01}"
+  },
+  "french": {
+    "name": "词伴 · 法语",
+    "directory": "CibanFrench",
+    "language": "fr",
+    "server": "ciban-french-server.exe",
+    "settings": "ciban-french-settings.exe",
+    "clsid": "{294A558E-5744-46C5-9D83-32E9C628A0F2}",
+    "profile": "{CE5D2EC1-BF83-4E3C-AC32-FF51E413FC22}",
+    "attribute": "{1448627B-5E15-4120-A7BC-8DC6716AA0F2}",
+    "translate": "{15EA65F0-1E5C-4A99-A818-98B3D22EA0F2}",
+    "switch": "{0F461022-C443-4816-A88A-D569B603AF02}",
+    "appId": "{A3D4C75B-FD51-49E7-A080-2CA22997CF02}"
+  }
+}

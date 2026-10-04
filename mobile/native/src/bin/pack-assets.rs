@@ -8,7 +8,8 @@ use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let root = PathBuf::from(std::env::args().nth(1).ok_or("missing project path")?);
-    let assets = root.join("mobile/android/app/src");
+    // Optional destination preserves the same canonical packer for Windows staging.
+    let assets = std::env::args().nth(2).map(PathBuf::from).unwrap_or_else(|| root.join("mobile/android/app/src"));
     let common = assets.join("main/assets/data");
     let english = assets.join("english/assets/data");
     let french = assets.join("french/assets/data");

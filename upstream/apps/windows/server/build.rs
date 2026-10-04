@@ -11,6 +11,9 @@ use embed_manifest::{embed_manifest, new_manifest};
 fn main() {
     // build.rs 跑在宿主机上，只有目标是 Windows 时才嵌。
     println!("cargo:rerun-if-env-changed=QINGJIAN_UIACCESS");
+    println!("cargo:rerun-if-env-changed=CIBAN_PRODUCT");
+    println!("cargo:rerun-if-env-changed=CIBAN_VERSION");
+    println!("cargo:rerun-if-env-changed=CIBAN_SDK_BIN");
     if std::env::var_os("CARGO_CFG_WINDOWS").is_some() {
         let ui_access = std::env::var("QINGJIAN_UIACCESS").map_or(true, |v| v != "0");
         if !ui_access {
@@ -31,11 +34,20 @@ fn main() {
 /// winresource 缺省不带 manifest，与上面链接器嵌的那份不冲突。
 #[cfg(windows)]
 fn embed_icon() {
-    const ICON: &str = "../tsf/resources/qingjian.ico";
-    println!("cargo:rerun-if-changed={ICON}");
-    if let Err(error) = winresource::WindowsResource::new().set_icon(ICON).compile() {
-        println!("cargo:warning=嵌入 Server 图标失败: {error}");
+    let product = std::env::var("CIBAN_PRODUCT").unwrap_or_default();
+    let icon = if product.is_empty() { "../tsf/resources/qingjian.ico" } else { "../../../../desktop/windows/resources/ciban.ico" };
+    let name = match product.as_str() { "french" => "词伴 · 法语", "english" => "词伴 · 英语", _ => "青简" };
+    let mut resource = winresource::WindowsResource::new();
+    if let Ok(bin) = std::env::var("CIBAN_SDK_BIN") { resource.set_toolkit_path(&bin); }
+    resource.set_icon(icon).set("ProductName", name).set("FileDescription", &format!("{name} 输入服务")).set("CompanyName", "Ciban Project");
+    if !product.is_empty() {
+        let version = std::env::var("CIBAN_VERSION").unwrap_or_else(|_| "0.1.0-demo.1".into());
+        resource.set("FileVersion", &version).set("ProductVersion", &version)
+            .set_version_info(winresource::VersionInfo::FILEVERSION, 0x0000_0001_0000_0001)
+            .set_version_info(winresource::VersionInfo::PRODUCTVERSION, 0x0000_0001_0000_0001);
     }
+    println!("cargo:rerun-if-changed={icon}");
+    resource.compile().expect("嵌入产品图标与版本信息");
 }
 
 #[cfg(not(windows))]

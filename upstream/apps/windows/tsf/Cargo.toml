@@ -17,6 +17,7 @@ qingjian-platform.workspace = true
 thiserror.workspace = true
 
 [dev-dependencies]
+serde_json.workspace = true
 qingjian-windows-server = { path = "../server" }
 
 [lints]

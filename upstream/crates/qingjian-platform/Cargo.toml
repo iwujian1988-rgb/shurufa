@@ -9,6 +9,9 @@ repository.workspace = true
 [lints]
 workspace = true
 
+[build-dependencies]
+serde_json.workspace = true
+
 [dependencies]
 qingjian-core.workspace = true
 qingjian-dictionary.workspace = true

@@ -1,0 +1,188 @@
+{
+  "preedit": [
+    {
+      "text": "yin'hang",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 8,
+  "candidates": {
+    "items": [
+      {
+        "text": "银行",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "bank",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "🏦",
+        "kind": "Emoji",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": "银行",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "🏧",
+        "kind": "Emoji",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": "银行",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "引航",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "pilot",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "银行卡",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang",
+          "ka"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "bank card",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "💳",
+        "kind": "Emoji",
+        "syllables": [
+          "yin",
+          "hang",
+          "ka"
+        ],
+        "reading": "银行卡",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "银行家",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang",
+          "jia"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "banker",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "银行行长",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang",
+          "hang",
+          "zhang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "bank president",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "引吭高歌",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang",
+          "gao",
+          "ge"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "sing loudly",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 27,
+  "layout": "vertical",
+  "theme": "system",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

@@ -10,6 +10,7 @@ license = "GPL-3.0-or-later"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+ciban-lexicon = { path = "../../upstream/crates/ciban-lexicon" }
 qingjian-core = { path = "../../upstream/crates/qingjian-core" }
 qingjian-dictionary = { path = "../../upstream/crates/qingjian-dictionary" }
 qingjian-translate = { path = "../../upstream/crates/qingjian-translate" }

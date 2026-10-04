@@ -79,6 +79,11 @@ impl Router {
             items: vec![candidate],
         };
         self.engine.annotate(&mut list);
+        if let Some(lexicon) = &self.learning_lexicon {
+            if self.config.learning_language == Some(lexicon.language()) {
+                for candidate in &mut list.items { lexicon.annotate(candidate); }
+            }
+        }
         list.items.pop()
     }
 }

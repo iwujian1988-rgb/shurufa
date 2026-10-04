@@ -379,6 +379,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
 
 [[package]]
+name = "ciban-lexicon"
+version = "0.1.0"
+dependencies = [
+ "qingjian-core",
+ "qingjian-translate",
+ "serde_json",
+]
+
+[[package]]
 name = "clap"
 version = "4.6.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2864,6 +2873,7 @@ dependencies = [
 name = "qingjian-windows-server"
 version = "0.1.5-dev"
 dependencies = [
+ "ciban-lexicon",
  "dotenvy",
  "embed-manifest",
  "qingjian-core",
@@ -2876,6 +2886,7 @@ dependencies = [
  "qingjian-render",
  "qingjian-translate",
  "qingjian-update",
+ "serde_json",
  "thiserror 2.0.20",
  "toml_edit",
  "tracing",
@@ -2914,6 +2925,7 @@ dependencies = [
  "qingjian-core",
  "qingjian-platform",
  "qingjian-windows-server",
+ "serde_json",
  "thiserror 2.0.20",
  "windows",
  "windows-core 0.62.2",

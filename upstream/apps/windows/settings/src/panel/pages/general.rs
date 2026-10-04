@@ -3,16 +3,18 @@
 use qingjian_platform::{MAX_PAGE_SIZE, Scheme, ShiftLetter, SwitchKey};
 use windows_reactor::*;
 
-use crate::panel::controls::{feedback, field, index_of, page};
+use crate::panel::controls::{feedback, field, index_of, page, note};
 use crate::panel::{Message, Settings};
 
 /// 学习语言：界面名 + 配置写法。
-pub(crate) const LANGUAGES: [(&str, &str); 4] = [
+pub(crate) const LANGUAGES: &[(&str, &str)] = if qingjian_platform::product::IS_CIBAN {
+    &[(qingjian_platform::product::NAME, qingjian_platform::product::LANGUAGE), ("不显示译文", "off")]
+} else { &[
     ("英语", "en"),
     ("日语", "ja"),
     ("西班牙语", "es"),
     ("不显示译文", "off"),
-];
+] };
 
 /// 输入方案：界面名 + 配置写法，直接照 [`Scheme::ALL`] 建，不另抄一份。
 /// 数组长度取自 `ALL`，以后加方案时这里数组对不上就编不过。
@@ -52,6 +54,13 @@ pub(crate) fn view(settings: &Settings, context: &mut ViewContext<Settings>) -> 
     let g = &settings.config.general;
     let english_off = !settings.config.apps.english_candidates_off.is_empty();
     let rows = [
+        StackPanel::new().spacing(10.0).children([
+            TextBlock::new().text("边打字，边熟悉新单词").font_size(24.0).text_wrapping(TextWrapping::Wrap).into(),
+            Button::new().on_click(context.message(Message::EnableInputMethod)).content("在系统中启用词伴"),
+            feedback(&settings.notice),
+            note("按 Win + 空格选择当前词伴输入法，点击下面试打。输入 nihao、pingguo 或 xiexie；候选右侧显示译词。空格选中文，Ctrl + 数字选第一个译词，Shift 切换中英。Esc 取消，[] 翻页。试打文字不会由设置页保存。"),
+            TextBox::new().placeholder_text("在这里试打：你好、苹果、谢谢……").accepts_return(true).min_height(100.0).into(),
+        ]).into(),
         field(
             "学习语言",
             "候选词右侧显示哪种语言的译词，只列出装了释义表的语言；「不显示译文」同时关掉生词标记与释义兜底。",

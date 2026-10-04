@@ -6,6 +6,10 @@
 pub mod code_tables;
 mod config;
 pub mod dirs;
+/// Shared, immutable identity of this compiled Windows product.
+pub mod product {
+    include!(concat!(env!("OUT_DIR"), "/product.rs"));
+}
 mod error;
 pub mod extra_dictionaries;
 pub mod logs;

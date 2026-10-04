@@ -1,5 +1,7 @@
 # 英语与法语伴学输入法技术方案
 
+2026-10-04 Windows 首轮已实现：平台无关英法词义集中在 upstream/crates/ciban-lexicon，Android 模块保留兼容导出；桌面 Router 使用同一读音标注与短译文函数。最小调整沿用 Cargo 工作区，未建立另一份 shared 工程。products/windows.json 为双包标识真源，platform/build.rs 生成注册/pipe/目录常量；pipe 附登录会话编号并核验客户端会话，拒绝远程客户端。WinUI 设置/TSF/Server/标准 Inno 构建分别指定 CIBAN_PRODUCT；同机独立词义、配置及学习目录。当前交付 Windows 11 x64 demo，含 x86 DLL；云预测、输入日志、上游更新检查关闭，uiAccess=false。首轮中文候选与快捷译词提交已回归，桌面详情尚未接入。构建与安全约束见 ../desktop/windows/BUILD.md，实际验收边界见 ../deliverables/Windows验收记录.md。
+
 PC 路线已按锁定源码审计具体化（2026-10-04）：见 [PC_DELIVERY_PLAN.md](PC_DELIVERY_PLAN.md)。Windows 11 x64 优先，沿用上游 TSF + Server + WinUI + Inno，保留 32 位宿主所需的 x86 TSF DLL。一套工程构建英语/法语两个独立安装器；提前隔离身份与 IPC，再打通英语、同轮接入法语。将 mobile/native 中读音词义与标注提取为平台无关共享模块，数据生成与 Android 资源布局解耦。默认关闭输入内容日志、云预测和上游更新检查。当前只完成源码与元数据审计，未验证 Windows 编译/安装；uiAccess/签名、旧 DLL 升级兼容与实际应用验收为交付门槛。
 
 官网下载扩展（2026-10-04 最新一次性规则）：原有 `maxnote.top` 的 HTTPS、独立 `/ciban/` 路径，Node.js 单一服务监听 `127.0.0.1:3081`；原教育站点 3000 端口与代码不改。每个码仅可领取英法中的一个 APK，校验与 HEAD 不核销，有效 APK GET 发送响应前以串行队列 + fsync + 原子替换将核销写入 `/var/lib/ciban-download/redemptions.json`。原 100 个码哈希与编号保留，明文仅在本地。Cookie HttpOnly/Secure/SameSite=Strict，原领取者续传凭据只保存哈希，可在重启后恢复；未完成、同一浏览器、同一版本、30 分钟内仅 Range 续传，完成后禁止重下。生产账本必须存在且合法，损坏 / 缺失时拒绝启动，不重置已用码；服务只允许写持久状态目录，代码 / APK 只读。源码独立授权不占 APK 次数，已用码仍可获取配套源码。停用恢复只改手动停用标志，不清除核销记录。更新发布与备份均需保留账本及码表当前状态，禁止多进程并写。见 [下载官网](DOWNLOAD_WEBSITE.md) 与 `website/README.md`。

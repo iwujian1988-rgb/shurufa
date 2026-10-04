@@ -41,10 +41,10 @@ use crate::com::module_path;
 const LAUNCH_COOLDOWN: Duration = Duration::from_secs(5);
 
 /// 跨进程互斥体：多个应用的 DLL 同时发现 Server 不在时只起一个（第二个起来的抢不到管道会自己退出）。
-const LAUNCH_MUTEX: windows::core::PCWSTR = w!("Local\\QingjianServerLaunch");
+const LAUNCH_MUTEX: windows::core::PCWSTR = windows::core::PCWSTR(qingjian_platform::product::LAUNCH_MUTEX_W.as_ptr());
 
 /// 安装 / 卸载程序运行期间持有的互斥体，名字与 `qingjian.iss` 的 `HoldInstallerMutex` 一致。
-const INSTALLER_MUTEX: windows::core::PCWSTR = w!("Global\\QingjianInstaller");
+const INSTALLER_MUTEX: windows::core::PCWSTR = windows::core::PCWSTR(qingjian_platform::product::INSTALLER_MUTEX_W.as_ptr());
 
 /// 普通桌面应用的完整性级别 RID（UAC 未提升的用户进程）。低一档是 AppContainer / 浏览器沙箱，
 /// 高一档是管理员提升、SYSTEM 与安全桌面上的进程——那些里都不拉 Server。
@@ -202,7 +202,7 @@ fn server_exe() -> Option<PathBuf> {
 
 /// 与 DLL 同目录的 `qingjian-server.exe`（安装器把两者装在同一目录）。
 fn server_exe_path(module: &Path) -> PathBuf {
-    module.with_file_name("qingjian-server.exe")
+    module.with_file_name(qingjian_platform::product::SERVER)
 }
 
 #[cfg(test)]
@@ -217,7 +217,7 @@ mod tests {
             server_exe_path(Path::new(
                 r"D:\Program Files\Qingjian\qingjian_tsf-0.1.0-alpha.15-dev.dll"
             )),
-            Path::new(r"D:\Program Files\Qingjian\qingjian-server.exe")
+            Path::new(r"D:\Program Files\Qingjian").join(qingjian_platform::product::SERVER)
         );
     }
 }

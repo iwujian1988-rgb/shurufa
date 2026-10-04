@@ -75,6 +75,9 @@ fn register_profile() -> Result<()> {
                 &icon,
                 0,
             )?;
+            if qingjian_platform::product::IS_CIBAN {
+                profiles.EnableLanguageProfileByDefault(&CLSID_QINGJIAN, LANGID_ZH_CN, &GUID_PROFILE, true)?;
+            }
         }
         let category: ITfCategoryMgr =
             unsafe { CoCreateInstance(&CLSID_TF_CategoryMgr, None, CLSCTX_INPROC_SERVER)? };

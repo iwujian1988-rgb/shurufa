@@ -1,0 +1,35 @@
+{
+  "testedAt": "2026-10-04T21:36:01.3022949+08:00",
+  "version": "0.1.0-demo.1",
+  "products": [
+    {
+      "product": "english",
+      "clsid": "{D142037F-0AC3-48E8-98B6-738C3D92AAE1}",
+      "profile": "{7CD23EB0-9A53-4C11-9972-B0B833517421}",
+      "serverSha256": "2762d9e7061a02a649869f38eaf398dcf7793b8f1cedfb19ef3ede830348f112",
+      "dll64Sha256": "4ebee83b66fcb92df738b4d486bcd39383adb178a75dbf7c890c02ad4dd8595b",
+      "dll32Sha256": "faab6997b04b737c9f204f8820da413b82e7b2d9ba402961fa708f19941d5744",
+      "pipeRoundTrips": "passed",
+      "realDllFactory": "passed",
+      "privateInputLogAbsent": true,
+      "fixture": "nihao/pingguo/xiexie/yinhang, displayed meaning equals Ctrl+digit commit; Esc and Chinese space commit",
+      "systemRegistration": "not tested: administrator confirmation required",
+      "settingsUi": "not visually verified: Computer Use app approval timed out"
+    },
+    {
+      "product": "french",
+      "clsid": "{294A558E-5744-46C5-9D83-32E9C628A0F2}",
+      "profile": "{CE5D2EC1-BF83-4E3C-AC32-FF51E413FC22}",
+      "serverSha256": "496e838c186a3ef53093ac9a65a42ee00b7cf1ac306993d5055b0c6a127bb832",
+      "dll64Sha256": "5359fd0fbe0279cb179161d98a81e6225fa61390681fabc455a8897affec85d2",
+      "dll32Sha256": "7fdfd07b6e20cecd7dc0f007a1cdc0a3e78d86d459242b348674caa3a264af35",
+      "pipeRoundTrips": "passed",
+      "realDllFactory": "passed",
+      "privateInputLogAbsent": true,
+      "fixture": "nihao/pingguo/xiexie/yinhang, displayed meaning equals Ctrl+digit commit; Esc and Chinese space commit",
+      "systemRegistration": "not tested: administrator confirmation required",
+      "settingsUi": "not visually verified: Computer Use app approval timed out"
+    }
+  ],
+  "scope": "Real shipping server + Windows named pipes + TSF COM creation. Does not prove installed TSF host typing or settings GUI."
+}

@@ -1,0 +1,150 @@
+{
+  "preedit": [
+    {
+      "text": "ping'guo",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 8,
+  "candidates": {
+    "items": [
+      {
+        "text": "苹果",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "French",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "la pomme",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "🍏",
+        "kind": "Emoji",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": "苹果",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "🍎",
+        "kind": "Emoji",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": "苹果",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "平果",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "苹果派",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo",
+          "pai"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "🥧",
+        "kind": "Emoji",
+        "syllables": [
+          "ping",
+          "guo",
+          "pai"
+        ],
+        "reading": "苹果派",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "苹果绿",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo",
+          "lv"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "评估",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "gu"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "French",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "appréciation",
+              "reading": null,
+              "fresh": false
+            },
+            {
+              "part_of_speech": null,
+              "text": "évaluation",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "平谷",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "gu"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 12,
+  "layout": "vertical",
+  "theme": "system",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

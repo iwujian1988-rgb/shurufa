@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-04T21:51:46.4195578+08:00",
+  "signatureVersion": "1.459.543.0",
+  "scan": "Microsoft Defender custom scan completed for both final installers and unpacked staging",
+  "projectDetections": 0,
+  "installers": [
+    {
+      "file": "ciban-english-0.1.0-demo.1-windows-x64-setup.exe",
+      "bytes": 38264282,
+      "sha256": "CE7FF2631E6C2B96BE7A6B6F6AAE26171CC57EE9F9BDE7EE9E0E92433E7FFA59",
+      "authenticode": "NotSigned"
+    },
+    {
+      "file": "ciban-french-0.1.0-demo.1-windows-x64-setup.exe",
+      "bytes": 36632308,
+      "sha256": "C302BFDDA8596D852C64D33381FA5435353A70CDF3DB70D0805AD730B4869CFE",
+      "authenticode": "NotSigned"
+    }
+  ],
+  "limitations": "Unsigned demo. No guarantee for other antivirus engines or SmartScreen; no security settings changed."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "product": "english",
+    "file": "ciban-english-server.exe",
+    "machine": "0x8664",
+    "sha256": "2762D9E7061A02A649869F38EAF398DCF7793B8F1CEDFB19EF3EDE830348F112"
+  },
+  {
+    "product": "english",
+    "file": "ciban-english-settings.exe",
+    "machine": "0x8664",
+    "sha256": "184338F38FEFE65A4226BC3592E3D9755C5E5588BB33F3C48421A58AD7BCDE02"
+  },
+  {
+    "product": "english",
+    "file": "tsf-x64.dll",
+    "machine": "0x8664",
+    "sha256": "4EBEE83B66FCB92DF738B4D486BCD39383ADB178A75DBF7C890C02AD4DD8595B"
+  },
+  {
+    "product": "english",
+    "file": "tsf-x86.dll",
+    "machine": "0x014C",
+    "sha256": "FAAB6997B04B737C9F204F8820DA413B82E7B2D9BA402961FA708F19941D5744"
+  },
+  {
+    "product": "french",
+    "file": "ciban-french-server.exe",
+    "machine": "0x8664",
+    "sha256": "496E838C186A3EF53093AC9A65A42EE00B7CF1AC306993D5055B0C6A127BB832"
+  },
+  {
+    "product": "french",
+    "file": "ciban-french-settings.exe",
+    "machine": "0x8664",
+    "sha256": "5F585B005F90A3B5E0CEC81B3FFB1541B19140BA0E8A75E406CD6C6145EFB256"
+  },
+  {
+    "product": "french",
+    "file": "tsf-x64.dll",
+    "machine": "0x8664",
+    "sha256": "5359FD0FBE0279CB179161D98A81E6225FA61390681FABC455A8897AFFEC85D2"
+  },
+  {
+    "product": "french",
+    "file": "tsf-x86.dll",
+    "machine": "0x014C",
+    "sha256": "7FDFD07B6E20CECD7DC0F007A1CDC0A3E78D86D459242B348674CAA3A264AF35"
+  }
+]

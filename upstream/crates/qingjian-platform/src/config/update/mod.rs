@@ -20,7 +20,7 @@ pub struct UpdateConfig {
 impl Default for UpdateConfig {
     fn default() -> Self {
         Self {
-            check: true,
+            check: !crate::product::IS_CIBAN,
             channel: UpdateChannel::default(),
         }
     }
