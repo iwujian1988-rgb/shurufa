@@ -1,0 +1,3 @@
+thiserror-1.0.69 1.0.69
+License: MIT OR Apache-2.0
+对应完整源码：source-vendor/thiserror-1.0.69/

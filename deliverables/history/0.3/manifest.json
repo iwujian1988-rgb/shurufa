@@ -1,0 +1,56 @@
+{
+  "version": "0.3.0-demo",
+  "generatedAt": "2026-10-04T02:53:45.457Z",
+  "upstream": {
+    "repository": "https://github.com/qingjian-team/qingjian.git",
+    "commit": "c08ae57cb88b6a4a46f4a5e9c1d6d11c5e69222e",
+    "checkedOn": "2026-10-04",
+    "codeLicense": "GPL-3.0-or-later",
+    "sourceDirectory": "upstream",
+    "mobileProducts": [
+      "dev.ciban.english",
+      "dev.ciban.french"
+    ]
+  },
+  "products": [
+    "dev.ciban.english",
+    "dev.ciban.french"
+  ],
+  "minSdk": 26,
+  "targetSdk": 36,
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "signing": "Android Debug",
+  "frenchCoveredWords": 34548,
+  "frenchLessonHeadwords": 529,
+  "frenchPhraseEntries": 144,
+  "independentLanguageReview": false,
+  "testedRuntime": "M2007J17C Android 12 ARM64: physical T9/system IME and French detail/reading/phrase UI; Android 15 x86_64 emulator: JNI instrumentation and QWERTY/T9/French detail UI",
+  "physicalDeviceTested": true,
+  "phoneInstrumentationValidated": false,
+  "phoneInstrumentationLimitation": "MIUI blocked installation of new test helper; main APK upgrades and physical touch checks passed",
+  "fullCompatibilityValidated": false,
+  "layouts": [
+    "qwerty",
+    "t9"
+  ],
+  "artifacts": [
+    {
+      "name": "ciban-english-demo.apk",
+      "bytes": 38366365,
+      "sha256": "3c1f8687add3fb40ecbdc20ecc906b13868cd47a8df477b99600a04c3ec858b4"
+    },
+    {
+      "name": "ciban-french-demo.apk",
+      "bytes": 35969987,
+      "sha256": "db9c5371a98958ffc2176ed742237df6f7c4bc62026ff3291713d0e251c380e3"
+    },
+    {
+      "name": "ciban-demo-source.tar.gz",
+      "bytes": 78077092,
+      "sha256": "650464f548b1ed8767179e855d1fe83425caa605a39b6474b7799d2631df3cf4"
+    }
+  ]
+}

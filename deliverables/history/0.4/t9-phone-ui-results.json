@@ -1,0 +1,27 @@
+{
+  "version": "0.4.0-demo",
+  "runtime": "M2007J17C Android 12 ARM64",
+  "generatedAt": "2026-10-04T07:09:26.581Z",
+  "apkSha256": {
+    "english": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b",
+    "french": "df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0"
+  },
+  "results": [
+    {
+      "name": "english: real phone T9 touch + syllable + translated candidate + commit + deletion + space",
+      "status": "PASS"
+    },
+    {
+      "name": "english: real phone InputMethodService T9 composing + commit + space + deletion",
+      "status": "PASS"
+    },
+    {
+      "name": "french: real phone T9 touch + syllable + translated candidate + commit + deletion + space",
+      "status": "PASS"
+    },
+    {
+      "name": "french: real phone InputMethodService T9 composing + commit + space + deletion",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "dictionaryEntries": 92825,
+  "distinctChineseWords": 91919,
+  "englishCoveredWords": 87352,
+  "englishGlossaryEntries": 232213,
+  "englishUpstreamCoveredWords": 88112,
+  "frenchBaseReadingEntries": 55461,
+  "frenchCoveredWords": 34548,
+  "frenchLessonReadingEntries": 558,
+  "independentLanguageReview": false,
+  "scope": "Word with >=1 annotated dictionary reading; English includes curated readings and unresolved-reading guards. Not frequency weighted, translation accuracy or sentence translation.",
+  "version": "0.4.0-demo"
+}

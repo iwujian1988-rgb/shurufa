@@ -1,0 +1,35 @@
+import { createRequire } from 'node:module';
+import { readFile, writeFile, stat } from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import assert from 'node:assert/strict';
+throw new Error('Historical reusable-code test: use test/single-use-online.mjs browser with temporary validation codes.');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const require = createRequire(import.meta.url);
+const { chromium } = require('C:/Users/imwuj/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const owner = JSON.parse(await readFile(path.join(root, 'private/owner-codes.json'), 'utf8'));
+const expected = JSON.parse(await readFile(path.join(root, 'private/release.json'), 'utf8')).artifacts.find(f => f.id === 'french');
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+try {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, acceptDownloads: true });
+  const page = await context.newPage();
+  await page.goto('https://maxnote.top/ciban/#code=' + encodeURIComponent(owner[1].code), { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.getElementById('apk-download').getAttribute('aria-disabled') === 'false');
+  await page.locator('input[value=french]').check();
+  const downloadEvent = page.waitForEvent('download', { timeout: 30000 });
+  await page.locator('#apk-download').click();
+  const download = await downloadEvent;
+  assert.equal(download.suggestedFilename(), expected.filename);
+  assert.equal(await download.failure(), null);
+  const filePath = await download.path();
+  assert.equal((await stat(filePath)).size, expected.bytes);
+  const hash = createHash('sha256');
+  for await (const chunk of createReadStream(filePath)) hash.update(chunk);
+  assert.equal(hash.digest('hex'), expected.sha256);
+  const report = { checkedOn: new Date().toISOString(), url: 'https://maxnote.top/ciban/', viewport: '390x844', dedicatedLink: true, selection: 'french', actualButtonClickDownload: true, filename: expected.filename, bytes: expected.bytes, sha256: expected.sha256 };
+  await writeFile(path.join(root, 'test-results/browser-download-report.json'), JSON.stringify(report, null, 2));
+  process.stdout.write(JSON.stringify(report) + '\n');
+  await context.close();
+} finally { await browser.close(); }

@@ -1,0 +1,3 @@
+ptr_meta 0.3.2
+License: MIT
+对应完整源码：source-vendor/ptr_meta/

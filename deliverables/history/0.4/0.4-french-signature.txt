@@ -1,0 +1,9 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Tested APK SHA-256: df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0; 16K zipalign: PASS

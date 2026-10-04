@@ -1,0 +1,8 @@
+{
+  "name": "ciban-download-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "test": "node --test test/server.test.mjs", "prepare:release": "node scripts/prepare-release.mjs" },
+  "engines": { "node": ">=20" }
+}

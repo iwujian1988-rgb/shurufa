@@ -1,0 +1,80 @@
+{
+  "version": "0.4.0-demo",
+  "runtime": "M2007J17C Android 12 ARM64",
+  "generatedAt": "2026-10-04T07:05:52.879Z",
+  "apkSha256": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b",
+  "resumedFromMatchedApk": true,
+  "scope": "Own editor physical touch; reading differences, phrases, grammar/examples, upstream POS fallback, unresolved reading guard, long press/back without commit; successful earlier cases may resume only with identical APK hash",
+  "results": [
+    {
+      "spelling": "yinhang",
+      "word": "银行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "hai",
+      "word": "还",
+      "status": "PASS"
+    },
+    {
+      "spelling": "huan",
+      "word": "还",
+      "status": "PASS"
+    },
+    {
+      "spelling": "xing",
+      "word": "行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "hang",
+      "word": "行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "de",
+      "word": "地",
+      "status": "PASS"
+    },
+    {
+      "spelling": "di",
+      "word": "地",
+      "status": "PASS"
+    },
+    {
+      "spelling": "wojuede",
+      "word": "我觉得",
+      "status": "PASS"
+    },
+    {
+      "spelling": "buzhidao",
+      "word": "不知道",
+      "status": "PASS"
+    },
+    {
+      "spelling": "haizi",
+      "word": "孩子",
+      "status": "PASS"
+    },
+    {
+      "spelling": "xinxi",
+      "word": "信息",
+      "status": "PASS"
+    },
+    {
+      "spelling": "xuexi",
+      "word": "学习",
+      "status": "PASS"
+    },
+    {
+      "spelling": "shu",
+      "word": "树",
+      "status": "PASS"
+    },
+    {
+      "spelling": "dan",
+      "word": "单",
+      "status": "PASS"
+    }
+  ]
+}

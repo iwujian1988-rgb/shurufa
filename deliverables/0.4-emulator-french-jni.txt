@@ -1,0 +1,6 @@
+Runtime: Android 15 API 35 x86_64 emulator
+Tested APK SHA-256: df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0
+PASS: real JNI + packaged data + QWERTY/T9 UI; annotation, commit, stale selection, delete, Unicode, syllable selection; language-specific reading distinctions, phrases and noun grammar/detail panel; English countability/irregular forms/upstream POS when applicable
+T9 comfortable key height: 67.809525 dp
+T9 five JNI digit calls (ms, not UI latency): [6, 5, 4, 3, 3]
+

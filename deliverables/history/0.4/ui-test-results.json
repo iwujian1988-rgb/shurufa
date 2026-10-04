@@ -1,0 +1,26 @@
+[
+  {
+    "name": "english: in-app pinyin + translated candidate + Chinese commit + code-point deletion",
+    "status": "PASS"
+  },
+  {
+    "name": "english: expanded candidates + ASCII mode + symbols",
+    "status": "PASS"
+  },
+  {
+    "name": "english: real InputMethodService composing + commit + space + deletion",
+    "status": "PASS"
+  },
+  {
+    "name": "french: in-app pinyin + translated candidate + Chinese commit + code-point deletion",
+    "status": "PASS"
+  },
+  {
+    "name": "french: expanded candidates + ASCII mode + symbols",
+    "status": "PASS"
+  },
+  {
+    "name": "french: real InputMethodService composing + commit + space + deletion",
+    "status": "PASS"
+  }
+]

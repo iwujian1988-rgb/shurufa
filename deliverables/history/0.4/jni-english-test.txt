@@ -1,0 +1,2 @@
+PASS: real JNI + packaged data; annotation, commit, stale selection, delete, Unicode, invalid handle
+

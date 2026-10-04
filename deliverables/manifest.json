@@ -1,0 +1,106 @@
+{
+  "version": "0.5.0-demo",
+  "generatedAt": "2026-10-04T09:29:00.990Z",
+  "upstream": {
+    "repository": "https://github.com/qingjian-team/qingjian.git",
+    "commit": "c08ae57cb88b6a4a46f4a5e9c1d6d11c5e69222e",
+    "checkedOn": "2026-10-04",
+    "codeLicense": "GPL-3.0-or-later",
+    "sourceDirectory": "upstream",
+    "mobileProducts": [
+      "dev.ciban.english",
+      "dev.ciban.french"
+    ]
+  },
+  "products": [
+    "dev.ciban.english",
+    "dev.ciban.french"
+  ],
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "minSdk": 26,
+  "targetSdk": 36,
+  "signing": "Android Debug; existing certificate retained",
+  "layouts": [
+    "qwerty",
+    "t9"
+  ],
+  "t9PrimaryLabels": [
+    "标点",
+    "ABC",
+    "DEF",
+    "GHI",
+    "JKL",
+    "MNO",
+    "PQRS",
+    "TUV",
+    "WXYZ"
+  ],
+  "t9HeightPresets": [
+    "compact",
+    "comfortable",
+    "large"
+  ],
+  "defaultT9Height": "comfortable",
+  "performance": {
+    "english": {
+      "firstDraw": {
+        "samples": 276,
+        "p50Ms": 39.028594,
+        "p95Ms": 71.40901,
+        "maxMs": 95.094427
+      },
+      "jni": {
+        "samples": 460,
+        "p50Ms": 6.667708,
+        "p95Ms": 14.685781
+      },
+      "burstTenKeysToFinalDrawMs": 155.170573
+    },
+    "french": {
+      "firstDraw": {
+        "samples": 276,
+        "p50Ms": 39.009791,
+        "p95Ms": 63.306094,
+        "maxMs": 104.678334
+      },
+      "jni": {
+        "samples": 460,
+        "p50Ms": 5.781146,
+        "p95Ms": 14.057032
+      },
+      "burstTenKeysToFinalDrawMs": 161.604844
+    }
+  },
+  "englishBaselineFirstDraw": {
+    "p50Ms": 162.923802,
+    "p95Ms": 181.408386
+  },
+  "measurementScope": "performClick to first keyboard onDraw with matching raw; excludes touch hardware and display scanout; JNI includes JSON parsing",
+  "englishP95ReductionPercent": 60.63632361516077,
+  "physicalDeviceTested": true,
+  "fullCompatibilityValidated": false,
+  "independentLanguageReview": false,
+  "arbitraryPhraseTranslationImplemented": false,
+  "languageData": "unchanged from 0.4; original coverage and independent-review limitations retained",
+  "testScope": "M2007J17C Android 12 ARM64: synthetic private input UI/JNI performance, actual letter keys/scroll/expand/detail and practice/system IME touch tests; Android 15 x86_64: real JNI and UI smoke including letter labels and touch identity during rebind. No all-app timing claim.",
+  "artifacts": [
+    {
+      "name": "ciban-english-demo.apk",
+      "bytes": 38510126,
+      "sha256": "3a9f13c856d77903662ec083b958931aa9b35c23c593e7acb39462ed4624017f"
+    },
+    {
+      "name": "ciban-french-demo.apk",
+      "bytes": 36023842,
+      "sha256": "77898775f8fb3ddea2b74eb01026d127b9b22dcf2900db85035407b317822a0c"
+    },
+    {
+      "name": "ciban-demo-source.tar.gz",
+      "bytes": 80161050,
+      "sha256": "5d6469f077556626adc4abe91b528b463f1050c220c37cdb8ab71526856f0ccb"
+    }
+  ]
+}

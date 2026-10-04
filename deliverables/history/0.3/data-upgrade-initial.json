@@ -1,0 +1,42 @@
+{
+  "version": "0.3.0-demo",
+  "generatedAt": "2026-10-04T02:20:38.788Z",
+  "results": [
+    {
+      "language": "english",
+      "status": "PASS",
+      "previousRoot": "engine-v1",
+      "currentRoot": "engine-v2-d81f8d4954238748",
+      "apkSha256": "2bf404a46bb1eb00553388c31dfc08f9ae54ad6a5a30a87c5d25bba1c0351801",
+      "learningBefore": {
+        "frequency.tsv": "e3132e1a1c133fe382423ac0904466617f498d56fc8f1ea5cec721103b0f8635",
+        "user-choices.tsv": "cefabc9a18ff6184bdf0045cd9dc0f1c9e4463b856a0b0747a42e8dc95fb3f4e",
+        "user-ngram.tsv": "3928e58b2c95bc96775299d5867e57ab2854b6439c3363c15b6b420006a06ed5"
+      },
+      "learningAfter": {
+        "frequency.tsv": "e3132e1a1c133fe382423ac0904466617f498d56fc8f1ea5cec721103b0f8635",
+        "user-choices.tsv": "cefabc9a18ff6184bdf0045cd9dc0f1c9e4463b856a0b0747a42e8dc95fb3f4e",
+        "user-ngram.tsv": "3928e58b2c95bc96775299d5867e57ab2854b6439c3363c15b6b420006a06ed5"
+      },
+      "frenchAssetsMatched": false
+    },
+    {
+      "language": "french",
+      "status": "PASS",
+      "previousRoot": "engine-v1",
+      "currentRoot": "engine-v2-742f2adb46689862",
+      "apkSha256": "29de2f679c686f91538e7817d600089f83b941833843affab64cbc01bdbf2ca5",
+      "learningBefore": {
+        "frequency.tsv": "0de0e377668c22695de16418e08c2d3199d1a040def527e5fc1d13f1a324e24d",
+        "user-choices.tsv": "0dccea9d461d7afd6230bc900f45c4e3f00904a929fe34b9c309593071f7445f",
+        "user-ngram.tsv": "21c6cb0f88694f4f2db4d02978b31832434c659f75669067facd7bc6d14a71c0"
+      },
+      "learningAfter": {
+        "frequency.tsv": "0de0e377668c22695de16418e08c2d3199d1a040def527e5fc1d13f1a324e24d",
+        "user-choices.tsv": "0dccea9d461d7afd6230bc900f45c4e3f00904a929fe34b9c309593071f7445f",
+        "user-ngram.tsv": "21c6cb0f88694f4f2db4d02978b31832434c659f75669067facd7bc6d14a71c0"
+      },
+      "frenchAssetsMatched": true
+    }
+  ]
+}

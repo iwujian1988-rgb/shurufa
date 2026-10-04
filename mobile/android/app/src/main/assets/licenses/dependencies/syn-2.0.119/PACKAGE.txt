@@ -1,0 +1,3 @@
+syn-2.0.119 2.0.119
+License: MIT OR Apache-2.0
+对应完整源码：source-vendor/syn-2.0.119/

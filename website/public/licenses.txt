@@ -1,0 +1,36 @@
+词伴 Android 0.5.0-demo — 开源与数据许可
+
+词伴基于青简输入法，采用 GPL-3.0-or-later。
+上游：https://github.com/qingjian-team/qingjian
+固定提交：c08ae57cb88b6a4a46f4a5e9c1d6d11c5e69222e
+GNU GPL v3：https://www.gnu.org/licenses/gpl-3.0.html
+
+英语、法语 APK 对应源码（含构建说明、上游及所需本地依赖）通过本官网
+“文件校验与开源信息”中的源码入口提供。每个码只能领取一个 APK；
+获取对应源码不消耗安装包次数，已使用的码仍可验证获取源码，不需另付下载码。
+下载码控制本站的初次分发，不限制接收者依据 GPL 获得的使用、修改和再分发权利。
+本程序不提供任何担保；完整条款见对应源码内 LICENSE。
+
+法语基础词典含 CFDICT 数据，署名 Chine Informations / David Houstin 及贡献者（CC-BY-SA 3.0）：
+https://chine.in/mandarin/dictionnaire/CFDICT/
+https://creativecommons.org/licenses/by-sa/3.0/
+其他词库、拼音及第三方依赖的许可与来源，见对应源码内
+data/README.md、docs/FRENCH_DICTIONARY_PLAN.md、data/french-research/LICENSE-CFDICT.md、
+mobile/android/app/src/main/assets/NOTICE.txt 和 assets/licenses，以及上游目录及 vendor 许可文件。
+部分基础词库的原始转录许可仍待正式商用发布前核实；当前为测试分发。
+AI 辅助整理的英法学习内容尚未全部经过独立语言编辑校审。
+
+网页学习依据：
+Uchihara, Webb & Yanagisawa (2019), The Effects of Repetition on Incidental
+Vocabulary Learning: A Meta-Analysis of Correlational Studies.
+https://doi.org/10.1111/lang.12343
+重复接触的研究不直接证明本输入法的学习效果。
+
+隐私说明：
+官网不接收输入法内的打字内容；当前 APK 无网络权限。
+官网下载时处理下载码验证与临时授权，服务器持久保存一次领取的码哈希、
+版本、时间及授权凭据哈希，以防重复领取。此路径关闭一般访问日志，
+应用不记录验证请求正文、原始下载码或授权 Cookie。专属链接建议使用 #code= 格式，
+该部分不会随 HTTP 请求传给服务器。页面无第三方统计或远程字体。
+
+发布类型：Android Debug 测试签名，非应用商店正式发布版本。

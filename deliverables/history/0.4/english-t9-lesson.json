@@ -1,0 +1,7 @@
+{
+  "version": "0.4.0-demo",
+  "status": "PASS",
+  "runtime": "M2007J17C Android 12 ARM64",
+  "apkSha256": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b",
+  "scope": "Physical T9 42494 -> child lesson -> plural children -> no unintended commit -> return/commit 孩子"
+}

@@ -1,0 +1,49 @@
+{
+  "version": "0.3.0-demo",
+  "runtime": "M2007J17C Android 12 ARM64",
+  "generatedAt": "2026-10-04T02:51:14.520Z",
+  "apkSha256": "db9c5371a98958ffc2176ed742237df6f7c4bc62026ff3291713d0e251c380e3",
+  "scope": "Physical touch in own app; reading-sensitive annotation, noun gender/lemma, phrase note, long press without commit and return/commit",
+  "results": [
+    {
+      "spelling": "yinhang",
+      "word": "银行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "hai",
+      "word": "还",
+      "status": "PASS"
+    },
+    {
+      "spelling": "huan",
+      "word": "还",
+      "status": "PASS"
+    },
+    {
+      "spelling": "xing",
+      "word": "行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "hang",
+      "word": "行",
+      "status": "PASS"
+    },
+    {
+      "spelling": "de",
+      "word": "的",
+      "status": "PASS"
+    },
+    {
+      "spelling": "wojuede",
+      "word": "我觉得",
+      "status": "PASS"
+    },
+    {
+      "spelling": "buzhidao",
+      "word": "不知道",
+      "status": "PASS"
+    }
+  ]
+}

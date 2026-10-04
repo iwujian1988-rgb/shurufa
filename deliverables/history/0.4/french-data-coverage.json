@@ -1,0 +1,20 @@
+{
+  "dictionaryEntries": 92825,
+  "distinctChineseWords": 91919,
+  "frenchCoveredReadingEntries": 34854,
+  "frenchCoveredWords": 34548,
+  "independentLanguageReview": false,
+  "readingAndLessonRegressions": "PASS",
+  "scope": "exact headword with at least one matching toneless pronunciation; not accuracy or usage-weighted coverage",
+  "topByDictionaryStaticFrequency": [
+    {
+      "coveredWords": 969,
+      "wordCount": 1000
+    },
+    {
+      "coveredWords": 3922,
+      "wordCount": 5000
+    }
+  ],
+  "version": "0.4.0-demo"
+}

@@ -1,0 +1,3 @@
+0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b  ciban-english-demo.apk
+df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0  ciban-french-demo.apk
+a54e6212d9a13ea200a19c698b90289cb2e3b566f24f4cb7908e4440f0c5bef6  ciban-demo-source.tar.gz

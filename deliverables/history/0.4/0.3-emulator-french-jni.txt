@@ -1,0 +1,5 @@
+Runtime: Android 15 API 35 x86_64 emulator
+Tested APK SHA-256: db9c5371a98958ffc2176ed742237df6f7c4bc62026ff3291713d0e251c380e3
+PASS: real JNI + packaged data + QWERTY/T9 UI; annotation, commit, stale selection, delete, Unicode, syllable selection; French reading distinctions, phrases, noun gender and detail panel when applicable
+T9 five JNI digit calls (ms, not UI latency): [7, 6, 3, 4, 3]
+

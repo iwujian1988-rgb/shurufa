@@ -1,0 +1,3 @@
+jiff-static 0.2.37
+License: Unlicense OR MIT
+对应完整源码：source-vendor/jiff-static/

@@ -1,0 +1,63 @@
+{
+  "version": "fr-2026-10-04-v2",
+  "baseReadingEntries": 55461,
+  "lessonReadingEntries": 558,
+  "lessonHeadwords": 529,
+  "phraseSourceEntries": 144,
+  "phraseHeadwordsInstalled": 144,
+  "phraseHeadwordsOutsideWordDictionary": [
+    "我明白了",
+    "我很好",
+    "你好吗",
+    "很高兴认识你",
+    "请稍等",
+    "一会儿见",
+    "下次见",
+    "回头见",
+    "旅途愉快",
+    "我渴了",
+    "我累了",
+    "我生病了",
+    "我迷路了",
+    "帮帮我",
+    "请帮我",
+    "我要买",
+    "便宜一点",
+    "我来自中国",
+    "我住在",
+    "去机场",
+    "去车站",
+    "一张票",
+    "洗手间在哪里",
+    "别着急"
+  ],
+  "explicitPolyphoneReadingEntries": 37,
+  "baseHeadwords": 55021,
+  "lessonSensesWithPOS": 597,
+  "lessonSensesWithGender": 189,
+  "lessonSensesWithLemma": 306,
+  "distinctChineseWords": 91919,
+  "coveredChineseWords": 34548,
+  "topByDictionaryStaticFrequency": [
+    {
+      "wordCount": 1000,
+      "coveredWords": 969
+    },
+    {
+      "wordCount": 5000,
+      "coveredWords": 3922
+    }
+  ],
+  "blockedSourceRecords": 289,
+  "remainingTop5000Words": 1078,
+  "independentLanguageReview": false,
+  "scope": "Exact Chinese headwords with at least one matching toneless pronunciation; not translation accuracy or usage-weighted coverage",
+  "licenses": {
+    "base": "CC-BY-SA-3.0",
+    "lessons": "GPL-3.0-or-later"
+  },
+  "hashes": {
+    "base.tsv": "ac3f781ae44419d66b5f63f679f09d566f157611a40d1dae98ae9707e4506e86",
+    "lessons.tsv": "622d39336fbe87046a05614b4eae4e463d43568fddce72936b5eed478029aae9"
+  }
+}

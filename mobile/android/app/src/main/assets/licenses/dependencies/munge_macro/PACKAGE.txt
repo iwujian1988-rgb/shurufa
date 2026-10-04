@@ -1,0 +1,3 @@
+munge_macro 0.4.7
+License: MIT
+对应完整源码：source-vendor/munge_macro/

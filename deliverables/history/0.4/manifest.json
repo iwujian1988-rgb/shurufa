@@ -1,0 +1,66 @@
+{
+  "version": "0.4.0-demo",
+  "generatedAt": "2026-10-04T07:19:14.937Z",
+  "upstream": {
+    "repository": "https://github.com/qingjian-team/qingjian.git",
+    "commit": "c08ae57cb88b6a4a46f4a5e9c1d6d11c5e69222e",
+    "checkedOn": "2026-10-04",
+    "codeLicense": "GPL-3.0-or-later",
+    "sourceDirectory": "upstream",
+    "mobileProducts": [
+      "dev.ciban.english",
+      "dev.ciban.french"
+    ]
+  },
+  "products": [
+    "dev.ciban.english",
+    "dev.ciban.french"
+  ],
+  "minSdk": 26,
+  "targetSdk": 36,
+  "abis": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "signing": "Android Debug",
+  "frenchCoveredWords": 34548,
+  "frenchLessonHeadwords": 529,
+  "frenchPhraseEntries": 144,
+  "englishCoveredWords": 87352,
+  "englishCuratedHeadwords": 280,
+  "englishPhraseEntries": 144,
+  "englishUnresolvedReadingGuards": 1675,
+  "t9HeightPresets": [
+    "compact",
+    "comfortable",
+    "large"
+  ],
+  "defaultT9Height": "comfortable",
+  "independentLanguageReview": false,
+  "testedRuntime": "M2007J17C Android 12 ARM64: physical height settings/T9/system IME, English and French detail/reading/phrase UI; Android 15 x86_64 emulator: JNI instrumentation, QWERTY/T9/details, reduced-width and landscape UI",
+  "physicalDeviceTested": true,
+  "phoneInstrumentationValidated": false,
+  "phoneInstrumentationLimitation": "MIUI blocked installation of new test helper; main APK upgrades and physical touch checks passed",
+  "fullCompatibilityValidated": false,
+  "layouts": [
+    "qwerty",
+    "t9"
+  ],
+  "artifacts": [
+    {
+      "name": "ciban-english-demo.apk",
+      "bytes": 38547345,
+      "sha256": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b"
+    },
+    {
+      "name": "ciban-french-demo.apk",
+      "bytes": 36020851,
+      "sha256": "df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0"
+    },
+    {
+      "name": "ciban-demo-source.tar.gz",
+      "bytes": 79032171,
+      "sha256": "a54e6212d9a13ea200a19c698b90289cb2e3b566f24f4cb7908e4440f0c5bef6"
+    }
+  ]
+}

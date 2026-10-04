@@ -1,0 +1,3 @@
+serde_core 1.0.229
+License: MIT OR Apache-2.0
+对应完整源码：source-vendor/serde_core/

@@ -1,0 +1,3 @@
+libc 0.2.190
+License: MIT OR Apache-2.0
+对应完整源码：source-vendor/libc/

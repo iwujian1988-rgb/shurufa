@@ -1,0 +1,12 @@
+{
+  "dictionaryEntries": 92825,
+  "distinctChineseWords": 91919,
+  "englishCoveredWords": 88112,
+  "englishGlossaryEntries": 232213,
+  "frenchBaseReadingEntries": 55461,
+  "frenchCoveredWords": 34548,
+  "frenchLessonReadingEntries": 558,
+  "independentLanguageReview": false,
+  "scope": "English exact word; French word with at least one matching toneless reading; not frequency weighted, accuracy or sentence translation",
+  "version": "0.3.0-demo"
+}

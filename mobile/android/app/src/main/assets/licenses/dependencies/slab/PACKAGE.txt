@@ -1,0 +1,3 @@
+slab 0.4.12
+License: MIT
+对应完整源码：source-vendor/slab/

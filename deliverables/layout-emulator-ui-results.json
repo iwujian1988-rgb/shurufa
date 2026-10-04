@@ -1,0 +1,40 @@
+{
+  "version": "0.4.0-demo",
+  "runtime": "Android 15 API 35 x86_64 emulator",
+  "generatedAt": "2026-10-04T06:51:00.471Z",
+  "apkSha256": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b",
+  "results": [
+    {
+      "name": "reduced-width",
+      "status": "PASS",
+      "editorBounds": [
+        50,
+        218,
+        670,
+        427
+      ],
+      "keyboardBounds": [
+        0,
+        442,
+        720,
+        1417
+      ]
+    },
+    {
+      "name": "landscape",
+      "status": "PASS",
+      "editorBounds": [
+        58,
+        21,
+        1862,
+        265
+      ],
+      "keyboardBounds": [
+        0,
+        272,
+        1920,
+        1061
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+tracing-core 0.1.36
+License: MIT
+对应完整源码：source-vendor/tracing-core/

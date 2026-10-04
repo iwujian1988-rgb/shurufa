@@ -1,0 +1,4 @@
+private/
+test-results/
+release.tar.gz
+*.log

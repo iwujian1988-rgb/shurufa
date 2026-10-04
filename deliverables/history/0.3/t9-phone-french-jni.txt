@@ -1,0 +1,4 @@
+Tested APK SHA-256: 3d5ea1644f5ea6bb2da55281ab59e8760cd0a68d24381c9079ef2b174d6d957e
+PASS: real JNI + packaged data + QWERTY/T9 UI; annotation, commit, stale selection, delete, Unicode, syllable selection
+T9 five JNI digit calls (ms, not UI latency): [8, 5, 4, 3, 3]
+

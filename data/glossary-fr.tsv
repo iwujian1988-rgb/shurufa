@@ -1,0 +1,373 @@
+# 词伴法语 demo 示例 v1；AI 编写，未经独立法语编辑校审；GPL-3.0-or-later
+你好	int. bonjour
+您好	int. bonjour
+再见	int. au revoir
+谢谢	int. merci
+感谢	v. remercier
+对不起	int. pardon
+抱歉	adj. désolé
+没关系	phr. ce n'est rien
+请	adv. s'il vous plaît
+欢迎	v. accueillir
+早上好	int. bonjour
+晚上好	int. bonsoir
+晚安	int. bonne nuit
+是	v. être
+有	v. avoir
+我	pron. je
+你	pron. tu
+他	pron. il
+她	pron. elle
+我们	pron. nous
+你们	pron. vous
+他们	pron. ils
+她们	pron. elles
+大家	pron. tout le monde
+自己	pron. soi-même
+谁	pron. qui
+什么	pron. quoi
+哪里	adv. où
+为什么	adv. pourquoi
+怎么	adv. comment
+多少	adv. combien
+这个	pron. ceci
+那个	pron. cela
+这里	adv. ici
+那里	adv. là
+现在	adv. maintenant
+今天	n. aujourd'hui
+明天	n. demain
+昨天	n. hier
+早上	n. le matin
+上午	n. la matinée
+中午	n. midi
+下午	n. l'après-midi
+晚上	n. le soir
+夜晚	n. la nuit
+时间	n. le temps
+小时	n. l'heure
+分钟	n. la minute
+星期	n. la semaine
+周末	n. le week-end
+月份	n. le mois
+今年	n. cette année
+去年	n. l'année dernière
+明年	n. l'année prochaine
+春天	n. le printemps
+夏天	n. l'été
+秋天	n. l'automne
+冬天	n. l'hiver
+天气	n. le temps
+晴天	n. le beau temps
+下雨	v. pleuvoir
+下雪	v. neiger
+太阳	n. le soleil
+月亮	n. la lune
+星星	n. l'étoile
+天空	n. le ciel
+风	n. le vent
+雨	n. la pluie
+雪	n. la neige
+冷	adj. froid
+热	adj. chaud
+温暖	adj. doux
+凉快	adj. frais
+学习	v. apprendre
+学	v. apprendre
+练习	v. s'entraîner
+复习	v. réviser
+阅读	v. lire
+读	v. lire
+写	v. écrire
+听	v. écouter
+说	v. parler
+看	v. regarder
+问	v. demander
+回答	v. répondre
+理解	v. comprendre
+记住	v. retenir
+忘记	v. oublier
+认识	v. connaître
+知道	v. savoir
+教	v. enseigner
+学校	n. l'école
+大学	n. l'université
+老师	n. le professeur
+学生	n. l'élève
+同学	n. le camarade
+课	n. le cours
+课程	n. le cours
+考试	n. l'examen
+作业	n. les devoirs
+问题	n. la question
+答案	n. la réponse
+书	n. le livre
+词典	n. le dictionnaire
+单词	n. le mot
+词汇	n. le vocabulaire
+句子	n. la phrase
+语言	n. la langue
+中文	n. le chinois
+英语	n. l'anglais
+法语	n. le français
+发音	n. la prononciation
+语法	n. la grammaire
+朋友	n. l'ami
+家	n. la maison
+家庭	n. la famille
+父亲	n. le père
+母亲	n. la mère
+爸爸	n. papa
+妈妈	n. maman
+孩子	n. l'enfant
+儿子	n. le fils
+女儿	n. la fille
+哥哥	n. le grand frère
+弟弟	n. le petit frère
+姐姐	n. la grande sœur
+妹妹	n. la petite sœur
+丈夫	n. le mari
+妻子	n. l'épouse
+男人	n. l'homme
+女人	n. la femme
+人	n. la personne
+生活	n. la vie
+工作	v. travailler	n. le travail
+公司	n. l'entreprise
+办公室	n. le bureau
+同事	n. le collègue
+会议	n. la réunion
+计划	n. le projet
+项目	n. le projet
+任务	n. la tâche
+完成	v. terminer
+开始	v. commencer
+结束	v. finir
+继续	v. continuer
+帮助	v. aider
+需要	v. avoir besoin de
+想	v. vouloir
+想要	v. vouloir
+希望	v. espérer
+喜欢	v. aimer
+爱	v. aimer
+觉得	v. penser
+认为	v. penser
+决定	v. décider
+选择	v. choisir
+努力	v. faire des efforts
+成功	n. le succès
+失败	n. l'échec
+机会	n. l'occasion
+经验	n. l'expérience
+重要	adj. important
+简单	adj. simple
+困难	adj. difficile
+容易	adj. facile
+好	adj. bon
+坏	adj. mauvais
+大	adj. grand
+小	adj. petit
+新	adj. nouveau
+旧	adj. ancien
+快	adj. rapide
+慢	adj. lent
+高	adj. haut
+低	adj. bas
+长	adj. long
+短	adj. court
+多	adv. beaucoup
+少	adv. peu
+非常	adv. très
+一起	adv. ensemble
+一直	adv. toujours
+经常	adv. souvent
+有时候	adv. parfois
+已经	adv. déjà
+还	adv. encore
+马上	adv. tout de suite
+也	adv. aussi
+不	adv. ne… pas
+和	conj. et
+或者	conj. ou
+但是	conj. mais
+因为	conj. parce que
+所以	conj. donc
+如果	conj. si
+快乐	adj. heureux
+开心	adj. content
+高兴	adj. content
+难过	adj. triste
+生气	adj. en colère
+累	adj. fatigué
+饿	adj. affamé
+渴	adj. assoiffé
+健康	n. la santé
+生病	v. être malade
+医生	n. le médecin
+医院	n. l'hôpital
+药	n. le médicament
+身体	n. le corps
+头	n. la tête
+眼睛	n. l'œil
+耳朵	n. l'oreille
+嘴	n. la bouche
+手	n. la main
+脚	n. le pied
+心	n. le cœur
+吃	v. manger
+喝	v. boire
+饭	n. le repas
+早餐	n. le petit-déjeuner
+午餐	n. le déjeuner
+晚餐	n. le dîner
+水	n. l'eau
+茶	n. le thé
+咖啡	n. le café
+牛奶	n. le lait
+果汁	n. le jus
+面包	n. le pain
+米饭	n. le riz
+面条	n. les nouilles
+鸡蛋	n. l'œuf
+肉	n. la viande
+鸡肉	n. le poulet
+鱼	n. le poisson
+蔬菜	n. le légume
+水果	n. le fruit
+苹果	n. la pomme
+香蕉	n. la banane
+橙子	n. l'orange
+葡萄	n. le raisin
+草莓	n. la fraise
+糖	n. le sucre
+盐	n. le sel
+好吃	adj. délicieux
+甜	adj. sucré
+酸	adj. acide
+辣	adj. épicé
+餐厅	n. le restaurant
+菜单	n. le menu
+买	v. acheter
+卖	v. vendre
+价格	n. le prix
+钱	n. l'argent
+便宜	adj. bon marché
+贵	adj. cher
+商店	n. le magasin
+超市	n. le supermarché
+市场	n. le marché
+银行	n. la banque
+现金	n. les espèces
+信用卡	n. la carte bancaire
+支付	v. payer
+去	v. aller
+来	v. venir
+走	v. marcher
+跑	v. courir
+坐	v. s'asseoir
+站	v. se tenir debout
+睡觉	v. dormir
+起床	v. se lever
+休息	v. se reposer
+等	v. attendre
+等待	v. attendre
+找	v. chercher
+找到	v. trouver
+打开	v. ouvrir
+关闭	v. fermer
+带	v. apporter
+给	v. donner
+拿	v. prendre
+放	v. poser
+用	v. utiliser
+旅行	v. voyager	n. le voyage
+旅游	n. le tourisme
+出发	v. partir
+到达	v. arriver
+回家	v. rentrer
+城市	n. la ville
+国家	n. le pays
+中国	n. la Chine
+法国	n. la France
+巴黎	n. Paris
+加拿大	n. le Canada
+北京	n. Pékin
+路	n. la route
+街道	n. la rue
+地址	n. l'adresse
+左边	n. la gauche
+右边	n. la droite
+前面	adv. devant
+后面	adv. derrière
+附近	adv. à proximité
+远	adj. loin
+近	adj. proche
+汽车	n. la voiture
+公交车	n. le bus
+地铁	n. le métro
+火车	n. le train
+飞机	n. l'avion
+自行车	n. le vélo
+车站	n. la gare
+机场	n. l'aéroport
+票	n. le billet
+护照	n. le passeport
+酒店	n. l'hôtel
+房间	n. la chambre
+门	n. la porte
+窗户	n. la fenêtre
+桌子	n. la table
+椅子	n. la chaise
+床	n. le lit
+厨房	n. la cuisine
+厕所	n. les toilettes
+洗澡	v. se doucher
+衣服	n. le vêtement
+鞋	n. la chaussure
+颜色	n. la couleur
+红色	adj. rouge
+蓝色	adj. bleu
+绿色	adj. vert
+白色	adj. blanc
+黑色	adj. noir
+黄色	adj. jaune
+美丽	adj. beau
+漂亮	adj. joli
+音乐	n. la musique
+电影	n. le film
+照片	n. la photo
+拍照	v. photographier
+手机	n. le téléphone
+电脑	n. l'ordinateur
+网络	n. Internet
+消息	n. le message
+邮件	n. le courriel
+电话	n. l'appel
+运动	n. le sport
+游泳	v. nager
+跑步	v. courir
+散步	v. se promener
+唱歌	v. chanter
+跳舞	v. danser
+动物	n. l'animal
+猫	n. le chat
+狗	n. le chien
+鸟	n. l'oiseau
+花	n. la fleur
+树	n. l'arbre
+山	n. la montagne
+海	n. la mer
+河	n. la rivière
+一	num. un
+二	num. deux
+三	num. trois
+四	num. quatre
+五	num. cinq
+六	num. six
+七	num. sept
+八	num. huit
+九	num. neuf
+十	num. dix
+百	num. cent
+千	num. mille

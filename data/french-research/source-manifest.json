@@ -1,0 +1,30 @@
+{
+  "source": "CFDICT",
+  "author": "Chine Informations / David Houstin and contributors",
+  "homepage": "https://chine.in/mandarin/dictionnaire/CFDICT/",
+  "download": "https://chine.in/assets/cfdict/cfdict.u8",
+  "license": "CC-BY-SA-3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "downloadedAt": "2026-10-04",
+  "sourceVersion": "14/12/2024 02:30",
+  "sourceSha256": "124d87f0fc2aed305e42ec3794584fa62bf00df9ed0aac45b950aba518795e75",
+  "sourceBytes": 3522011,
+  "parsedRecords": 56299,
+  "distinctSimplifiedHeadwords": 55304,
+  "repeatedHeadwords": 911,
+  "rejectedRecords": 1,
+  "independentLanguageReview": false,
+  "transformations": [
+    "Parse original UTF-8 U8 records",
+    "Group by exact simplified headword",
+    "Preserve source lines, pinyin and all senses in JSONL",
+    "Deduplicate identical senses for candidate TSV without reordering"
+  ],
+  "deployedToApk": false,
+  "limitations": [
+    "Runtime displays at most two senses",
+    "Runtime lookup uses headword, not pinyin or sentence context",
+    "Source order does not imply most common sense",
+    "Gender, POS and concise display remain to be curated"
+  ]
+}

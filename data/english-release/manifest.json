@@ -1,0 +1,36 @@
+{
+  "version": "en-2026-10-04-v1",
+  "license": "GPL-3.0-or-later",
+  "independentLanguageReview": false,
+  "commonSourceEntries": 73,
+  "phraseSourceEntries": 144,
+  "polyphoneSourceEntries": 101,
+  "curatedReadingEntries": 317,
+  "curatedHeadwords": 280,
+  "ambiguousDictionaryHeadwords": 871,
+  "unresolvedReadingGuards": 1675,
+  "tableEntries": 1992,
+  "sourceFiles": [
+    {
+      "file": "data/english-common.tsv",
+      "sha256": "f677d7d23471782befb6e6dcee68dc182f2d9844c3f6d11d040983f25cc4ffa0"
+    },
+    {
+      "file": "data/english-phrases.tsv",
+      "sha256": "a9ba8976b233e8009d6d1ef205cfca93dcfe1e6679604ae7c3a1dcb327955d08"
+    },
+    {
+      "file": "data/english-polyphones.tsv",
+      "sha256": "cee92d76257a4e7118cc4c2bd8e6becd139c483976157395bd02be1d0abe0324"
+    },
+    {
+      "file": "data/french-research/chinese-entries.json",
+      "sha256": "b315b598856b3abc78f32657e1f0b372acf9ba11ea169e12fc20eacbe1a187c0"
+    },
+    {
+      "file": "data/french-release/lessons.tsv",
+      "sha256": "622d39336fbe87046a05614b4eae4e463d43568fddce72936b5eed478029aae9"
+    }
+  ],
+  "notes": "Keep upstream word glossary for other headwords. Curated entries use exact toneless readings; unresolved multi-reading entries deliberately hide word-only gloss. Same reading with different tones or meanings still needs context. Phrase examples are authoring, not independent review; some phrases require sentence generation."
+}

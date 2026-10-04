@@ -1,0 +1,3 @@
+jiff-tzdb-platform 0.1.3
+License: Unlicense OR MIT
+对应完整源码：source-vendor/jiff-tzdb-platform/

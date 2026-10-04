@@ -1,0 +1,22 @@
+{
+  "distinctChineseWords": 91919,
+  "effectiveCoveredReadings": 87389,
+  "effectiveCoveredWords": 87352,
+  "independentLanguageReview": false,
+  "missingOrGuardedWords": 4567,
+  "packedRowsChecked": 1992,
+  "scope": "Word-count coverage with >=1 dictionary reading annotated; not frequency weighted or translation accuracy. Unresolved multi-reading glosses deliberately hidden. All authored/guard mmap records compared with source.",
+  "topCoverage": [
+    {
+      "covered": 982,
+      "words": 1000
+    },
+    {
+      "covered": 4685,
+      "words": 5000
+    }
+  ],
+  "unresolvedReadingGuards": 1675,
+  "upstreamCoveredWords": 88112,
+  "version": "0.4.0-demo"
+}

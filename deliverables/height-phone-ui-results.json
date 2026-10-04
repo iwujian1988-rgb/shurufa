@@ -1,0 +1,79 @@
+{
+  "version": "0.4.0-demo",
+  "runtime": "M2007J17C Android 12 ARM64",
+  "generatedAt": "2026-10-04T06:53:36.053Z",
+  "density": 2.75,
+  "apkSha256": {
+    "english": "0c2b2e788064969066c2bd1b4198aa786da800f47a40e69e9d0f0323bbb2156b",
+    "french": "df63c38aa0c4a1db9d8b61d42c831824dc7a086bc20ae43ffbcc100a739d00c0"
+  },
+  "scope": "Physical setting taps in own app; all three heights persist after Activity recreation, full 9-key bounds visible and real composing/commit; system IME follows comfortable preset",
+  "results": [
+    {
+      "language": "english",
+      "preset": "紧凑",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 54.18181818181818,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "english",
+      "preset": "加大",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 80.36363636363636,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "english",
+      "preset": "舒适",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 68.36363636363636,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "english",
+      "preset": "舒适",
+      "scope": "system",
+      "status": "PASS",
+      "imeVisible": true,
+      "touchCoordinatesFromMeasuredPractice": true,
+      "systemKeyHeightDirectlyMeasured": false
+    },
+    {
+      "language": "french",
+      "preset": "紧凑",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 54.18181818181818,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "french",
+      "preset": "加大",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 80.36363636363636,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "french",
+      "preset": "舒适",
+      "scope": "practice",
+      "status": "PASS",
+      "keyHeightDp": 68.36363636363636,
+      "keyWidthDp": 101.81818181818181
+    },
+    {
+      "language": "french",
+      "preset": "舒适",
+      "scope": "system",
+      "status": "PASS",
+      "imeVisible": true,
+      "touchCoordinatesFromMeasuredPractice": true,
+      "systemKeyHeightDirectlyMeasured": false
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+munge 0.4.7
+License: MIT
+对应完整源码：source-vendor/munge/

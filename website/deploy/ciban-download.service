@@ -1,0 +1,31 @@
+[Unit]
+Description=Ciban protected download website
+After=network.target
+
+[Service]
+Type=simple
+User=ciban-web
+Group=ciban-web
+WorkingDirectory=/opt/ciban-download/current
+ExecStart=/usr/bin/node --max-old-space-size=128 /opt/ciban-download/current/server.mjs
+Environment=NODE_ENV=production
+Environment=PORT=3081
+Environment=SITE_ORIGIN=https://maxnote.top
+Environment=TRUST_PROXY=1
+Environment=STATE_DIR=/var/lib/ciban-download
+Environment=REQUIRE_LEDGER=1
+StateDirectory=ciban-download
+StateDirectoryMode=0700
+ReadWritePaths=/var/lib/ciban-download
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryMax=192M
+TasksMax=64
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

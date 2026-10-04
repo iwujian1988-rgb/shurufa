@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "purpose": "0.4 diagnostic baseline has identical native libraries and dictionary/English data to original 0.4 deliverable; only debug benchmark and read-only view-state accessors added",
+  "baselineApkSha256": "079fd42b9214f37397081e10b4146013a5944698c503c0706b8726e8bf9075fb",
+  "benchmarkSourceSha256": "9f77c2f43ebed06309e7157e35bc80ce290de672a273494b92a9fd4bb0111b45",
+  "checks": [
+    {
+      "sha256": "f292ad3a6d0b5c1ddc654409681d67e3dc7d17b19cb6b42c489a9eb3abf3b8ed",
+      "name": "lib/arm64-v8a/libciban_native.so",
+      "matched": true
+    },
+    {
+      "sha256": "f35ad663f70ff0896bd40dd5f3bc2af4993d34a8396df25dd9955d34aa05b526",
+      "name": "lib/x86_64/libciban_native.so",
+      "matched": true
+    },
+    {
+      "sha256": "3e33b16a84df555e6f16d52ac8ab3c2c6b6f1f71734e69463861fd5abd9c19dc",
+      "name": "assets/data/dict.qj",
+      "matched": true
+    },
+    {
+      "sha256": "4cc9c587b206d0f12aabb1b85cb21e6ac2a1c8c4932b9af14332bd96e0be012a",
+      "name": "assets/data/glossary.qj",
+      "matched": true
+    },
+    {
+      "sha256": "00dc10a6354c036911e0310bdd7a6234c7080aa72ed5a2bc3554e1ce86f64b7b",
+      "name": "assets/data/english-lessons.qj",
+      "matched": true
+    }
+  ]
+}

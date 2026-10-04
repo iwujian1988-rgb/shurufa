@@ -1,0 +1,29 @@
+{
+  "candidateCoveredWords": 34607,
+  "candidateGlossaryEntries": 55304,
+  "candidatePlusCurrentCoveredWords": 34609,
+  "currentCoveredWords": 372,
+  "deployedToApk": false,
+  "dictionaryEntries": 92825,
+  "distinctChineseWords": 91919,
+  "independentLanguageReview": false,
+  "ranking": "maximum static frequency across pronunciations of each exact Chinese headword; ties lexicographic",
+  "scope": "exact word count matches, not usage-weighted coverage, translation accuracy or sentence translation",
+  "topByDictionaryStaticFrequency": [
+    {
+      "candidateCoveredWords": 891,
+      "currentCoveredWords": 187,
+      "wordCount": 1000
+    },
+    {
+      "candidateCoveredWords": 3844,
+      "currentCoveredWords": 327,
+      "wordCount": 5000
+    },
+    {
+      "candidateCoveredWords": 6717,
+      "currentCoveredWords": 356,
+      "wordCount": 10000
+    }
+  ]
+}

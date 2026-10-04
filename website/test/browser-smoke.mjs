@@ -1,0 +1,57 @@
+import { createRequire } from 'node:module';
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import assert from 'node:assert/strict';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'C:/Users/imwuj/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const base = process.env.TEST_URL || 'http://127.0.0.1:3081/ciban/';
+const owner = JSON.parse(await readFile(path.join(root, 'private', 'owner-codes.json'), 'utf8'));
+const code = owner[0].code;
+const browser = await chromium.launch({ headless: true, channel: 'chrome' });
+const output = path.join(root, 'test-results'); await mkdir(output, { recursive: true });
+const report = [];
+try {
+  for (const width of [320, 390, 768, 1440]) {
+    const context = await browser.newContext({ viewport: { width, height: width >= 768 ? 1000 : 844 }, reducedMotion: 'reduce' });
+    const page = await context.newPage();
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto(base, { waitUntil: 'networkidle' });
+    assert.equal(await page.locator('#apk-download').getAttribute('aria-disabled'), 'true');
+    await page.getByRole('button', { name: '法语 Français' }).click();
+    assert.equal(await page.locator('#candidate-gloss').textContent(), 'café');
+    const metrics = await page.evaluate(() => ({ viewport: innerWidth, document: document.documentElement.scrollWidth }));
+    assert.ok(metrics.document <= width, `Horizontal overflow at ${width}: ${metrics.document}`);
+    assert.deepEqual(errors, []);
+    await page.screenshot({ path: path.join(output, `page-${width}.png`), fullPage: true });
+    await page.locator('#download').scrollIntoViewIfNeeded();
+    await page.locator('input[value=french]').check();
+    await page.locator('#download-code').fill('bad');
+    await page.locator('#verify-button').click();
+    await page.waitForFunction(() => document.getElementById('unlock-status').classList.contains('error'));
+    assert.equal(await page.locator('#apk-download').getAttribute('aria-disabled'), 'true');
+    await page.locator('#download-code').fill(code);
+    await page.locator('#verify-button').click();
+    await page.waitForFunction(() => document.getElementById('apk-download').getAttribute('aria-disabled') === 'false');
+    assert.match(await page.locator('#apk-download').textContent(), /法语/);
+    assert.equal(await page.locator('#apk-download').getAttribute('href'), '/ciban/download/french');
+    await page.locator('.integrity summary').click();
+    assert.equal(await page.locator('#source-download').getAttribute('href'), '/ciban/download/source');
+    await page.screenshot({ path: path.join(output, `download-${width}.png`) });
+    report.push({ url: base, width, noOverflow: true, errors, invalidCodeDenied: true, validCodeUnlocks: true, sourceAccessible: true });
+    await context.close();
+  }
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(base + '#code=' + encodeURIComponent(code), { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.getElementById('apk-download').getAttribute('aria-disabled') === 'false');
+  assert.ok(!page.url().includes(code));
+  const cookies = await context.cookies();
+  assert.equal(cookies.find(c => c.name === 'ciban_access').httpOnly, true);
+  report.push({ dedicatedLink: true, codeScrubbedFromUrl: true, httpOnly: true });
+  await context.close();
+  await writeFile(path.join(output, 'browser-report.json'), JSON.stringify(report, null, 2));
+  process.stdout.write(JSON.stringify(report, null, 2) + '\n');
+} finally { await browser.close(); }

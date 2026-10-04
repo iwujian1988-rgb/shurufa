@@ -1,0 +1,9 @@
+* text=auto eol=lf
+# Source manifests record byte hashes; keep vocabulary data exactly as supplied.
+data/** -text
+upstream/assets/** -text
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.jar binary
