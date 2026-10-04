@@ -21,6 +21,8 @@
 
 专属链接格式 `https://maxnote.top/ciban/#code=...`：fragment 不进入 HTTP 请求、服务器日志或 Referrer；前端读取后清掉 URL，POST 到校验接口。兼容 `?code=...`，但优先发 CSV 中的 fragment 链接。不要把私密码清单发给全部用户。
 
+专属链接会自动填入并验证，验证成功或失败后均保留本页输入码，不再自动清空表单。URL 中的码仍立即移除，不持久存储明文码。已打开同一页面时再次进入专属链接也会处理；刷新后以已有 Cookie 的授权状态和输入框提示解释，无需再输入仍有效的码。
+
 码表仅保存 SHA-256 哈希、编号及停用标志。验证后设置 Secure、HttpOnly、SameSite=Strict、`Path=/ciban/` 的随机 Cookie，30 分钟有效。每次 APK/源码请求（含 HEAD、Range）都校验授权。核销账本另外记录码哈希、授权 Cookie 哈希、选中版本、开始/完成时间和续传到期时间，不保存明文码或 Cookie。
 
 生产账本在 `/var/lib/ciban-download/redemptions.json`，目录 0700、文件 0600，只有专用服务用户和 root 可读写。单一 Node 进程串行核销，临时文件写入 + fsync + 原子替换 + 目录 fsync 后才开始传输。已核销的续传授权可从账本恢复，重启不会让码复活。**不要启动多个 Node 进程共写同一账本，也不要删除/重建生产账本。** 生产 `REQUIRE_LEDGER=1`，账本缺失或损坏时拒绝启动，不自动重置次数。
@@ -52,6 +54,8 @@ node server.mjs
 准备脚本核对 `../deliverables/manifest.json` 和实际文件 SHA-256，复制三个私有文件并保存 release 信息。已有码表时保留，**不要删掉 private 目录或重新生成已发放的码**。脚本不应把明文码打印到终端。
 
 线上一次性检查：`test/single-use-online.mjs` 的 `browser / prepare / resume` 三阶段，使用另外生成并临时安装的验收码；**不要拿 100 个正式码跑下载测试**。browser 检查四种尺寸、真实法语下载、刷新和另一浏览器重用失败、源码保留；prepare 领取英语部分数据，重启服务后 resume 完整续传核对哈希并拒绝重下。临时验收码结束后从码表移除。旧的 `browser-download.mjs`、`online-release.mjs` 仅反映可重复使用阶段，应禁止直接拿正式码执行。截图和报告在 `test-results/`，不部署。
+
+专属链接浏览器回归：`node test/code-link-browser.mjs`。需要 Chrome 与 Playwright，可通过 PLAYWRIGHT_MODULE 指定已有模块位置；默认使用本机 Codex 的模块。默认创建独立本地服务和临时码，检查手机 / 桌面 fragment、query、同页链接、刷新授权、错码和手动修正，禁止所有下载请求。线上检查须同时设置 TEST_URL 和 TEST_CODE_FILE；码文件必须含 `id: TEST-LINK-...` 与 code，必须是单独临时安装的验收码，不能拿正式 100 个码测试。验收后移除临时哈希并检查没有核销记录，不重置账本。输出 test-results/code-link-browser-report.json，不包含明文码。
 
 ## 部署隔离与维护
 

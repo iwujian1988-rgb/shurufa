@@ -2,14 +2,23 @@ const $ = id => document.getElementById(id);
 const state = { authorized: false, sourceAuthorized: false, used: false, pending: false, language: 'english', release: null };
 const names = { english: '英语', french: '法语' };
 const input = $('download-code');
-const initial = new URL(location.href);
-const fragment = new URLSearchParams(initial.hash.slice(1));
-const supplied = fragment.get('code') || initial.searchParams.get('code');
-// Fragments stay out of HTTP/access logs. Also accept and promptly scrub query codes.
-if (supplied) { input.value = supplied; initial.searchParams.delete('code'); initial.hash = 'download'; history.replaceState(null, '', initial.pathname + initial.search + initial.hash); }
+function takeLinkCode() {
+  const url = new URL(location.href);
+  const fragment = new URLSearchParams(url.hash.slice(1));
+  const code = fragment.get('code') || url.searchParams.get('code');
+  if (!code) return false;
+  input.value = code;
+  // Remove the code from history/Referrer, while keeping it visible in this page's form.
+  url.searchParams.delete('code'); url.hash = 'download';
+  history.replaceState(null, '', url.pathname + url.search + url.hash);
+  return true;
+}
+const supplied = takeLinkCode();
+let verificationId = 0, expiryTimer, verificationController;
 function status(text, type = '') { $('unlock-status').textContent = text; $('unlock-status').className = `status ${type}`; }
 function applySession(result) { state.authorized = result.authorized === true; state.sourceAuthorized = result.sourceAuthorized === true; state.used = result.used === true; render(); }
 function render() {
+  input.placeholder = state.authorized ? '此浏览器已验证，无需重新输入' : state.used ? '下载码已使用；可输入其他下载码' : '粘贴你的下载码';
   const file = state.release?.artifacts.find(f => f.id === state.language);
   $('apk-download').innerHTML = `下载${names[state.language]}版 APK <span aria-hidden="true">↓</span>`;
   $('file-note').textContent = `${names[state.language]}版 · ${file ? (file.bytes / 1e6).toFixed(1) : state.language === 'english' ? '38.5' : '36.0'} MB · ${state.release?.version || '0.5.0-demo'}`;
@@ -29,20 +38,28 @@ document.querySelectorAll('[data-lang]').forEach(button => button.addEventListen
   $('candidate-gloss').textContent = french ? 'café' : 'coffee'; $('other-gloss').textContent = french ? 'carte' : 'card'; $('third-gloss').textContent = french ? 'ouvrir' : 'open'; $('demo-language').textContent = french ? 'FR' : 'EN';
 }));
 async function unlock() {
+  const attempt = ++verificationId;
+  verificationController?.abort();
+  const controller = new AbortController(); verificationController = controller;
+  const timeout = setTimeout(() => controller.abort(), 12000);
+  clearTimeout(expiryTimer);
   const button = $('verify-button');
   button.disabled = true; button.textContent = '验证中';
   state.authorized = false; state.sourceAuthorized = false; render(); status('正在验证下载码…');
   try {
-    const response = await fetch('/ciban/api/unlock', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: input.value }), signal: AbortSignal.timeout(12000) });
+    const response = await fetch('/ciban/api/unlock', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: input.value }), signal: controller.signal });
     const result = await response.json();
+    if (attempt !== verificationId) return;
     applySession(result);
-    if (!response.ok) { status(result.error || '验证未通过，请稍后再试。', 'error'); if (result.sourceAuthorized) input.value = ''; return; }
-    input.value = '';
+    if (!response.ok) { status(result.error || '验证未通过，请稍后再试。', 'error'); return; }
     status('已验证，可领取一个版本。开始下载后，此码立即失效。', 'success');
-    setTimeout(() => { state.authorized = false; state.sourceAuthorized = false; render(); status('本次验证已过期，未使用的码可重新验证；已使用的码不能再领取。'); }, result.expiresIn * 1000);
-  } catch { status('暂时无法连接，请检查网络后重试。', 'error'); }
-  finally { button.disabled = false; button.textContent = '验证'; }
+    expiryTimer = setTimeout(() => { state.authorized = false; state.sourceAuthorized = false; render(); status('本次验证已过期，未使用的码可重新验证；已使用的码不能再领取。'); }, result.expiresIn * 1000);
+  } catch { if (attempt === verificationId) status('暂时无法连接，请检查网络后重试。', 'error'); }
+  finally { clearTimeout(timeout); if (attempt === verificationId) { button.disabled = false; button.textContent = '验证'; } }
 }
+window.addEventListener('hashchange', () => {
+  if (takeLinkCode()) { $('download').scrollIntoView(); unlock(); }
+});
 $('unlock-form').addEventListener('submit', event => { event.preventDefault(); unlock(); });
 for (const id of ['apk-download', 'source-download']) $(id).addEventListener('click', async event => {
   event.preventDefault();
@@ -75,10 +92,13 @@ async function boot() {
     if (!response.ok) throw new Error('release');
     state.release = await response.json(); render();
   } catch { status('版本信息暂时无法加载，请稍后重试。', 'error'); }
-  if (supplied) { await unlock(); return; }
+  if (verificationId) return;
+  if (supplied) { $('download').scrollIntoView(); await unlock(); return; }
   try {
     const response = await fetch('/ciban/api/session', { signal: AbortSignal.timeout(10000) });
-    const result = await response.json(); applySession(result);
+    const result = await response.json();
+    if (verificationId) return;
+    applySession(result);
     if (state.authorized) status('此浏览器已验证，可领取一个版本；开始下载后此码失效。', 'success');
     else if (result.used) status('下载码已使用，不能再次领取。配套源码仍可下载。');
   } catch { status('暂时无法连接，请检查网络后重试。', 'error'); }

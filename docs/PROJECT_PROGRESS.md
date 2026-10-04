@@ -1,5 +1,7 @@
 # 英语与法语伴学输入法项目进度与长期记忆
 
+2026-10-04 专属下载链接填写修复：用户反馈点击专属链接后输入框为空。实际原因是前端自动填入并验证后再次清空了输入框；已改为验证成功或失败均保留本页输入，仍立即清除 URL 中的码，不写本地持久存储。补上同一页面 hashchange 新链接读取、取消过时验证请求，以及刷新后已有授权的明确提示。已原子更新线上 app.js，无服务重启、APK 更新或核销账本写入。正式 HTTPS 390 / 1440 px 浏览器覆盖 fragment、query、同页链接、刷新、切换语言、错码与手动修正，全部通过；使用独立临时码，0 下载请求，正式码未参与。线上脚本哈希与本地一致，单次领取规则不变。测试入口 website/test/code-link-browser.mjs，详情见 DOWNLOAD_WEBSITE.md。
+
 2026-10-04 GitHub 协作整理：用户指定源码仓库为 `https://github.com/iwujian1988-rgb/shurufa`（公开仓库）。提交范围为 Android 英法双包源码、共享 Rust/JNI 和修改后的 upstream 源码副本、语言数据与许可、官网源码、项目文档和验收证据。真实下载码、签名私钥、核销账本、APK 及构建缓存均排除。新增 docs/COLLABORATION.md，构建脚本支持 SDK/JDK/NDK/DebugKeystore 配置和 MSVC/Windows SDK 自动发现；固定运行数据通过 prepare-runtime-data.ps1 校验下载恢复。整理后本机数据恢复成功，Rust 默认测试 13 通过 / 1 专项忽略，官网本地测试 15 通过；尚未声称在另一台全新机器完成构建。本轮没有修改输入法行为或重新发布线上 APK。协作后仍以本文件与 TECHNICAL_PLAN.md 作为长期记忆，任务剩余范围见 DEVELOPMENT_BACKLOG.md。
 
 2026-10-04 下载官网已按用户最新要求改为一次性码：`https://maxnote.top/ciban/`。原 100 个码及本地 CSV 保留；每个码只能领取英语或法语中的一个 APK，开始传输前持久核销，不是验证时消耗。并发只能领取一次，重输 / 刷新 / 换浏览器 / 服务器重启不能恢复已用码。原浏览器 30 分钟内可用 Range 续传同一文件，完成后禁止重下。已用码仍可获取配套 GPL 源码，不占新的安装包次数。15 项服务端测试及线上四尺寸 / 法语实际点击下载 / 重复领取拒绝检查通过。持久账本在服务器 `/var/lib/ciban-download/redemptions.json`，版本升级、恢复停用或维护时不得清空。代码在 `website/`，明文清单仅 `website/private/下载码与专属链接-100个.csv`。详细需求、部署、证据见 [下载官网](DOWNLOAD_WEBSITE.md)，维护入口见 `website/README.md`。
