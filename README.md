@@ -21,6 +21,7 @@
 
 - [项目进度与长期记忆](docs/PROJECT_PROGRESS.md)：已确认需求、建议路线、完成事项、环境证据、待办和变更记录。
 - [技术方案](docs/TECHNICAL_PLAN.md)：共享核心、双包配置、各平台适配、语言数据和验收方式。
+- [PC 交付方案](docs/PC_DELIVERY_PLAN.md)：Windows 复用范围、英法双包隔离、开发顺序与验收门槛。
 - [剩余开发清单](docs/DEVELOPMENT_BACKLOG.md)：法语真实覆盖、输入质量与兼容、产品化及跨平台未完成事项。
 - [开发助手读取入口](AGENTS.md)：后续在本目录工作时先读取上述文档，并维护真实进度。
 - [协作与构建准备](docs/COLLABORATION.md)：给其他开发者和 AI 的交接入口。
