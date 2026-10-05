@@ -1,5 +1,7 @@
 # 词伴独立下载官网
 
+最新状态（2026-10-05）：官网同时提供 Android APK 和 Windows EXE，四个语言安装包共用每码一次领取额度，平台对应源码不扣次数。18 项后端回归、正式 HTTPS 浏览器及完整下载哈希、服务重启续传通过，正式码未被验收消耗，临时码已清理；详细更新见本文件末尾与 deliverables/Windows官网下载验收记录.md。
+
 生产地址：`https://maxnote.top/ciban/`。与现有教育网站共用域名及 HTTPS，独立 Node.js 服务、独立目录，不依赖原网站登录或数据库。
 
 ## 内容与交互
@@ -76,3 +78,12 @@ node server.mjs
 Uchihara, Webb & Yanagisawa (2019), *The Effects of Repetition on Incidental Vocabulary Learning: A Meta-Analysis of Correlational Studies*, Language Learning. https://doi.org/10.1111/lang.12343
 
 网页仅概括“重复接触与词汇学习正相关，效果受注意力、已有知识、接触方式影响”。这不能直接推出词伴对记忆效率的实测提升。
+## 2026-10-05：Windows 共用一次性下载控制
+
+用户授权将 EXE 放入原官网，与安卓用同一套控制。官网保留 `/ciban/` 地址，先选 Android / Windows，再选英语 / 法语。原有 english/french/source 路由和文件保留；新增 windows-english/windows-french/source-windows。每个码在四个安装包中只能领取一个，Windows 与 Android 使用同一 Cookie、码表、串行核销队列和生产账本。HEAD/验证不消耗，开始有效 GET 前核销；Windows 续传同样绑定原浏览器、文件及 30 分钟窗口。两份平台对应源码均不扣次数，已用码仍可获取。
+
+Windows 英语 EXE：38,062,515 字节，SHA-256 b8f4c4fc682f07dc2b0d749477d5037fb9ad4ce5bde94ca4d3b07be860cdd410；法语 EXE：36,495,973 字节，SHA-256 0b3a13d668b282f6f69c83e8aa3fc6ad6a74e4ebe988eae4cc7667d697aa27c9；对应源码：44,941,140 字节，SHA-256 99b8bf138f14511559f6c0ecfcd9109572b0f8cfad7e12b06b66f6ed6265ee8b，对应提交 f342f21a05c17de6be0782e9b16a35962aa64472。EXE 未签名，Defender 扫描通过不保证所有软件零误报；实际安装和跨应用验收边界沿用 Windows 记录。
+
+发布目录 `/opt/ciban-download/release-20261005-windows-v1`；从上一目录复制原 APK/源码/最新码表，新增 EXE/源码和界面文件，核对六份私有文件哈希后原子切换 current，只重启词伴服务。生产账本仍在 `/var/lib/ciban-download/redemptions.json`，部署未上传、清空或替换账本。旧站首页/端口及 Nginx 路由不改。备份 `/opt/ciban-download/backup-before-windows-20261005` 保存切换前码表与账本。Windows 核销记录产生后，不能直接回退到只认识 APK artifact 的旧后端，也不能用旧账本覆盖；需保留当前兼容核销实现。
+
+本地后端 18 项测试通过，新增跨平台并发/单额度/Windows 重启续传/源码不扣次数；四种尺寸 320/390/768/1440 的设备及语言选择、正确下载与源码路由、专属链接保留填入、无溢出/JS 错误通过。生产验收仅使用独立 TEST-WINDOWS 临时码；报告在 website/test-results（私有、不提交 Git），公开验收摘要见 deliverables/Windows官网下载验收记录.md。

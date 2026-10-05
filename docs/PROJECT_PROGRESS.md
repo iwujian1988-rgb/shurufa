@@ -191,3 +191,12 @@ iOS 双 App 风险来自审核规则 4.3 的推断，并非已收到审核拒绝
 - Computer Use 的设置窗口访问审批超时，没有绕过访问限制；渲染图不是系统截图，设置首页实屏、实际安装升级、跨应用输入、32 位宿主及多屏/DPI仍待验收。本轮没有重建 Android APK，官网与一次性下载码不变。
 
 详细记录见 [新版验收记录](../deliverables/Windows法语补词与UI验收记录.md)，测试入口见 [新版测试说明](../deliverables/Windows测试说明-v2.md)。
+## 2026-10-05：Windows 共用一次性下载控制
+
+用户授权将 EXE 放入原官网，与安卓用同一套控制。官网保留 `/ciban/` 地址，先选 Android / Windows，再选英语 / 法语。原有 english/french/source 路由和文件保留；新增 windows-english/windows-french/source-windows。每个码在四个安装包中只能领取一个，Windows 与 Android 使用同一 Cookie、码表、串行核销队列和生产账本。HEAD/验证不消耗，开始有效 GET 前核销；Windows 续传同样绑定原浏览器、文件及 30 分钟窗口。两份平台对应源码均不扣次数，已用码仍可获取。
+
+Windows 英语 EXE：38,062,515 字节，SHA-256 b8f4c4fc682f07dc2b0d749477d5037fb9ad4ce5bde94ca4d3b07be860cdd410；法语 EXE：36,495,973 字节，SHA-256 0b3a13d668b282f6f69c83e8aa3fc6ad6a74e4ebe988eae4cc7667d697aa27c9；对应源码：44,941,140 字节，SHA-256 99b8bf138f14511559f6c0ecfcd9109572b0f8cfad7e12b06b66f6ed6265ee8b，对应提交 f342f21a05c17de6be0782e9b16a35962aa64472。EXE 未签名，Defender 扫描通过不保证所有软件零误报；实际安装和跨应用验收边界沿用 Windows 记录。
+
+发布目录 `/opt/ciban-download/release-20261005-windows-v1`；从上一目录复制原 APK/源码/最新码表，新增 EXE/源码和界面文件，核对六份私有文件哈希后原子切换 current，只重启词伴服务。生产账本仍在 `/var/lib/ciban-download/redemptions.json`，部署未上传、清空或替换账本。旧站首页/端口及 Nginx 路由不改。备份 `/opt/ciban-download/backup-before-windows-20261005` 保存切换前码表与账本。Windows 核销记录产生后，不能直接回退到只认识 APK artifact 的旧后端，也不能用旧账本覆盖；需保留当前兼容核销实现。
+
+本地后端 18 项测试通过，新增跨平台并发/单额度/Windows 重启续传/源码不扣次数；四种尺寸 320/390/768/1440 的设备及语言选择、正确下载与源码路由、专属链接保留填入、无溢出/JS 错误通过。生产验收仅使用独立 TEST-WINDOWS 临时码；报告在 website/test-results（私有、不提交 Git），公开验收摘要见 deliverables/Windows官网下载验收记录.md。

@@ -147,7 +147,8 @@ export async function createApp(options = {}) {
         if (!session) return json(res, 403, { error: '请先输入有效下载码。' });
         const file = files.get(route.slice(9));
         if (!file) return json(res, 404, { error: '文件不存在。' });
-        if (file.id !== 'source' && session.revoked) return json(res, 403, { error: '下载码已停用。' });
+        const isSource = file.id === 'source' || file.kind === 'source';
+        if (!isSource && session.revoked) return json(res, 403, { error: '下载码已停用。' });
         const filePath = path.join(privateDir, 'artifacts', file.filename);
         const info = await stat(filePath);
         if (info.size !== file.bytes) throw new Error('ARTIFACT_SIZE');
@@ -163,7 +164,7 @@ export async function createApp(options = {}) {
         }
         if ((transfers.get(ip) || 0) >= 4 || [...transfers.values()].reduce((a, b) => a + b, 0) >= 32) return json(res, 429, { error: '下载任务较多，请稍后重试。' });
         let claimed = false;
-        if (file.id !== 'source') {
+        if (!isSource) {
           // Reserve the actual transfer before headers. HEAD, invalid ranges and missing files never burn a code.
           let decision;
           try { decision = await ledger.mutate(records => {
@@ -180,7 +181,7 @@ export async function createApp(options = {}) {
           if (decision.busy) return json(res, 409, { error: '该下载已在进行中，请勿重复发起。' });
         }
         res.writeHead(range ? 206 : 200, {
-          'Content-Type': file.id === 'source' ? 'application/gzip' : 'application/vnd.android.package-archive',
+          'Content-Type': isSource ? 'application/gzip' : file.platform === 'windows' ? 'application/octet-stream' : 'application/vnd.android.package-archive',
           'Content-Disposition': `attachment; filename="${file.filename}"`,
           'Content-Length': end - start + 1, 'Accept-Ranges': 'bytes',
           'Cache-Control': 'private, no-store',

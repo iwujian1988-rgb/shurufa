@@ -20,9 +20,19 @@ for (const [id, filename] of names) {
   const expected = manifest.artifacts.find(a => a.name === filename || a.file === filename || a.filename === filename || a.path?.endsWith(filename));
   if (!expected || (expected.sha256 || expected.hash) !== sha256) throw new Error(`Manifest mismatch: ${filename}`);
   await copyFile(source, path.join(privateDir, 'artifacts', filename));
-  artifacts.push({ id, filename, bytes, sha256 });
+  artifacts.push({ id, filename, bytes, sha256, platform: 'android', kind: id === 'source' ? 'source' : 'installer', version: manifest.version, sourceId: 'source' });
 }
-await writeFile(path.join(privateDir, 'release.json'), JSON.stringify({ version: manifest.version, minAndroid: '8.0', publishedOn: '2026-10-04', signing: 'Android Debug 测试签名', artifacts }, null, 2));
+const windows = JSON.parse(await readFile(path.join(deliverables, 'windows-release-manifest-v2.json'), 'utf8'));
+for (const [id, expected] of [...windows.installers.map(item => [item.file.includes('-english-') ? 'windows-english' : 'windows-french', item]), ['source-windows', windows.sourceArchive]]) {
+  const source = path.join(deliverables, expected.file);
+  const hash = createHash('sha256'); let bytes = 0;
+  for await (const chunk of createReadStream(source)) { hash.update(chunk); bytes += chunk.length; }
+  const sha256 = hash.digest('hex');
+  if (sha256 !== expected.sha256.toLowerCase() || bytes !== expected.bytes) throw new Error(`Windows manifest mismatch: ${expected.file}`);
+  await copyFile(source, path.join(privateDir, 'artifacts', expected.file));
+  artifacts.push({ id, filename: expected.file, bytes, sha256, platform: 'windows', kind: id === 'source-windows' ? 'source' : 'installer', version: windows.version, sourceId: 'source-windows' });
+}
+await writeFile(path.join(privateDir, 'release.json'), JSON.stringify({ version: manifest.version, windowsVersion: windows.version, minAndroid: '8.0', minWindows: '11 x64', publishedOn: '2026-10-05', signing: 'Android Debug 测试签名 / Windows 未签名测试包', artifacts }, null, 2));
 for (const [lang, name] of [['english', '0.5-english-detail.png'], ['french', '0.5-french-letters.png']]) await copyFile(path.join(deliverables, name), path.join(root, 'public', 'assets', `${lang}.png`));
 let exists = false;
 try { await access(path.join(privateDir, 'codes.json')); exists = true; } catch (error) { if (error.code !== 'ENOENT') throw error; }

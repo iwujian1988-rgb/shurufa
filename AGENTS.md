@@ -19,7 +19,7 @@
 - iOS 技术可行性、GPL 与 App Store 分发条件，以及双 App 审核风险须前置核实，不承诺尚未验证的上架结果。
 - 保持已有工作区其他项目和用户改动不受影响。安卓正式签名与商店发布配置尚未具备；下载官网已获授权部署到既有 `maxnote.top` 的独立 `/ciban/` 路径。
 - 官网任务先读 `docs/DOWNLOAD_WEBSITE.md` 和 `website/README.md`。100 个明文下载码只保留在 `website/private/`，不得上传成公共资源或提交 Git。发布更新保留现有码及线上停用状态，APK 与对应源码均通过服务端授权。
-- 下载码已改为一次性领取一个 APK，验证不消耗，发送前持久核销。禁止发布、恢复停用或测试时清空 `/var/lib/ciban-download/redemptions.json`；不能再恢复可重复使用语义。源码不占 APK 次数。线上验收使用另外生成的临时码，完成后清理，不能消耗所有者的 100 个正式码。
+- 下载码为跨平台共用一次性额度：Android / Windows 的英法四个安装包中只能领取一个 APK 或 EXE，验证不消耗，发送前持久核销。保留 Android 的 english/french/source 路由，Windows 为 windows-english/windows-french/source-windows；两份源码均不扣次数，已用码仍可取得。禁止发布、恢复停用或测试时清空 `/var/lib/ciban-download/redemptions.json`；不能再恢复可重复使用语义。线上验收使用另外生成的临时码，完成后清理，不能消耗所有者的 100 个正式码。Windows 核销记录产生后，不可回退到只认识 APK 记录的旧后端或恢复旧空账本。
 
 ## 文档的性质
 

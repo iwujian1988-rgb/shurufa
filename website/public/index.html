@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#f7f8f2">
   <title>词伴 — 打中文，顺手遇见英语与法语</title>
-  <meta name="description" content="让每天打的字，成为记住的词。词伴在中文输入候选旁展示英语或法语释义，支持九宫格与全键盘、离线输入。下载 Android 英语版与法语版。">
+  <meta name="description" content="让每天打的字，成为记住的词。词伴在中文输入候选旁展示英语或法语释义，支持九宫格与全键盘、离线输入。下载 Android APK 与 Windows EXE，英语和法语独立版本，同一套一次性下载码。">
   <link rel="canonical" href="https://maxnote.top/ciban/">
   <link rel="stylesheet" href="/ciban/style.css">
   <script src="/ciban/app.js" defer></script>
@@ -15,7 +15,7 @@
   <a class="skip" href="#main">跳到正文</a>
   <header class="header wrap">
     <a class="brand" href="/ciban/" aria-label="词伴首页"><span class="brand-mark" aria-hidden="true">词</span><span>词伴<span class="brand-sub">CIBAN</span></span></a>
-    <nav aria-label="主导航"><a href="#why">为什么词伴</a><a href="#experience">看看体验</a><a class="nav-download" href="#download">下载 Android 版 <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="主导航"><a href="#why">为什么词伴</a><a href="#experience">看看体验</a><a class="nav-download" href="#download">下载安装包 <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -24,7 +24,7 @@
         <h1 id="hero-title">让每天打的字，<br>成为<span class="accent">记住的词。</span></h1>
         <p class="lead">聊天、搜索、写笔记。<br>中文照常输入，英语或法语释义就在候选旁。<br>把遇见单词的机会，放进你的每一天。</p>
         <div class="hero-actions"><a class="button primary" href="#download">开始使用词伴 <span aria-hidden="true">↗</span></a><a class="text-link" href="#experience">看看它怎样工作 <span aria-hidden="true">↓</span></a></div>
-        <p class="hero-note">Android 8.0+ <span>·</span> 英语 / 法语两个独立版本 <span>·</span> 离线可用</p>
+        <p class="hero-note">Android / Windows <span>·</span> 英语 / 法语两个独立版本 <span>·</span> 离线可用</p>
       </div>
       <div class="hero-demo">
         <div class="demo-head"><span>把一句日常，变成一次遇见</span><span class="small-tag">体验示意</span></div>
@@ -52,12 +52,12 @@
       </div>
     </section>
     <section class="download section wrap" id="download" aria-labelledby="download-title">
-      <div class="download-copy"><p class="eyebrow">START HERE / 从这里开始</p><h2 id="download-title">下一句话，<br>和词伴一起打。</h2><p>选择想接触的语言，输入下载码。<br>安装后，跟着词伴首页启用并选择键盘。</p><div class="release-label"><span class="dot" aria-hidden="true"></span> Android 测试版 <strong>0.5.0-demo</strong></div><p class="release-note">支持 Android 8.0 及以上、ARM64 / x86_64。<br>当前使用测试签名，部分词义仍待语言编辑校审。<br>iOS 与电脑版本在后续计划中。</p></div>
+      <div class="download-copy"><p class="eyebrow">START HERE / 从这里开始</p><h2 id="download-title">下一句话，<br>和词伴一起打。</h2><p>先选设备和语言，再输入下载码。<br>安装后，跟着词伴首页启用并选择键盘。</p><div class="release-label"><span class="dot" aria-hidden="true"></span> <span id="release-title">Android 测试版</span> <strong id="release-version">0.5.0-demo</strong></div><p class="release-note" id="release-note">支持 Android 8.0 及以上、ARM64 / x86_64。<br>当前使用测试签名，部分词义仍待语言编辑校审。<br>Windows 测试版也可在这里领取；iOS / macOS 尚未提供。</p></div>
       <div class="download-panel">
         <form id="unlock-form">
-          <fieldset class="language-choice"><legend>1. 选择语言版本</legend><label><input type="radio" name="language" value="english" checked><span><strong>英语版</strong><span>English <small>38.5 MB</small></span></span><span class="radio-dot" aria-hidden="true"></span></label><label><input type="radio" name="language" value="french"><span><strong>法语版</strong><span>Français <small>36.0 MB</small></span></span><span class="radio-dot" aria-hidden="true"></span></label></fieldset>
-          <label class="code-label" for="download-code">2. 输入下载码</label><div class="code-row"><input id="download-code" name="code" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="粘贴你的下载码" maxlength="80" aria-describedby="code-help unlock-status" required><button class="button primary" id="verify-button" type="submit">验证</button></div>
-          <p id="code-help" class="help">每个码只能领取英语或法语中的一个安装包。仅验证不消耗，开始下载后立即失效。</p>
+          <fieldset class="platform-choice"><legend>1. 选择设备</legend><label><input type="radio" name="platform" value="android" checked><span>Android <small>APK · 手机</small></span></label><label><input type="radio" name="platform" value="windows"><span>Windows <small>EXE · 电脑</small></span></label></fieldset><fieldset class="language-choice"><legend>2. 选择语言版本</legend><label><input type="radio" name="language" value="english" checked><span><strong>英语版</strong><span>English <small>38.5 MB</small></span></span><span class="radio-dot" aria-hidden="true"></span></label><label><input type="radio" name="language" value="french"><span><strong>法语版</strong><span>Français <small>36.0 MB</small></span></span><span class="radio-dot" aria-hidden="true"></span></label></fieldset>
+          <label class="code-label" for="download-code">3. 输入下载码</label><div class="code-row"><input id="download-code" name="code" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="粘贴你的下载码" maxlength="80" aria-describedby="code-help unlock-status" required><button class="button primary" id="verify-button" type="submit">验证</button></div>
+          <p id="code-help" class="help">Android / Windows 共用下载码，每个码只能领取一个语言、一个平台的安装包。仅验证不消耗，开始下载后立即失效。</p>
           <p id="unlock-status" class="status" role="status" aria-live="polite">请输入下载码，验证后下载。</p>
         </form>
         <a id="apk-download" class="button download-button" aria-disabled="true" tabindex="-1">下载英语版 APK <span aria-hidden="true">↓</span></a>
@@ -66,9 +66,9 @@
         <noscript><p class="status error">请启用 JavaScript 以验证下载码。服务器仍会拦截未经验证的下载。</p></noscript>
       </div>
     </section>
-    <section class="install wrap" aria-labelledby="install-title"><h3 id="install-title">第一次安装，三步就好</h3><ol><li><span>01</span><div><strong>下载并安装 APK</strong><p>用安卓浏览器打开；如系统询问，请为本次安装允许该浏览器安装应用。</p></div></li><li><span>02</span><div><strong>打开词伴，启用键盘</strong><p>在首页点“启用词伴”，进入系统设置启用对应语言版。</p></div></li><li><span>03</span><div><strong>选择词伴，开始试打</strong><p>在首页点“选择键盘”，先输入 nihao、xuexi 或 kafei 看看。</p></div></li></ol></section>
-    <section class="faq section wrap" aria-labelledby="faq-title"><div><p class="eyebrow">GOOD TO KNOW / 使用前了解</p><h2 id="faq-title">你可能还想知道。</h2></div><div class="faq-list"><details><summary>我输入的是中文，还是外语？</summary><p>仍然是中文。英语或法语释义显示在有对应释义的候选旁，帮助你顺手接触外语。点击候选不会自动把聊天内容改成外语。</p></details><details><summary>它能翻译整句或任意词组吗？</summary><p>当前支持词级释义和已整理的常用词组，不是整句翻译器，也不能保证所有自组词都有译文。部分释义仍需校审，请结合语境使用。</p></details><details><summary>需要联网吗？输入内容会上传吗？</summary><p>当前 APK 不申请网络权限，基本输入、词库查询与释义在本机运行。下载官网需要联网；验证下载码会暂存下载授权，不接收你在输入法里打的内容。</p></details><details><summary>英语版、法语版可以一起装吗？</summary><p>可以。两版是独立应用，可同时安装。启用后，在系统输入法选择器中切换“词伴 · 英语”或“词伴 · 法语”。</p></details><details><summary>下载码可以重复使用吗？</summary><p>不能。每个下载码只能领取一个版本的 APK，开始下载时立即核销；换浏览器、刷新或重新输入同一码都不能再次领取。仅验证、查看页面不消耗码。下载中断时，原浏览器可在 30 分钟授权期内续传同一文件，完成后不能重下。配套源码不占安装包次数，已用码仍可获取源码。专属链接也遵循同样规则。</p></details><details><summary>为什么 Android 提示安装来源或键盘权限？</summary><p>这是直接安装 APK 和启用第三方输入法时的系统提示。请核对来源、文件校验值和应用名称。当前为测试签名版本；如果已有同名应用但签名不同，安装可能失败，请先备份个人数据再处理。</p></details></div></section>
+    <section class="install wrap" aria-labelledby="install-title"><h3 id="install-title">第一次安装，三步就好</h3><ol><li><span>01</span><div><strong id="install-step-1">下载并安装 APK</strong><p id="install-note-1">用安卓浏览器打开；如系统询问，请为本次安装允许该浏览器安装应用。</p></div></li><li><span>02</span><div><strong>打开词伴，启用键盘</strong><p id="install-note-2">在首页点“启用词伴”，进入系统设置启用对应语言版。</p></div></li><li><span>03</span><div><strong>选择词伴，开始试打</strong><p id="install-note-3">在首页点“选择键盘”，先输入 nihao、xuexi 或 kafei 看看。</p></div></li></ol></section>
+    <section class="faq section wrap" aria-labelledby="faq-title"><div><p class="eyebrow">GOOD TO KNOW / 使用前了解</p><h2 id="faq-title">你可能还想知道。</h2></div><div class="faq-list"><details><summary>我输入的是中文，还是外语？</summary><p>仍然是中文。英语或法语释义显示在有对应释义的候选旁，帮助你顺手接触外语。点击候选不会自动把聊天内容改成外语。</p></details><details><summary>它能翻译整句或任意词组吗？</summary><p>当前支持词级释义和已整理的常用词组，不是整句翻译器，也不能保证所有自组词都有译文。部分释义仍需校审，请结合语境使用。</p></details><details><summary>需要联网吗？输入内容会上传吗？</summary><p>当前 APK 不申请网络权限，基本输入、词库查询与释义在本机运行。下载官网需要联网；验证下载码会暂存下载授权，不接收你在输入法里打的内容。</p></details><details><summary>英语版、法语版可以一起装吗？</summary><p>可以。两版是独立应用，可同时安装。启用后，在系统输入法选择器中切换“词伴 · 英语”或“词伴 · 法语”。</p></details><details><summary>下载码可以重复使用吗？</summary><p>不能。Android 与 Windows 共用额度，每个下载码只能领取一个语言版本的 APK 或 EXE，开始下载时立即核销；换浏览器、刷新或重新输入同一码都不能再次领取。仅验证、查看页面不消耗码。下载中断时，原浏览器可在 30 分钟授权期内续传同一文件，完成后不能重下。配套源码不占安装包次数，已用码仍可获取源码。专属链接也遵循同样规则。</p></details><details><summary>Windows 版本有什么使用要求？</summary><p>当前支持 Windows 11 x64，安装器为未签名测试包，可能出现未知发布者提示。请核对官网下载来源与 SHA-256；不要关闭安全防护。安装后打开词伴设置，按 Win + 空格选择对应输入法。系统安装、各应用兼容和升级体验仍需试用验证。</p></details><details><summary>为什么 Android 提示安装来源或键盘权限？</summary><p>这是直接安装 APK 和启用第三方输入法时的系统提示。请核对来源、文件校验值和应用名称。当前为测试签名版本；如果已有同名应用但签名不同，安装可能失败，请先备份个人数据再处理。</p></details></div></section>
   </main>
-  <footer class="footer wrap"><a class="brand" href="/ciban/"><span class="brand-mark" aria-hidden="true">词</span><span>词伴<span class="brand-sub">CIBAN</span></span></a><p>在每天的中文里，遇见一点外语。<br><span>Android 测试版 · 基于青简开源项目</span></p><a href="/ciban/licenses.txt">开源与许可 ↗</a></footer>
+  <footer class="footer wrap"><a class="brand" href="/ciban/"><span class="brand-mark" aria-hidden="true">词</span><span>词伴<span class="brand-sub">CIBAN</span></span></a><p>在每天的中文里，遇见一点外语。<br><span>Android / Windows 测试版 · 基于青简开源项目</span></p><a href="/ciban/licenses.txt">开源与许可 ↗</a></footer>
 </body>
 </html>

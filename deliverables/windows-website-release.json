@@ -1,0 +1,22 @@
+{
+  "checkedOn": "2026-10-05",
+  "url": "https://maxnote.top/ciban/",
+  "windowsVersion": "0.1.0-demo.2",
+  "androidVersion": "0.5.0-demo",
+  "policy": "one shared code, one of four installers",
+  "backendTests": 18,
+  "browserWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "fullDownloadsSha256": "English EXE, French EXE via Chrome, Windows source passed",
+  "restartAndResume": "passed",
+  "ownerCodes": 100,
+  "temporaryCodes": 0,
+  "ownerCodesConsumedByTests": 0,
+  "existingLedgerPreserved": true,
+  "originalHomepageHttpStatus": 200,
+  "sourceCommit": "f342f21a05c17de6be0782e9b16a35962aa64472"
+}

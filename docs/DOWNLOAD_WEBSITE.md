@@ -1,5 +1,7 @@
 # 词伴下载官网：需求、方案与验收
 
+最新状态（2026-10-05）：官网同时提供 Android APK 和 Windows EXE，四个语言安装包共用每码一次领取额度，平台对应源码不扣次数。18 项后端回归、正式 HTTPS 浏览器及完整下载哈希、服务重启续传通过，正式码未被验收消耗，临时码已清理；详细更新见本文件末尾与 deliverables/Windows官网下载验收记录.md。
+
 更新：2026-10-04。当前状态：官网已部署至 `https://maxnote.top/ciban/`，两份 APK 和对应源码上传完成；正式 HTTPS 保护、三份文件完整哈希与四种尺寸线上浏览器检查均通过。
 
 最新规则：用户要求“下载码用一次就失效一次”。已从可重复使用改为每码领取一个 APK，详见下方核销更新。初次网站上线的验收属于旧规则，不能作为新核销语义的验证。
@@ -74,3 +76,12 @@
 - 使用两个临时验收码进行真实下载测试，不消费正式 100 个码。
 - `test-results/single-use-restart-report.json`：实际重启独立服务后，两临时已用码仍返回 410；原 Cookie 的英语 Range 续传 206，拼回完整 38,510,126 字节并验证 SHA-256 正确；完成后重放 410，原站首页 200。验收结束临时码已从码表移除，原 100 个码保留；账本保留核销历史，不清空。
 - 最后线上审计：100 个正式码、0 个临时码；正式码均未被本轮验收消耗或停用。`server.mjs` SHA-256 `605fa6360fe5ce801973e11ea678c64c1f7b6048a7c0e8010e68ed1a9b4aa196`，`redemption-store.mjs` SHA-256 `4dbbbc6fa821172522bd216ae8aff0c8def99fbb9a7840d1bddf3f8e0853d2c4`，均与本地一致。两个临时码的核销历史保留在账本中，但已不属于有效码表，不计算为正式码消费。
+## 2026-10-05：Windows 共用一次性下载控制
+
+用户授权将 EXE 放入原官网，与安卓用同一套控制。官网保留 `/ciban/` 地址，先选 Android / Windows，再选英语 / 法语。原有 english/french/source 路由和文件保留；新增 windows-english/windows-french/source-windows。每个码在四个安装包中只能领取一个，Windows 与 Android 使用同一 Cookie、码表、串行核销队列和生产账本。HEAD/验证不消耗，开始有效 GET 前核销；Windows 续传同样绑定原浏览器、文件及 30 分钟窗口。两份平台对应源码均不扣次数，已用码仍可获取。
+
+Windows 英语 EXE：38,062,515 字节，SHA-256 b8f4c4fc682f07dc2b0d749477d5037fb9ad4ce5bde94ca4d3b07be860cdd410；法语 EXE：36,495,973 字节，SHA-256 0b3a13d668b282f6f69c83e8aa3fc6ad6a74e4ebe988eae4cc7667d697aa27c9；对应源码：44,941,140 字节，SHA-256 99b8bf138f14511559f6c0ecfcd9109572b0f8cfad7e12b06b66f6ed6265ee8b，对应提交 f342f21a05c17de6be0782e9b16a35962aa64472。EXE 未签名，Defender 扫描通过不保证所有软件零误报；实际安装和跨应用验收边界沿用 Windows 记录。
+
+发布目录 `/opt/ciban-download/release-20261005-windows-v1`；从上一目录复制原 APK/源码/最新码表，新增 EXE/源码和界面文件，核对六份私有文件哈希后原子切换 current，只重启词伴服务。生产账本仍在 `/var/lib/ciban-download/redemptions.json`，部署未上传、清空或替换账本。旧站首页/端口及 Nginx 路由不改。备份 `/opt/ciban-download/backup-before-windows-20261005` 保存切换前码表与账本。Windows 核销记录产生后，不能直接回退到只认识 APK artifact 的旧后端，也不能用旧账本覆盖；需保留当前兼容核销实现。
+
+本地后端 18 项测试通过，新增跨平台并发/单额度/Windows 重启续传/源码不扣次数；四种尺寸 320/390/768/1440 的设备及语言选择、正确下载与源码路由、专属链接保留填入、无溢出/JS 错误通过。生产验收仅使用独立 TEST-WINDOWS 临时码；报告在 website/test-results（私有、不提交 Git），公开验收摘要见 deliverables/Windows官网下载验收记录.md。

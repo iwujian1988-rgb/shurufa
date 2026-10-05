@@ -1,12 +1,14 @@
-词伴 Android 0.5.0-demo — 开源与数据许可
+词伴 Android 0.5.0-demo / Windows 0.1.0-demo.2 — 开源与数据许可
 
 词伴基于青简输入法，采用 GPL-3.0-or-later。
 上游：https://github.com/qingjian-team/qingjian
 固定提交：c08ae57cb88b6a4a46f4a5e9c1d6d11c5e69222e
 GNU GPL v3：https://www.gnu.org/licenses/gpl-3.0.html
 
-英语、法语 APK 对应源码（含构建说明、上游及所需本地依赖）通过本官网
-“文件校验与开源信息”中的源码入口提供。每个码只能领取一个 APK；
+英语、法语 APK / EXE 对应源码通过本官网
+“文件校验与开源信息”中的源码入口提供。先选择平台，源码入口随之切换。
+Windows 源码包含工程、语言数据及构建说明，依赖按锁定版本恢复。
+每个码在 Android / Windows 四个语言安装包中只能领取一个；
 获取对应源码不消耗安装包次数，已使用的码仍可验证获取源码，不需另付下载码。
 下载码控制本站的初次分发，不限制接收者依据 GPL 获得的使用、修改和再分发权利。
 本程序不提供任何担保；完整条款见对应源码内 LICENSE。
@@ -33,4 +35,6 @@ https://doi.org/10.1111/lang.12343
 应用不记录验证请求正文、原始下载码或授权 Cookie。专属链接建议使用 #code= 格式，
 该部分不会随 HTTP 请求传给服务器。页面无第三方统计或远程字体。
 
-发布类型：Android Debug 测试签名，非应用商店正式发布版本。
+发布类型：Android Debug 测试签名；Windows 未签名测试安装器。均非正式商店发布版本。
+Windows 随包 Microsoft Windows App SDK / WebView2 等运行时采用各自许可，
+不是 GPL 项目源码；许可保留在安装包 licenses 及对应源码 desktop/windows/licenses 中。

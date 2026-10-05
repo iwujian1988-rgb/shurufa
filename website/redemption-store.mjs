@@ -34,7 +34,7 @@ export async function createRedemptionStore(directory, { requireExisting = false
   }
   if (value.schemaVersion !== 1 || !value.redemptions || Array.isArray(value.redemptions) || typeof value.redemptions !== 'object') throw new Error('INVALID_REDEMPTION_LEDGER');
   for (const [hash, r] of Object.entries(value.redemptions)) {
-    if (!/^[a-f0-9]{64}$/.test(hash) || !/^[a-f0-9]{64}$/.test(r.sessionHash || '') || !['english', 'french'].includes(r.artifact) || !Number.isFinite(r.startedAt) || !Number.isFinite(r.expiresAt) || (r.completedAt !== null && !Number.isFinite(r.completedAt))) throw new Error('INVALID_REDEMPTION_RECORD');
+    if (!/^[a-f0-9]{64}$/.test(hash) || !/^[a-f0-9]{64}$/.test(r.sessionHash || '') || !['english', 'french', 'windows-english', 'windows-french'].includes(r.artifact) || !Number.isFinite(r.startedAt) || !Number.isFinite(r.expiresAt) || (r.completedAt !== null && !Number.isFinite(r.completedAt))) throw new Error('INVALID_REDEMPTION_RECORD');
   }
   return {
     get: hash => value.redemptions[hash],

@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0-demo.2",
+  "sourceCommit": "f342f21a05c17de6be0782e9b16a35962aa64472",
+  "repository": "https://github.com/iwujian1988-rgb/shurufa",
+  "sourceArchive": {
+    "file": "ciban-windows-0.1.0-demo.2-source.tar.gz",
+    "bytes": 44941140,
+    "sha256": "99B8BF138F14511559F6C0ECFCD9109572B0F8CFAD7E12B06B66F6ED6265EE8B"
+  },
+  "installers": [
+    {
+      "file": "ciban-english-0.1.0-demo.2-windows-x64-setup.exe",
+      "bytes": 38062515,
+      "sha256": "B8F4C4FC682F07DC2B0D749477D5037FB9AD4CE5BDE94CA4D3B07BE860CDD410",
+      "authenticode": "NotSigned"
+    },
+    {
+      "file": "ciban-french-0.1.0-demo.2-windows-x64-setup.exe",
+      "bytes": 36495973,
+      "sha256": "0B3A13D668B282F6F69C83E8AA3FC6AD6A74E4EBE988EAE4CC7667D697AA27C9",
+      "authenticode": "NotSigned"
+    }
+  ],
+  "scope": "Local test packages. Corresponding source archive includes source, licenses, data and build instructions; dependencies restored using pinned official sources. No public EXE distribution."
+}

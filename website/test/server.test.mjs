@@ -10,8 +10,9 @@ async function fixture(t) {
   const root = await mkdtemp(path.join(tmpdir(), 'ciban-once-test-'));
   await mkdir(path.join(root, 'artifacts'));
   await writeFile(path.join(root, 'codes.json'), JSON.stringify([{ id: '001', hash: hashCode(CODE), revoked: false }]));
-  await writeFile(path.join(root, 'release.json'), JSON.stringify({ version: 'test', artifacts: ['english', 'french', 'source'].map(id => ({ id, filename: id + '.bin', bytes: content.length })) }));
-  for (const id of ['english', 'french', 'source']) await writeFile(path.join(root, 'artifacts', id + '.bin'), content);
+  const ids = ['english', 'french', 'source', 'windows-english', 'windows-french', 'source-windows'];
+  await writeFile(path.join(root, 'release.json'), JSON.stringify({ version: 'test', artifacts: ids.map(id => ({ id, filename: id + '.bin', bytes: content.length, platform: id.includes('windows') ? 'windows' : 'android', kind: id.startsWith('source') ? 'source' : 'installer' })) }));
+  for (const id of ids) await writeFile(path.join(root, 'artifacts', id + '.bin'), content);
   let time = Date.now(), server, url;
   async function start() { server = await createApp({ privateDir: root, now: () => time }); await new Promise(resolve => server.listen(0, '127.0.0.1', resolve)); url = `http://127.0.0.1:${server.address().port}/ciban/`; }
   async function stop() { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
@@ -26,7 +27,7 @@ async function fixture(t) {
 }
 test('public page has security headers; unauthorized GET/HEAD/Range cannot download', async t => {
   const f = await fixture(t), r = await f.request(''); assert.equal(r.status, 200); assert.match(await r.text(), /词伴/); assert.equal(r.headers.get('referrer-policy'), 'no-referrer'); assert.match(r.headers.get('content-security-policy'), /frame-ancestors 'none'/);
-  for (const id of ['english', 'french', 'source']) for (const method of ['GET', 'HEAD']) assert.equal((await f.get(id, '', { method, headers: { Range: 'bytes=0-10' } })).status, 403);
+  for (const id of ['english', 'french', 'source', 'windows-english', 'windows-french', 'source-windows']) for (const method of ['GET', 'HEAD']) assert.equal((await f.get(id, '', { method, headers: { Range: 'bytes=0-10' } })).status, 403);
 });
 test('private, guessed and query-code paths cannot bypass authorization', async t => {
   const f = await fixture(t); for (const p of ['private/codes.json', 'private/state/redemptions.json', 'private/owner-codes.json', 'ciban-english-demo.apk', 'download/english?code=' + CODE, '%2e%2e/server.mjs']) assert.ok([403, 404].includes((await f.request(p)).status));
@@ -71,4 +72,37 @@ test('missing/corrupt required ledger fails closed', async t => {
 });
 test('tampered cookies and excess invalid attempts are rejected', async t => {
   const f = await fixture(t), c = f.cookie(await f.unlock()); assert.equal((await f.get('english', c + '0')).status, 403); f.advance(16 * 60 * 1000); for (let i = 0; i < 15; i++) assert.equal((await f.unlock('bad')).status, 403); assert.equal((await f.unlock('bad')).status, 429);
+});
+
+test('Windows shares one quota with Android; both sources remain available after restart', async t => {
+  const f = await fixture(t), c = f.cookie(await f.unlock());
+  assert.equal((await f.get('windows-french', c, { method: 'HEAD' })).status, 200);
+  await (await f.get('source-windows', c)).arrayBuffer();
+  assert.equal((await f.session(c)).authorized, true);
+  const exe = await f.get('windows-french', c);
+  assert.equal(exe.status, 200); assert.equal(exe.headers.get('content-type'), 'application/octet-stream');
+  assert.deepEqual(Buffer.from(await exe.arrayBuffer()), content);
+  for (let i = 0; i < 20 && (await f.session(c)).resumable; i++) await new Promise(resolve => setTimeout(resolve, 5));
+  await f.restart();
+  for (const id of ['english', 'french', 'windows-english', 'windows-french']) assert.equal((await f.get(id, c)).status, 410);
+  for (const id of ['source', 'source-windows']) { const r = await f.get(id, c); assert.equal(r.status, 200); assert.equal(r.headers.get('content-type'), 'application/gzip'); await r.arrayBuffer(); }
+  assert.equal((await f.unlock()).status, 410);
+});
+
+test('Android and Windows race uses the same serialized ledger', async t => {
+  const f = await fixture(t), a = f.cookie(await f.unlock()), b = f.cookie(await f.unlock());
+  const responses = await Promise.all([f.get('english', a), f.get('windows-english', b)]);
+  assert.deepEqual(responses.map(r => r.status).sort(), [200, 410]);
+  for (const response of responses) await response.arrayBuffer();
+});
+
+test('Windows resumed download binds browser and artifact across restart', async t => {
+  const f = await fixture(t), a = f.cookie(await f.unlock()), b = f.cookie(await f.unlock());
+  const head = await f.get('windows-english', a, { headers: { Range: 'bytes=0-1023' } });
+  assert.equal(head.status, 206); await head.arrayBuffer(); await f.restart();
+  for (const id of ['english', 'windows-french']) assert.equal((await f.get(id, a, { headers: { Range: 'bytes=1024-' } })).status, 410);
+  // The other browser's unredeemed in-memory session is intentionally lost on restart.
+  assert.equal((await f.get('windows-english', b, { headers: { Range: 'bytes=1024-' } })).status, 403);
+  const tail = await f.get('windows-english', a, { headers: { Range: 'bytes=1024-' } });
+  assert.equal(tail.status, 206); assert.deepEqual(Buffer.from(await tail.arrayBuffer()), content.subarray(1024));
 });
