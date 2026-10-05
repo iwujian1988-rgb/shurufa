@@ -69,6 +69,34 @@ for(const [word,p,gloss,pos,note] of poly){
     return sense;
   }),note});
 }
+// Explicit common-word additions; never route unrelated pronunciations or invent gender.
+const priority=lines('data/french-priority.tsv'), prioritySeen=new Set(), priorityKeys=new Set(), chineseAdditions=new Map();
+const priorityReadings=JSON.parse(read('data/french-priority-readings.json'));
+for(const [head,pos,gloss,note='常用表达；词形、主语和时态需随语境变化。'] of priority){
+  const [word,supplied]=head.split('#'), explicit=supplied||priorityReadings[word];
+  if(prioritySeen.has(head))throw Error('Duplicate priority source '+head);prioritySeen.add(head);
+  if(!posNames[pos]||!gloss||/[\u4e00-\u9fff]/u.test(gloss)||/INVALID/.test(gloss))throw Error('Invalid priority translation '+head);
+  const known=[...(pronunciations.get(word)||[])];
+  if(!known.length&&!explicit)throw Error('Priority word requires explicit reading: '+word);
+  if(known.length>1&&!explicit)throw Error('Priority polyphone requires explicit reading: '+word+' '+known.join('/'));
+  const readings=explicit?[canonical(explicit)]:known;
+  if(!known.length)for(const p of readings)chineseAdditions.set(word+'#'+p,[word,p]);
+  if(known.length&&readings.some(p=>!known.includes(p)))throw Error('Priority reading does not match dictionary: '+head);
+  const short=gloss.split(' ; ');
+  const senses=short.map(text=>{
+    const sense={text,pos:posNames[pos]};
+    if(pos==='n.'){
+      const article=text.match(/^(le |la |les |un |une |l[’'])/u)?.[0].trim()||'';
+      sense.article=article;sense.lemma=text.replace(/^(le |la |les |un |une |l[’'])/u,'');
+      if(/^(le|un)$/.test(article))sense.gender='阳性';
+      if(/^(la|une)$/.test(article))sense.gender='阴性';
+      // l’ and les do not establish noun gender; keep it unknown unless stated in note.
+    }
+    if(pos==='v.')sense.lemma=text;
+    return sense;
+  });
+  for(const p of readings){const key=word+'#'+p;if(overlay.has(key))continue;put(word,p,{short,senses,note,category:'priority-common-2026-10-04'});priorityKeys.add(key);}
+}
 function output(name,map,license){
   const a=[...map].sort(([a],[b])=>a<b?-1:a>b?1:0);
   for(const [key,value]of a){
@@ -79,13 +107,15 @@ function output(name,map,license){
   fs.writeFileSync(path.join(dir,name+'.tsv'),'# '+license+'; pronunciation-aware learning records\n'+a.map(([k,v])=>k+'\t'+JSON.stringify(v).replace(/\|/g,'\\u007c')).join('\n')+'\n');
 }
 output('base',base,'CFDICT / CC BY-SA 3.0');output('lessons',overlay,'词伴 AI / GPL-3.0-or-later');
+fs.writeFileSync(path.join(dir,'chinese-additions.tsv'),'# 词伴日用词（AI） / GPL-3.0-or-later; frequency 1000 is a project default, not measured usage\n'+[...chineseAdditions.values()].map(([word,p])=>`${word}\t${p}\t1000`).join('\n')+'\n');
 const covered=new Set(chinese.filter(e=>overlay.has(e.word+'#'+canonical(e.pinyin))||base.has(e.word+'#'+canonical(e.pinyin))).map(e=>e.word));
 const top=JSON.parse(read('data/french-research/top5000.json'));
 const topCoverage=[1000,5000].map(n=>({wordCount:n,coveredWords:top.slice(0,n).filter(e=>covered.has(e.word)).length}));
 const missing=top.filter(e=>!covered.has(e.word));
 fs.writeFileSync(path.join(dir,'review-queue.jsonl'),top.map(e=>JSON.stringify({...e,covered:covered.has(e.word),review:'pending-independent-language-review'})).join('\n')+'\n');
 fs.writeFileSync(path.join(dir,'blocked-source.jsonl'),blocked.map(e=>JSON.stringify(e)).join('\n')+'\n');
-const report={version:'fr-2026-10-04-v2',baseReadingEntries:base.size,lessonReadingEntries:overlay.size,
+fs.writeFileSync(path.join(dir,'remaining-top5000.jsonl'),missing.map(e=>JSON.stringify({...e,reason:'needs-context-or-separate-review'})).join('\n')+'\n');
+const report={version:'fr-2026-10-04-v3',prioritySourceEntries:priority.length,priorityReadingEntries:priorityKeys.size,addedChineseWordReadings:chineseAdditions.size,baseReadingEntries:base.size,lessonReadingEntries:overlay.size,
   lessonHeadwords:new Set([...overlay.values()].map(x=>x.word)).size,phraseSourceEntries:phrases.length,
   phraseHeadwordsInstalled:new Set([...overlay.values()].filter(x=>x.senses[0].pos==='会话表达 / 短语').map(x=>x.word)).size,
   phraseHeadwordsOutsideWordDictionary:phrases.filter(([w])=>!pronunciations.has(w)).map(([w])=>w),
@@ -97,5 +127,5 @@ const report={version:'fr-2026-10-04-v2',baseReadingEntries:base.size,lessonRead
   blockedSourceRecords:blocked.length,remainingTop5000Words:missing.length,independentLanguageReview:false,
   scope:'Exact Chinese headwords with at least one matching toneless pronunciation; not translation accuracy or usage-weighted coverage',
   licenses:{base:'CC-BY-SA-3.0',lessons:'GPL-3.0-or-later'},
-  hashes:Object.fromEntries(['base.tsv','lessons.tsv'].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]))};
+  hashes:Object.fromEntries(['base.tsv','lessons.tsv','chinese-additions.tsv'].map(n=>[n,crypto.createHash('sha256').update(fs.readFileSync(path.join(dir,n))).digest('hex')]))};
 fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

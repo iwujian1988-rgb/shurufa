@@ -1,0 +1,880 @@
+# 词伴常用补充（AI 草拟并复核，未独立语言编辑校审） / GPL-3.0-or-later
+# 中文词头（可附 #无声调拼音） TAB 词性 TAB 法语常用表达 TAB 语境说明（可选）
+瓶盖	n.	le bouchon	瓶子的盖或塞；啤酒等金属压盖可用 la capsule。
+平菇	n.	le pleurote	常见食用菌。
+时区	n.	le fuseau horaire
+夏令时	n.	l’heure d’été	heure 为阴性名词。
+短发	n.	les cheveux courts	cheveu 为阳性，常用复数。
+长腿	n.	les longues jambes	jambe 为阴性，常用复数。
+大长腿	n.	de longues jambes	jambe 为阴性，常用复数。
+高铁	n.	le train à grande vitesse	泛指高速列车；不把中国高铁直接等同法国 TGV 品牌。
+榴莲	n.	le durian
+网友	n.	un internaute	女性也用 une internaute。
+天文台	n.	l’observatoire	阳性名词。
+视星等	n.	la magnitude apparente	天文学术语。
+赤纬	n.	la déclinaison	天文学坐标。
+银纬	n.	la latitude galactique
+银经	n.	la longitude galactique
+星等	n.	la magnitude	天体亮度量度。
+公转	n.	la révolution orbitale	天文学语境。
+月台	n.	le quai	车站站台。
+镇区	n.	le canton	行政单位的具体对应随国家制度而变。
+教区	n.	le diocèse	主教辖区；基层堂区可用 la paroisse。
+土豪	n.	un nouveau riche	口语带调侃或贬义；不适合所有“富人”语境。
+大佬	n.	un ponte	口语，指有影响力的人；技术达人可说 un expert。
+学霸	n.	un élève brillant	女性 une élève brillante；也适用于学习出色的人。
+小伙伴	n.	les copains	口语，同伴或朋友；并非固定指儿童。
+好朋友	n.	un bon ami	女性 une bonne amie。
+好人	n.	une bonne personne
+一人	num.	une personne
+两个人	num.	deux personnes
+三十	num.	trente
+三个	num.	trois	中文量词通常不单独翻译。
+五年	num.	cinq ans
+六年	num.	six ans
+两种	num.	deux types
+万元	num.	dix mille yuans	中国货币语境。
+这句话	n.	cette phrase
+这首歌	n.	cette chanson
+这辈子	n.	cette vie
+一段时间	n.	une période
+长时间	n.	une longue période
+这两天	phr.	ces deux derniers jours	指最近两天；也可能指这几天。
+在学校	phr.	à l’école
+回学校	v.	retourner à l’école
+在北京	phr.	à Pékin
+在上海	phr.	à Shanghai
+在家里	phr.	à la maison
+在外面	phr.	dehors
+在路上	phr.	en route
+到现在	adv.	jusqu’à présent
+过几天	adv.	dans quelques jours
+一开始	adv.	au début
+亲爱的	phr.	mon chéri ; ma chérie	称呼男性/女性亲密对象；称呼复数收信人需改词形。
+我们的	pron.	notre ; nos	notre 用于单数被修饰名词，nos 用于复数。
+它的	pron.	son ; sa ; ses	随所属名词的性数变化；并非随“它”的性别。
+您的	pron.	votre ; vos	礼貌称呼或复数“你们”。
+所有的	adj.	tous les ; toutes les	随后接名词的性别变化。
+别人的	phr.	des autres
+真正的	adj.	authentique ; véritable	修饰名词，需结合语境选择。
+美丽的	adj.	beau ; belle	随被修饰名词性数变化。
+漂亮的	adj.	joli ; jolie	随被修饰名词性数变化。
+重要的	adj.	important ; importante
+不同的	adj.	différent ; différente
+年轻的	adj.	jeune
+幸福的	adj.	heureux ; heureuse
+开心的	adj.	content ; contente
+可爱的	adj.	mignon ; mignonne
+可怜的	adj.	malheureux ; malheureuse	指值得同情；需区分 pauvre 的其他含义。
+美好的	adj.	merveilleux ; merveilleuse
+认真的	adj.	sérieux ; sérieuse
+最好的	adj.	le meilleur ; la meilleure
+最大的	adj.	le plus grand ; la plus grande
+最棒的	adj.	le meilleur ; la meilleure
+好看的	adj.	joli ; jolie
+不错的	adj.	pas mal
+假的	adj.	faux ; fausse
+瘦的	adj.	mince
+胖的	adj.	gros ; grosse	形容他人体型可能不礼貌。
+不胖	adj.	pas gros ; pas grosse
+不冷	adj.	pas froid ; pas froide
+太大	phr.	trop grand ; trop grande
+这么大	phr.	aussi grand ; aussi grande
+那么大	phr.	aussi grand ; aussi grande
+太可爱	phr.	trop mignon ; trop mignonne	口语赞美。
+很可爱	phr.	très mignon ; très mignonne
+很帅	phr.	très beau	形容男性外貌。
+最帅	phr.	le plus beau	形容男性外貌。
+好帅	phr.	qu’il est beau !	男性外貌赞美。
+好美	phr.	que c’est beau !
+很美	phr.	très beau ; très belle
+太美	phr.	magnifique
+好漂亮	phr.	que c’est joli !
+好开心	phr.	quelle joie !
+很开心	phr.	très content ; très contente
+好幸福	phr.	tellement heureux ; tellement heureuse
+好累	phr.	tellement fatigué ; tellement fatiguée
+太累	phr.	trop fatigué ; trop fatiguée
+很重要	phr.	très important ; très importante
+很不错	phr.	vraiment pas mal
+很棒	phr.	formidable
+真棒	phr.	bravo !
+最棒	phr.	le meilleur ; la meilleure
+挺好的	phr.	c’est plutôt bien
+好点	phr.	un peu mieux
+好大	phr.	que c’est grand !
+好快	phr.	que c’est rapide !
+这么快	phr.	si vite
+这么早	phr.	si tôt
+这么晚	phr.	si tard
+这么久	phr.	si longtemps
+比较好	phr.	plutôt bien ; mieux	第一项表示较好，第二项表示比较后的更好。
+多好	phr.	comme c’est bien !
+好好看	phr.	c’est vraiment joli	也可指“仔细看”，此处为外观赞美。
+好看啊	phr.	c’est joli !
+真好看	phr.	c’est vraiment beau !
+挺好看	phr.	c’est plutôt joli
+太好看	phr.	c’est magnifique !
+不一样	adj.	différent ; différente
+一样的	adj.	identique
+同一个	phr.	le même ; la même
+都一样	phr.	tout est pareil
+都可以	phr.	tout convient	选择时表示哪个都可以。
+都好	phr.	tout va bien
+全是	phr.	ce sont tous ; ce sont toutes	后面接复数类别，性别取决于所指。
+没有人	pron.	personne
+没有了	phr.	il n’y en a plus
+我没有	phr.	je n’en ai pas	指没有某物；不是“我没有做过”的通用表达。
+也没有	phr.	non plus	否定句中的“也没有”；完整句需补主语和谓语。
+并没有	phr.	pas du tout	强调否定，具体否定内容需随句子补充。
+没有啊	phr.	non, pas du tout
+有啊	phr.	oui, il y en a
+有一个	phr.	il y en a un ; il y en a une	随所指名词性别变化。
+可以的	phr.	c’est possible
+可以了	phr.	c’est bon	表示可以了或已经足够。
+可以啊	phr.	bien sûr
+可以吗	phr.	est-ce possible ?
+可以可以	phr.	oui, bien sûr
+好呀	phr.	d’accord !
+好嘛	phr.	d’accord	表示答应；撒娇或反问时语气不同。
+好么	phr.	d’accord ?
+好呢	phr.	d’accord
+好滴	phr.	d’accord	轻松口语。
+好哒	phr.	d’accord	轻松口语。
+是呀	phr.	oui, c’est ça
+是吧	phr.	n’est-ce pas ?
+是滴	phr.	oui, c’est ça	轻松口语。
+对呀	phr.	ouais, c’est ça	非正式口语。
+是这样	phr.	c’est comme ça
+就是这样	phr.	c’est exactement ça
+就这样	phr.	comme ça
+这样啊	phr.	ah, d’accord
+是啥	phr.	qu’est-ce que c’est ?
+什么啊	phr.	qu’est-ce que c’est ?
+什么呢	phr.	quoi donc ?
+啥子	pron.	quoi	方言“什么”。
+神马	pron.	quoi	网络用语“什么”，不是字面神兽。
+啥意思	phr.	ça veut dire quoi ?
+怎么了	phr.	qu’est-ce qui se passe ?
+咋了	phr.	qu’est-ce qui se passe ?
+咋样	phr.	comment ça va ?
+咋办#za ban	phr.	que faire ?
+哪天	phr.	quel jour ?
+几号	phr.	quelle date ?
+去哪	phr.	où aller ?
+去哪里	phr.	où aller ?
+在哪儿	phr.	où ?
+你在哪	phr.	où es-tu ?
+叫什么	phr.	comment ça s’appelle ?
+怎么说	phr.	comment dire ?
+怎么看	phr.	qu’en penser ?	询问看法；询问观看方式需另译。
+怎么知道	phr.	comment le savoir ?
+怎么会	phr.	comment est-ce possible ?
+怎么可能	phr.	comment est-ce possible ?
+怎么能	phr.	comment peut-on ?	后面需接动词或具体行为。
+哪有	phr.	mais non !	口语否认；询问哪里有时需另译。
+为什么要	phr.	pourquoi faut-il ?	后接行为。
+你为什么	phr.	pourquoi est-ce que tu…	句子片段，后面需补谓语。
+你确定	phr.	tu es sûr ? ; tu es sûre ?	随听话者性别变化。
+你是不是	phr.	est-ce que tu…	提问片段，需接谓语。
+我是不是	phr.	est-ce que je…	提问片段，需接谓语。
+有木有	phr.	il y en a ou pas ?	网络用语“有没有”。
+什么鬼	phr.	c’est quoi ce truc ?	非正式，表示困惑或吐槽。
+哇塞	int.	wahou !
+哎呦	int.	aïe ! ; oh !	疼痛或惊讶，取决于语境。
+无语	phr.	sans voix	形容无话可说；吐槽可说 je ne sais pas quoi dire。
+笑死	phr.	mort de rire	夸张口语。
+笑死我	phr.	ça me fait mourir de rire
+我错了	phr.	je me suis trompé ; je me suis trompée
+你懂	phr.	tu comprends
+我懂	phr.	je comprends
+懂了	phr.	j’ai compris
+知道了	phr.	j’ai compris ; je sais maintenant	根据“明白了”或“现在知道了”选择。
+不晓得	phr.	je ne sais pas
+不知道了	phr.	je ne sais plus
+还记得	v.	se souvenir encore
+我记得	phr.	je me souviens
+我以为	phr.	je pensais que…	需接从句，表示此前以为。
+还以为	phr.	je pensais pourtant que…	省略主语按常见“我还以为”整理。
+好像是	phr.	il semble que oui
+原来是	phr.	ah, c’est donc…	需接解释内容。
+确实是	phr.	c’est effectivement…	需接表语。
+一定是	phr.	c’est sûrement…	推测，需接表语。
+肯定是	phr.	c’est certainement…	需接表语。
+应该是	phr.	ça doit être…	推测，需接表语。
+可能是	phr.	c’est peut-être…	需接表语。
+其实是	phr.	en fait, c’est…	需接表语。
+是因为	phr.	c’est parce que…	需接原因。
+是为了	phr.	c’est pour…	需接目的。
+主要是	phr.	c’est surtout…	需接主要原因或对象。
+意思是	phr.	ça veut dire…	需接释义。
+意为	v.	signifier
+不是我	phr.	ce n’est pas moi
+不是你	phr.	ce n’est pas toi
+就是我	phr.	c’est bien moi
+就是你	phr.	c’est bien toi
+你就是	phr.	c’est toi qui…	需接谓语。
+我就是	phr.	c’est moi qui…	需接谓语。
+我不是	phr.	je ne suis pas…	需接表语。
+他是	phr.	il est…	需接表语。
+她是	phr.	elle est…	需接表语。
+它是	phr.	c’est…	需接表语。
+我们是	phr.	nous sommes…	需接表语。
+我们一起	phr.	ensemble	表示我们一起做某事，主语由句子补充。
+我自己	pron.	moi-même
+我一个	phr.	moi tout seul ; moi toute seule	按“我独自一人”整理，不用于“我一个朋友”。
+我俩	pron.	nous deux
+你俩	pron.	vous deux
+我妈	n.	ma mère
+我爸	n.	mon père
+我朋友	n.	mon ami ; mon amie
+我们学校	n.	notre école
+我这里	phr.	chez moi
+只有我	phr.	seulement moi
+没有我	phr.	sans moi
+没有你	phr.	sans toi
+像我	phr.	comme moi
+像你	phr.	comme toi
+对我	phr.	envers moi	表示对我的态度；其他用法需结合句子。
+对你	phr.	envers toi
+对他	phr.	envers lui
+为你	phr.	pour toi
+比我	phr.	que moi	比较结构的片段，前接比较级。
+比你	phr.	que toi	比较结构的片段，前接比较级。
+和他	phr.	avec lui
+跟他	phr.	avec lui
+给他	phr.	pour lui	指给他的物品；动作句也可能需 à lui。
+给她	phr.	pour elle	指给她的物品；动作句也可能需 à elle。
+给自己	phr.	pour soi-même
+对自己	phr.	envers soi-même
+我可以	phr.	je peux…	后接动词原形。
+我能	phr.	je peux…	后接动词原形。
+我不会	phr.	je ne sais pas faire…	表示不会做；未来不会发生需另译。
+你能	phr.	tu peux…	后接动词原形。
+你会	phr.	tu sais faire…	指掌握技能；“将会”另译。
+你应该	phr.	tu devrais…	后接动词原形。
+你得	phr.	tu dois…	后接动词原形。
+我得	phr.	je dois…	后接动词原形。
+我一定	phr.	je vais sûrement…	后接动词原形，具体时态依语境。
+我只	phr.	je ne fais que…	限定片段，后接具体行为。
+我只是	phr.	je suis simplement…	按“我只是某种身份”整理；行为句需另译。
+我也会	phr.	je sais aussi faire…	指也掌握某项技能。
+我也想	phr.	j’aimerais aussi…	后接动词原形。
+我也要	phr.	moi aussi, j’en veux
+我也有	phr.	j’en ai aussi
+我也在	phr.	je suis là aussi	按“我也在这里”整理；进行时需另译。
+我最近	phr.	ces derniers temps, je…	需补谓语。
+我今天	phr.	aujourd’hui, je…	需补谓语。
+我明天	phr.	demain, je…	需补谓语。
+我昨天	phr.	hier, je…	需补谓语。
+我以前	phr.	autrefois, je…	需补谓语。
+我之前	phr.	auparavant, je…	需补谓语。
+我每天	phr.	tous les jours, je…	需补谓语。
+你今天	phr.	aujourd’hui, tu…	需补谓语。
+你现在	phr.	maintenant, tu…	需补谓语。
+你最近	phr.	ces derniers temps, tu…	需补谓语。
+今天我	phr.	aujourd’hui, je…	需补谓语。
+今天是	phr.	aujourd’hui, c’est…	需接日期或事件。
+我准备	phr.	je me prépare à…	后接动词原形。
+我猜	phr.	je suppose que…	需接从句。
+我感觉	phr.	j’ai l’impression que…	需接从句。
+我发现	phr.	je constate que…	需接从句。
+我好像	phr.	on dirait que je…	需补谓语。
+我可能	phr.	je pourrais…	可能发生或可能做，时态随语境。
+我怕	phr.	j’ai peur
+怕你	phr.	avoir peur de toi
+我跟	phr.	moi et…	后接同行者，具体句子可使用 je… avec…。
+因为我	phr.	parce que je…	需补谓语。
+因为你	phr.	parce que tu…	需补谓语。
+但是我	phr.	mais je…	需补谓语。
+可是我	phr.	mais je…	需补谓语。
+不过我	phr.	mais moi, je…	需补谓语。
+不过你	phr.	mais toi, tu…	需补谓语。
+反正我	phr.	de toute façon, je…	需补谓语。
+其实我	phr.	en fait, je…	需补谓语。
+所以我	phr.	donc je…	需补谓语。
+所以你	phr.	donc tu…	需补谓语。
+虽然我	phr.	même si je…	需补谓语。
+如果你	phr.	si tu…	需补条件从句。
+原来你	phr.	ah, donc tu…	需补谓语。
+难道你	phr.	est-ce que tu… vraiment ?	需补谓语，并表达惊讶或反问。
+看来你	phr.	on dirait que tu…	需补谓语。
+你居然	phr.	toi, tu… !	需补谓语，表示意外；法语用语调或上下文表达。
+你竟然	phr.	tu as vraiment… !	意外语气，需补具体行为并调整时态。
+我觉得我	phr.	je pense que je…	需补谓语。
+我觉得你	phr.	je pense que tu…	需补谓语。
+你觉得	phr.	qu’en penses-tu ?
+觉得自己	phr.	avoir l’impression d’être…	后接状态或身份。
+也觉得	phr.	penser aussi que…	需接从句。
+就觉得	phr.	alors, on pense que…	需补主语/谓语的语境片段。
+都觉得	phr.	tout le monde pense que…	需接从句。
+你以为	phr.	tu pensais que…	需接从句。
+以为你	phr.	je pensais que tu…	按省略“我”整理，需补谓语。
+以为我	phr.	on pensait que je…	实际主语随句子确定。
+以为是	phr.	penser que c’est…	需接表语。
+你知道	phr.	tu sais
+不知道你	phr.	je ne sais pas si tu…	需补谓语。
+不知道我	phr.	ne pas savoir si je…	需补主语/谓语。
+知道你	phr.	savoir que tu…	需补主语/谓语。
+知道我	phr.	savoir que je…	需补主语/谓语。
+知道是	phr.	savoir que c’est…	需补主语与表语。
+知道怎么	phr.	savoir comment…	后接具体行为。
+就知道	phr.	je le savais	按“我就知道”口语整理。
+才知道	phr.	ne l’apprendre que maintenant	表示直到现在才知道。
+都知道	phr.	tout le monde sait
+都不知道	phr.	personne ne sait
+也不知道	phr.	ne pas savoir non plus	需补主语。
+不觉得	phr.	ne pas penser que…	需补主语及从句。
+还不是	phr.	pas encore	按“尚不是”整理；反问归因用法需另译。
+也不是	phr.	ce n’est pas non plus…	需接表语。
+并不是	phr.	ce n’est pas…	需接表语。
+又不是	phr.	ce n’est pourtant pas…	需接表语。
+不就是	phr.	n’est-ce pas simplement… ?	需补具体对象。
+都不是	phr.	aucun des deux	按两个对象都不是整理；更多对象可用 aucun。
+不是说	phr.	ce n’est pas ce que je veux dire	按“不是说这个意思”整理。
+这不是	phr.	ce n’est pas…	需接表语。
+就没有	phr.	il n’y en a donc pas
+不应该	phr.	ne pas devoir…	后接行为，需补主语。
+只会	phr.	ne savoir que…	限定掌握的能力，后接动词。
+还会	phr.	savoir aussi…	表示还掌握技能；未来意义需另译。
+都能	phr.	tous peuvent…	需明确主语和行为。
+也能	phr.	pouvoir aussi…	需补主语和行为。
+也可以	phr.	c’est aussi possible
+也不错	phr.	c’est bien aussi
+也好	phr.	c’est bien aussi
+本来就	phr.	déjà	强调原本如此，译法随句子变化。
+本来就是	phr.	c’est déjà…	需接表语。
+人多	phr.	il y a beaucoup de monde
+多人	phr.	plusieurs personnes
+好多人	phr.	beaucoup de monde
+有时间	phr.	avoir du temps
+有问题	phr.	il y a un problème
+有啥	phr.	qu’est-ce qu’il y a ?
+没啥	phr.	rien de spécial
+没得	phr.	il n’y en a pas	方言“没有”。
+没毛病	phr.	rien à redire	口语“没问题”；疾病语境需另译。
+不小心	adv.	par inadvertance
+早点睡	phr.	couche-toi plus tôt
+早睡	v.	se coucher tôt
+睡吧	phr.	va dormir
+就睡	phr.	aller dormir maintenant	表示这就去睡。
+睡觉了	phr.	je vais dormir	按“我要睡了”整理。
+睡着了	phr.	s’est endormi ; s’est endormie	省略主语，随主语性别变化。
+没睡	phr.	ne pas avoir dormi	需补主语。
+不睡	v.	ne pas dormir
+不睡觉	v.	ne pas dormir
+醒了	phr.	s’est réveillé ; s’est réveillée	需补主语。
+早点休息	phr.	repose-toi tôt
+好好休息	phr.	repose-toi bien
+注意身体	phr.	prends soin de toi
+注意安全	phr.	fais attention à toi
+照顾好	v.	prendre bien soin de…	后接人或物。
+一起加油	phr.	courage à nous !
+加油加油	phr.	allez, courage !
+加油啊	phr.	allez, courage !
+辛苦了	phr.	merci pour tes efforts	感谢辛苦付出；不直译成“你累了”。
+恭喜恭喜	phr.	félicitations !
+恭喜你	phr.	félicitations !
+谢谢啦	phr.	merci beaucoup !
+欢迎你	phr.	bienvenue !
+相信你	v.	te faire confiance
+支持你	v.	te soutenir
+希望你	phr.	j’espère que tu…	需补谓语。
+祝你	phr.	je te souhaite…	后接祝愿内容。
+心疼你	phr.	ça me fait de la peine pour toi	表达关心或为对方难受。
+羡慕你	phr.	je t’envie
+好羡慕	phr.	comme je t’envie !
+羡慕嫉妒	phr.	envieux et jaloux	描述心情，女性 envieuse et jalouse。
+想我	phr.	je te manque ?	按询问“想我吗”整理；陈述句需依主语变。
+想知道	v.	vouloir savoir
+想买	v.	vouloir acheter
+想问	v.	vouloir demander
+想说	v.	vouloir dire
+想看	v.	vouloir voir
+想让	v.	vouloir que…	后接主语及虚拟式从句。
+只想	v.	vouloir seulement…	后接动词。
+还想	v.	vouloir encore…	后接动词。
+都想	phr.	tous veulent…	需明确主语和行为。
+想多	v.	trop réfléchir	按想太多整理；更多想法另译。
+想好	v.	avoir bien réfléchi
+想了	phr.	y avoir réfléchi	需补主语和时态。
+最喜欢	v.	préférer
+最爱	v.	adorer
+很喜欢	v.	beaucoup aimer
+好喜欢	v.	vraiment aimer
+超喜欢	v.	adorer
+你喜欢	phr.	tu aimes…	后接对象。
+喜欢我	v.	m’aimer
+喜欢他	v.	l’aimer	指男性“他”，上下文确定指代。
+都喜欢	phr.	tout le monde aime…	后接对象。
+就喜欢	v.	aimer tout particulièrement…	后接对象。
+也喜欢	v.	aimer aussi…	后接对象。
+也爱	v.	aimer aussi…	后接对象。
+你爱	phr.	tu aimes…	后接对象。
+我爱	phr.	j’aime…	后接对象。
+不爱	v.	ne pas aimer
+真爱	n.	le véritable amour
+你回来	phr.	reviens !	按请求回来整理；陈述需用 tu reviens。
+快回来	phr.	reviens vite !
+回去了	phr.	est reparti ; est repartie	需补主语，随性别变化。
+我回来	phr.	je reviens
+不回来	v.	ne pas revenir
+不回	v.	ne pas rentrer	按不回家/不返回整理；不回复需另译。
+来吧	phr.	viens !
+来啊	phr.	viens !
+来呀	phr.	viens !
+来啦	phr.	j’arrive !
+快来	phr.	viens vite !
+去吧	phr.	vas-y !
+去啊	phr.	vas-y !
+快去	phr.	vas-y vite !
+再去	v.	y retourner
+又去	v.	y aller encore
+又来	phr.	encore une fois	按“又来这一套”整理；返回需另译。
+就来	phr.	j’arrive tout de suite
+就去	phr.	j’y vais tout de suite
+会去	v.	aller	未来意义需由主语和动词时态表达。
+不来	v.	ne pas venir
+没去	v.	ne pas y être allé	补主语并按性别加 e。
+就走	phr.	partir tout de suite
+我走	phr.	je pars
+你走	phr.	tu pars	命令“你走！”可用 pars !。
+走了	phr.	est parti ; est partie	需补主语，随性别变化。
+等着	phr.	attends !
+在等	v.	être en train d’attendre
+坐等	v.	attendre tranquillement
+找我	v.	venir me voir	按“来找我”整理；寻找我可用 me chercher。
+找你	v.	venir te voir	按“去找你”整理；寻找你可用 te chercher。
+来找我	phr.	viens me voir
+来找	v.	venir chercher
+去找	v.	aller chercher
+我找	phr.	je cherche…	后接对象。
+找个	v.	chercher un…	需接具体名词。
+找到了	phr.	j’ai trouvé	按“我找到了”整理，其他主语需变位。
+找了	v.	avoir cherché
+帮我	phr.	aide-moi
+帮你	v.	t’aider
+我帮	phr.	je vais aider…	后接对象。
+陪我	v.	me tenir compagnie
+陪你	v.	te tenir compagnie
+叫我	v.	m’appeler
+叫你	v.	t’appeler
+让他	phr.	laisse-le…	后接动词原形。
+让我们	phr.	laisse-nous…	后接动词原形；“让我们一起”也可用祈使式 nous。
+让自己	v.	se permettre de…	按允许自己做某事整理；因果意义需另译。
+问我	v.	me demander
+问你	v.	te demander
+告诉你	v.	te dire
+回复我	phr.	réponds-moi
+说什么	phr.	que dire ?
+说啥	phr.	dire quoi ?
+说出来	v.	dire à voix haute
+这么说	phr.	en d’autres termes	按“这样说来”整理；表达方式可用 dire ainsi。
+这样说	v.	dire cela
+他说	phr.	il dit…	需接话语。
+她说	phr.	elle dit…	需接话语。
+说了	v.	avoir dit
+没说	v.	ne pas avoir dit
+就说	phr.	disons…	按“就说/比如说”整理；其他意义需随主语变化。
+说是	phr.	on dit que…	需接从句。
+说要	phr.	dire qu’on veut…	需接行为并确定主语。
+都说	phr.	tout le monde dit que…	需接从句。
+会说	v.	savoir dire ; savoir parler	说话能力或会说某语言。
+能说	v.	pouvoir dire
+我说的	phr.	ce que je dis
+你说的	phr.	ce que tu dis
+说的	phr.	ce qui est dit
+你做	phr.	tu fais…	需接宾语。
+我做	phr.	je fais…	需接宾语。
+做什么	phr.	que faire ?
+要做	v.	devoir faire
+做好	v.	bien faire ; préparer	需结合“做好某事/准备好”选择。
+做了	v.	avoir fait
+做的	phr.	ce qui est fait
+做个	v.	faire un…	需接具体对象。
+我买	phr.	j’achète…	需接对象。
+你买	phr.	tu achètes…	需接对象。
+去买	v.	aller acheter
+要买	v.	vouloir acheter
+买个	v.	acheter un…	需接具体名词。
+没买	v.	ne pas avoir acheté
+买的	phr.	ce qui a été acheté
+我用	phr.	j’utilise…	需接对象。
+用了	v.	avoir utilisé
+用的	phr.	ce qui est utilisé
+换个	v.	changer de…	需接具体名词。
+换了	v.	avoir changé
+不开	v.	ne pas ouvrir	按开门等整理；不开车/不开机需另译。
+开了	v.	avoir ouvert	开门等语境；驾驶/启动需另译。
+坏了	phr.	en panne	设备故障；食物变质用 avarié。
+丢了	phr.	perdu ; perdue	需明确丢失物的性别和主语。
+掉了	phr.	est tombé ; est tombée	物品掉落，需补主语。
+留着	v.	garder
+带着	v.	emporter avec soi
+抱着	v.	tenir dans ses bras
+站在	v.	être debout à…	后接地点。
+穿了	v.	avoir mis	穿上衣物。
+你穿	phr.	tu portes…	需接衣物。
+穿的	phr.	ce qu’on porte
+剪了	v.	avoir coupé	头发等，需要具体对象。
+长胖#zhang pang	v.	prendre du poids
+胖了	v.	avoir pris du poids
+瘦了	v.	avoir maigri
+长大了#zhang da le	v.	avoir grandi
+毕业了	v.	avoir obtenu son diplôme
+结婚了	phr.	est marié ; est mariée	状态；“举行了婚礼”可用 s’est marié(e)。
+分手了	phr.	on a rompu	按“我们分手了”整理。
+感冒了	phr.	j’ai un rhume	按“我感冒了”整理，其他主语需变化。
+放假了	phr.	c’est les vacances	日常口语。
+上班了	v.	être allé travailler	需补主语并按性别加 e。
+工作了	v.	avoir commencé à travailler	开始工作语境。
+结束了	phr.	c’est terminé
+出现了	v.	être apparu	需补主语并按性别加 e。
+发现了	v.	avoir découvert
+发生了	v.	s’être produit	需补主语并按性别加 e。
+变了	v.	avoir changé
+过去了	phr.	c’est passé
+远了	phr.	c’est loin maintenant
+够了	phr.	ça suffit
+就够	phr.	ça suffit	具体“只要某物就够”需完整句。
+行了	phr.	c’est bon ; ça suffit	按同意或要求停止选择。
+就行	phr.	ça suffit
+就好	phr.	ça ira	表示这样就好。
+要好好	phr.	il faut bien…	后接具体行为。
+还得	phr.	il faut encore…	后接行为。
+就得	phr.	il faut alors…	后接行为。
+不让	v.	ne pas laisser
+不跟	v.	ne pas suivre	按不跟随整理；“不和某人一起”需另译。
+不给	v.	ne pas donner
+不叫	v.	ne pas appeler
+不出来	phr.	ne pas réussir à sortir	按无法出来整理，结果补语“想不出来”需另译。
+不出	phr.	ne pas sortir	单独动词用法，结果补语需另译。
+看出来	v.	remarquer
+看到了	v.	avoir vu
+看过	v.	avoir déjà vu
+没看	v.	ne pas avoir regardé
+不看	v.	ne pas regarder
+没看到	v.	ne pas avoir vu
+能看	v.	pouvoir regarder
+可以看	v.	pouvoir regarder
+也看	v.	regarder aussi
+都看	v.	regarder tous	主语需补充；“全部看完”另译。
+就看	v.	regarder simplement
+再看	v.	regarder encore
+看吧	phr.	regarde !	“你看吧”命令，决定是否看则另译。
+看到你	v.	te voir
+看见你	v.	te voir
+看到我	v.	me voir
+我看到	phr.	je vois…	需接宾语。
+看到的	phr.	ce qu’on voit
+在看	v.	être en train de regarder
+能看到	v.	pouvoir voir
+没见过	v.	ne jamais avoir vu
+没见	v.	ne pas avoir vu
+见了	v.	avoir rencontré
+认识你	v.	te connaître
+认识的	phr.	que l’on connaît	关系从句片段。
+听过	v.	avoir déjà entendu
+玩手机	v.	utiliser son téléphone	日常“玩手机”不限玩游戏。
+出去玩	v.	sortir s’amuser
+去玩	v.	aller s’amuser
+我玩	phr.	je joue…	需补游戏或对象。
+你玩	phr.	tu joues…	需补游戏或对象。
+玩了	v.	avoir joué
+玩啊	phr.	amuse-toi !
+饿了	phr.	j’ai faim	按“我饿了”整理。
+你吃	phr.	tu manges…	需补对象。
+我吃	phr.	je mange…	需补对象。
+我吃饭	phr.	je prends mon repas
+去吃	v.	aller manger
+要吃	v.	vouloir manger
+能吃	v.	pouvoir manger
+可以吃	phr.	c’est comestible	按能食用整理；许可进食需用 on peut manger。
+吃什么	phr.	que manger ?
+吃东西	v.	manger quelque chose
+吃火锅	v.	manger une fondue chinoise
+吃点	phr.	mange un peu
+吃个	v.	manger un…	需接具体食物。
+吃啊	phr.	mange !
+吃到	v.	avoir l’occasion de manger
+多吃	v.	manger davantage
+少吃	v.	manger moins
+不吃	v.	ne pas manger
+没吃	v.	ne pas avoir mangé
+都吃	v.	tout manger	按吃全部整理；“所有人都吃”需另译。
+喜欢吃	v.	aimer manger
+爱吃	v.	aimer manger
+好吃的	phr.	quelque chose de bon à manger
+很好吃	phr.	c’est délicieux
+就吃	v.	manger simplement	需结合完整句。
+喝了	v.	avoir bu
+醉了	phr.	ivre	需补主语；不能用于非酒精“陶醉”义。
+作词	v.	écrire les paroles	创作歌曲歌词。
+打卡	v.	pointer ; faire un check-in	第一项为上下班打卡；第二项为到访或网络打卡。
+吐槽	v.	râler ; se moquer	需结合抱怨或调侃的语境。
+卖萌	v.	faire le mignon	故意做可爱状；女性 faire la mignonne。
+摸头	v.	caresser la tête
+摸摸头	phr.	une petite caresse sur la tête	安慰式动作。
+生快	phr.	joyeux anniversaire !	“生日快乐”的网络缩写。
+么么哒	int.	bisous !	亲昵口语。
+奇葩	n.	un drôle de personnage	形容古怪的人；花卉或褒义另译。
+小仙女	n.	une petite fée	亲昵称呼或网络赞美，并非现实身份。
+妹纸	n.	une fille	“妹子”的网络写法。
+小哥哥	n.	un jeune homme	中文亲昵称呼，没有固定一对一法语称谓。
+狗粮	n.	la nourriture pour chiens	字面狗粮；情侣“撒狗粮”另译。
+同款	adj.	du même modèle
+偶遇	v.	rencontrer par hasard
+本书	n.	ce livre
+本作	n.	cette œuvre
+本站	n.	ce site	按网站整理；铁路车站需另译。
+此站	n.	cette station	交通站点。
+居民点	n.	une localité
+曾任	v.	avoir occupé le poste de…	后接职位。
+生于	v.	être né en…	地点或年份需具体补充，女性 née。
+之子	n.	le fils de…	需补父母姓名。
+第十三届	phr.	la treizième édition	赛事、活动届次。
+一圈	n.	un tour	绕行一圈；圆圈可用 un cercle。
+一顿	n.	un repas	按一顿饭整理；“一顿打”需另译。
+一觉	n.	un somme	一次睡眠。
+一首	num.	un morceau	歌曲或音乐作品计数，诗歌可用 un poème。
+一座	num.	un ; une	随建筑/山等名词性别变化，中文量词不单译。
+一只	num.	un ; une	随动物等名词性别变化，中文量词不单译。
+一颗	num.	un ; une	随名词性别变化，中文量词不单译。
+一条	num.	un ; une	随名词性别变化，中文量词不单译。
+一段	n.	un passage	文本、音乐片段；时间段可用 une période。
+一场	num.	un ; une	活动、比赛等计数，需接具体名词。
+这段	phr.	ce passage	按文本/音乐片段整理。
+这张	phr.	cette feuille	按纸张整理；照片等需换具体名词。
+一波	n.	une vague	字面一波；网络“一波操作”需另译。
+保鲜膜	n.	le film alimentaire
+保鲜袋	n.	le sachet de conservation
+保鲜盒	n.	la boîte de conservation
+垃圾袋	n.	le sac-poubelle
+垃圾桶	n.	la poubelle
+洗洁精	n.	le liquide vaisselle
+洗衣液	n.	la lessive liquide
+洗衣粉	n.	la lessive en poudre
+柔顺剂	n.	l’assouplissant	阳性名词；洗衣用品。
+消毒液	n.	le désinfectant
+纸巾	n.	le mouchoir en papier
+湿巾	n.	la lingette
+餐巾纸	n.	la serviette en papier
+卫生纸	n.	le papier toilette
+拖把	n.	la serpillière
+扫帚	n.	le balai
+簸箕	n.	la pelle à poussière
+抹布	n.	le chiffon
+浴巾	n.	la serviette de bain
+毛巾	n.	la serviette
+牙刷	n.	la brosse à dents
+牙膏	n.	le dentifrice
+牙线	n.	le fil dentaire
+漱口水	n.	le bain de bouche
+洗发水	n.	le shampoing
+沐浴露	n.	le gel douche
+护发素	n.	l’après-shampoing	阳性名词。
+洗面奶	n.	le nettoyant pour le visage
+护手霜	n.	la crème pour les mains
+防晒霜	n.	la crème solaire
+指甲剪	n.	le coupe-ongles
+剃须刀	n.	le rasoir
+吹风机	n.	le sèche-cheveux
+衣架	n.	le cintre
+枕套	n.	la taie d’oreiller
+床单	n.	le drap
+被套	n.	la housse de couette
+拖鞋	n.	les chaussons	chausson 为阳性，常用复数。
+插座	n.	la prise électrique
+插头	n.	la fiche électrique
+充电器	n.	le chargeur
+充电宝	n.	la batterie externe
+数据线	n.	le câble de données
+耳机	n.	le casque ; les écouteurs	耳罩式/入耳式，écouteur 为阳性。
+鼠标	n.	la souris	电脑鼠标，也指动物。
+鼠标垫	n.	le tapis de souris
+键盘	n.	le clavier
+电源	n.	l’alimentation électrique	阴性名词。
+电池	n.	la pile ; la batterie	一次性电池/可充电蓄电池。
+遥控器	n.	la télécommande
+路由器	n.	le routeur
+网线	n.	le câble réseau
+开关	n.	l’interrupteur	阳性名词，指电器开关。
+水杯	n.	le verre ; la tasse	玻璃杯/带柄杯，依器具选择。
+保温杯	n.	le mug isotherme
+杯盖	n.	le couvercle
+水壶	n.	la bouilloire	烧水壶；装饮用水的壶可用 la carafe。
+烧水壶	n.	la bouilloire
+电饭煲	n.	le cuiseur à riz
+微波炉	n.	le four à micro-ondes
+空气炸锅	n.	la friteuse à air chaud
+平底锅	n.	la poêle
+炒锅	n.	le wok
+锅盖	n.	le couvercle
+砧板	n.	la planche à découper
+菜刀	n.	le couteau de cuisine
+筷子	n.	les baguettes	baguette 为阴性。
+勺子	n.	la cuillère
+叉子	n.	la fourchette
+漏勺	n.	l’écumoire	阴性名词。
+饭盒	n.	la boîte-repas
+开瓶器	n.	le décapsuleur ; le tire-bouchon	压盖开瓶器/葡萄酒拔塞器。
+瓶塞	n.	le bouchon
+拧开	v.	dévisser	旋开瓶盖或螺纹物。
+拧紧	v.	visser ; serrer	旋紧/紧固，按对象选择。
+打包	v.	emballer ; prendre à emporter	包装/把食物打包带走。
+外卖	n.	le repas livré	餐饮配送；带走餐食可用 le repas à emporter。
+快递	n.	le colis	指快递包裹；快递服务为 la livraison express。
+收件人	n.	le destinataire	女性 la destinataire。
+寄件人	n.	l’expéditeur	男性寄件人；女性 l’expéditrice。
+快递员	n.	le livreur	女性 la livreuse。
+收货	v.	réceptionner une livraison
+运费	n.	les frais de livraison	frais 为阳性复数。
+包邮	phr.	livraison gratuite
+退货	v.	retourner un article
+退款	n.	le remboursement
+下单	v.	passer une commande
+订单	n.	la commande
+购物车	n.	le panier	网购购物车；实体手推车可用 le chariot。
+优惠券	n.	le bon de réduction
+折扣	n.	la réduction
+收据	n.	le reçu
+发票	n.	la facture
+扫码	v.	scanner un code
+付款	v.	payer
+转账	n.	le virement
+余额	n.	le solde
+密码	n.	le mot de passe
+验证码	n.	le code de vérification
+登录	v.	se connecter
+退出登录	v.	se déconnecter
+截图	n.	la capture d’écran
+录屏	n.	l’enregistrement d’écran	阳性名词。
+文件夹	n.	le dossier
+附件	n.	la pièce jointe
+链接	n.	le lien
+下载	v.	télécharger
+上传	v.	mettre en ligne
+保存	v.	enregistrer
+粘贴	v.	coller
+复制	v.	copier
+剪贴板	n.	le presse-papiers
+备份	n.	la sauvegarde
+更新	n.	la mise à jour
+版本	n.	la version
+通知	n.	la notification
+会议室	n.	la salle de réunion
+考勤	n.	le suivi des présences
+请假	v.	demander un congé
+加班	v.	faire des heures supplémentaires
+出差	n.	le déplacement professionnel
+报销	v.	se faire rembourser	报销费用。
+工资	n.	le salaire
+奖金	n.	la prime
+简历	n.	le CV
+面试	n.	l’entretien d’embauche	阳性名词。
+招聘	n.	le recrutement
+入职	v.	prendre ses fonctions
+辞职	v.	démissionner
+排班	n.	le planning des équipes
+值班	v.	être de permanence
+休假	n.	le congé
+年假	n.	les congés annuels	congé 为阳性。
+截止日期	n.	la date limite
+进度	n.	l’avancement	阳性名词，指任务推进。
+待办事项	n.	les tâches à faire	tâche 为阴性。
+公交卡	n.	la carte de transport
+地铁站	n.	la station de métro
+公交站	n.	l’arrêt de bus	阳性名词。
+换乘	v.	prendre une correspondance
+车票	n.	le billet
+单程票	n.	le billet aller simple
+往返票	n.	le billet aller-retour
+检票	v.	contrôler les billets
+行李箱	n.	la valise
+登机牌	n.	la carte d’embarquement
+航班	n.	le vol
+航站楼	n.	le terminal
+安检	n.	le contrôle de sécurité
+取票	v.	retirer son billet
+取件	v.	retirer un colis
+排队	v.	faire la queue
+堵车	n.	les embouteillages	embouteillage 为阳性。
+停车场	n.	le parking
+停车位	n.	la place de parking
+导航	n.	le guidage GPS	道路导航语境。
+目的地	n.	la destination
+入住	v.	s’enregistrer à l’hôtel
+退房	v.	quitter sa chambre	办理酒店退房。
+前台	n.	la réception	酒店等接待前台。
+房卡	n.	la carte de la chambre
+双人间	n.	la chambre double
+单人间	n.	la chambre individuelle
+预约	v.	prendre rendez-vous
+挂号	v.	prendre rendez-vous médical	医疗挂号；邮政挂号另译。
+药店	n.	la pharmacie
+体温计	n.	le thermomètre
+口罩	n.	le masque
+创可贴	n.	le pansement
+消炎药	n.	l’anti-inflammatoire	阳性名词；不应与抗生素混同。
+过敏	n.	l’allergie	阴性名词。
+发烧	v.	avoir de la fièvre
+咳嗽	v.	tousser
+嗓子疼	phr.	avoir mal à la gorge
+肚子疼	phr.	avoir mal au ventre
+胡萝卜	n.	la carotte
+西兰花	n.	le brocoli
+花菜	n.	le chou-fleur
+生菜	n.	la laitue
+香菜	n.	la coriandre
+大蒜	n.	l’ail	阳性名词。
+姜	n.	le gingembre	烹调用姜；姓氏不适用。
+葱	n.	la ciboule
+韭菜	n.	la ciboulette chinoise
+南瓜	n.	la courge
+茄子	n.	l’aubergine	阴性名词。
+蘑菇	n.	le champignon
+香菇	n.	le shiitaké
+金针菇	n.	l’enoki	阳性名词，食用菌。
+杏鲍菇	n.	le pleurote du panicaut
+豆腐	n.	le tofu
+豆浆	n.	le lait de soja
+燕麦	n.	l’avoine	阴性名词。
+酸奶	n.	le yaourt
+奶酪	n.	le fromage
+黄油	n.	le beurre
+果酱	n.	la confiture
+蜂蜜	n.	le miel
+酱油	n.	la sauce soja
+蚝油	n.	la sauce d’huître
+食用油	n.	l’huile alimentaire	阴性名词。
+花生油	n.	l’huile d’arachide	阴性名词。
+橄榄油	n.	l’huile d’olive	阴性名词。
+辣椒酱	n.	la sauce pimentée
+番茄酱	n.	la sauce tomate ; le ketchup	番茄烹调酱/餐桌甜番茄调味酱。
+沙拉酱	n.	la sauce pour salade
+饺子	n.	les raviolis chinois	ravioli 为阳性。
+包子	n.	le bao	有馅蒸包。
+馒头	n.	le pain chinois à la vapeur	无馅蒸面食。
+炒饭	n.	le riz sauté
+炒面	n.	les nouilles sautées	nouille 为阴性。
+米粉	n.	les vermicelles de riz	此处指米制面条；米磨成的粉为 la farine de riz。
+粥	n.	la bouillie de riz
+火锅	n.	la fondue chinoise
+披萨	n.	la pizza
+汉堡	n.	le hamburger
+薯条	n.	les frites	frite 为阴性。
+鸡翅	n.	les ailes de poulet	aile 为阴性。
+鸡腿	n.	la cuisse de poulet
+牛排	n.	le steak
+猪排	n.	la côte de porc
+三文鱼	n.	le saumon
+虾	n.	la crevette
+螃蟹	n.	le crabe
+扇贝	n.	la coquille Saint-Jacques
+无糖	adj.	sans sucre
+少糖	phr.	peu sucré	阳性单数形式；阴性 peu sucrée。
+去冰	phr.	sans glaçons
+加冰	phr.	avec des glaçons
+常温	phr.	à température ambiante
+打折	v.	faire une réduction
+售罄	phr.	épuisé ; épuisée	随商品名词性别变化。

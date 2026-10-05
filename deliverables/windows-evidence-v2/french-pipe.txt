@@ -1,0 +1,10 @@
+TSF x64: real product COM factory and text service instantiated successfully
+french: nihao -> 你好 | bonjour | translated commit OK
+french: pingguo -> 苹果 | la pomme | translated commit OK
+french: xiexie -> 谢谢 | merci | translated commit OK
+french: yinhang -> 银行 | la banque | translated commit OK
+french: pinggai -> 瓶盖 | le bouchon | translated commit OK
+french: pinggu -> 平菇 | le pleurote | translated commit OK
+french: baoxianmo -> 保鲜膜 | le film alimentaire | translated commit OK
+french: chongdianbao -> 充电宝 | la batterie externe | translated commit OK
+french: 59 real pipe key roundtrips, p50=629us p95=2009us (not end-to-end physical keyboard latency)

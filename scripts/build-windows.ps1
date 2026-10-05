@@ -1,6 +1,6 @@
 param(
     [ValidateSet('english','french','both')][string]$Product = 'both',
-    [string]$Version = '0.1.0-demo.1',
+    [string]$Version = '0.1.0-demo.2',
     [string]$InnoCompiler
 )
 $ErrorActionPreference = 'Stop'

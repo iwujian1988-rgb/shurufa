@@ -27,6 +27,10 @@ pub struct Palette {
 
     /// 当前候选的高亮底色。
     pub highlight: Color,
+
+    /// Optional compact-panel outline and selected-row marker; upstream themes retain None.
+    pub border: Option<Color>,
+    pub accent: Option<Color>,
 }
 
 impl Palette {
@@ -40,6 +44,8 @@ impl Palette {
             cloud: Color::rgb(0, 195, 208),
             background: Color::rgb(255, 255, 255),
             highlight: Color::rgba(176, 206, 125, 127),
+            border: None,
+            accent: None,
         }
     }
 
@@ -53,6 +59,28 @@ impl Palette {
             cloud: Color::rgb(0, 210, 224),
             background: Color::rgb(30, 30, 30),
             highlight: Color::rgba(36, 76, 36, 255),
+            border: None,
+            accent: None,
+        }
+    }
+
+    pub const fn ciban_light() -> Self {
+        Self {
+            text: Color::rgb(27, 31, 34), gloss: Color::rgb(91, 99, 107),
+            pos: Color::rgb(105, 112, 119), fresh: Color::rgb(0, 119, 76),
+            index: Color::rgb(105, 112, 119), cloud: Color::rgb(0, 119, 76),
+            background: Color::rgb(255, 255, 255), highlight: Color::rgb(235, 247, 240),
+            border: Some(Color::rgb(221, 225, 228)), accent: Some(Color::rgb(0, 143, 87)),
+        }
+    }
+
+    pub const fn ciban_dark() -> Self {
+        Self {
+            text: Color::rgb(241, 243, 245), gloss: Color::rgb(188, 195, 202),
+            pos: Color::rgb(160, 168, 176), fresh: Color::rgb(100, 215, 163),
+            index: Color::rgb(160, 168, 176), cloud: Color::rgb(100, 215, 163),
+            background: Color::rgb(32, 35, 39), highlight: Color::rgb(45, 53, 50),
+            border: Some(Color::rgb(69, 75, 80)), accent: Some(Color::rgb(100, 215, 163)),
         }
     }
 }

@@ -43,6 +43,18 @@ pub struct Theme {
 }
 
 impl Theme {
+    /// Compact bilingual panel. Keep the upstream appearance unchanged for other products.
+    pub fn ciban(dark: bool) -> Self {
+        Self {
+            text_font: FontSpec::new(15.5, 20.0),
+            annotation_font: FontSpec::new(13.0, 18.0),
+            index_font: FontSpec::new(11.5, 18.0),
+            colors: if dark { Palette::ciban_dark() } else { Palette::ciban_light() },
+            padding: 10.0, row_padding: 3.0, column_gap: 16.0,
+            corner_radius: 10.0, max_rows: 9, text_gamma: 0.9,
+        }
+    }
+
     /// 浅色，对齐 macOS 系统外观。
     pub fn light() -> Self {
         Self::with_palette(Palette::light(), 0.85)

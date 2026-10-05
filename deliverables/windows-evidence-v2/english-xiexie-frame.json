@@ -1,0 +1,110 @@
+{
+  "preedit": [
+    {
+      "text": "xie'xie",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 7,
+  "candidates": {
+    "items": [
+      {
+        "text": "谢谢",
+        "kind": "Chinese",
+        "syllables": [
+          "xie",
+          "xie"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "thank you",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "🙏",
+        "kind": "Emoji",
+        "syllables": [
+          "xie",
+          "xie"
+        ],
+        "reading": "谢谢",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "谢谢你",
+        "kind": "Chinese",
+        "syllables": [
+          "xie",
+          "xie",
+          "ni"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "thank you",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "谢谢啦",
+        "kind": "Chinese",
+        "syllables": [
+          "xie",
+          "xie",
+          "la"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "谢谢您",
+        "kind": "Chinese",
+        "syllables": [
+          "xie",
+          "xie",
+          "nin"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "thank you",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 35,
+  "layout": "vertical",
+  "theme": "light",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

@@ -1,8 +1,11 @@
 {
-  "version": "fr-2026-10-04-v2",
+  "version": "fr-2026-10-04-v3",
+  "prioritySourceEntries": 878,
+  "priorityReadingEntries": 877,
+  "addedChineseWordReadings": 55,
   "baseReadingEntries": 55461,
-  "lessonReadingEntries": 558,
-  "lessonHeadwords": 529,
+  "lessonReadingEntries": 1435,
+  "lessonHeadwords": 1406,
   "phraseSourceEntries": 144,
   "phraseHeadwordsInstalled": 144,
   "phraseHeadwordsOutsideWordDictionary": [
@@ -33,23 +36,23 @@
   ],
   "explicitPolyphoneReadingEntries": 37,
   "baseHeadwords": 55021,
-  "lessonSensesWithPOS": 597,
-  "lessonSensesWithGender": 189,
-  "lessonSensesWithLemma": 306,
+  "lessonSensesWithPOS": 1546,
+  "lessonSensesWithGender": 388,
+  "lessonSensesWithLemma": 735,
   "distinctChineseWords": 91919,
-  "coveredChineseWords": 34548,
+  "coveredChineseWords": 35235,
   "topByDictionaryStaticFrequency": [
     {
       "wordCount": 1000,
-      "coveredWords": 969
+      "coveredWords": 974
     },
     {
       "wordCount": 5000,
-      "coveredWords": 3922
+      "coveredWords": 4566
     }
   ],
   "blockedSourceRecords": 289,
-  "remainingTop5000Words": 1078,
+  "remainingTop5000Words": 434,
   "independentLanguageReview": false,
   "scope": "Exact Chinese headwords with at least one matching toneless pronunciation; not translation accuracy or usage-weighted coverage",
   "licenses": {
@@ -58,6 +61,7 @@
   },
   "hashes": {
     "base.tsv": "ac3f781ae44419d66b5f63f679f09d566f157611a40d1dae98ae9707e4506e86",
-    "lessons.tsv": "622d39336fbe87046a05614b4eae4e463d43568fddce72936b5eed478029aae9"
+    "lessons.tsv": "9456d9017a3bb992a735877db588c4807a1a02b359d9869bed0a22ef4a380201",
+    "chinese-additions.tsv": "a0dcd751553b12f10210c777e8114d902027285d91474faaa93cc8e0a6e321d2"
   }
 }

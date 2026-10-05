@@ -4,6 +4,7 @@
 #[derive(Clone)]
 pub(crate) enum Message {
     EnableInputMethod,
+    CompactAppearance,
     /// 导航切换分节（`None` 是取消选中，忽略）。
     Navigate(Option<String>),
 

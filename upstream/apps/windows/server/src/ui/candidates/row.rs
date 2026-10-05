@@ -18,6 +18,9 @@ pub(crate) fn from_candidate(position: usize, candidate: &Candidate, show_code: 
     }
     if let Some(translation) = &candidate.translation {
         for (i, sense) in translation.senses().iter().enumerate() {
+            // A compact learning panel shows the primary meaning; full text remains
+            // in the protocol and shortcut commit. Never insert ellipsis into committed text.
+            if qingjian_platform::product::IS_CIBAN && i > 0 { break; }
             if i > 0 || !annotation.is_empty() {
                 annotation.push((" · ".to_owned(), Tone::Faint));
             }
@@ -30,7 +33,10 @@ pub(crate) fn from_candidate(position: usize, candidate: &Candidate, show_code: 
                 Tone::Gloss
             };
             for segment in sense.furigana() {
-                annotation.push((segment.text, tone));
+                let text = if qingjian_platform::product::IS_CIBAN && segment.text.chars().count() > 48 {
+                    format!("{}…", segment.text.chars().take(47).collect::<String>())
+                } else { segment.text };
+                annotation.push((text, tone));
                 if let Some(reading) = segment.reading {
                     annotation.push((format!("({reading})"), Tone::Faint));
                 }

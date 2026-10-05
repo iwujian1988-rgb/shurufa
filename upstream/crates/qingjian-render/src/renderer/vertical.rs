@@ -75,6 +75,10 @@ impl Renderer {
                     content_width - m.padding(),
                     columns.row_height,
                 );
+                if let Some(accent) = m.theme.colors.accent {
+                    canvas.fill_round_rect(left + m.padding() / 2.0, y + m.px(6.0),
+                        m.px(2.0), (columns.row_height - m.px(12.0)).max(m.px(2.0)), m.px(1.0), accent);
+                }
             }
             let top = y + m.row_padding();
             let small_offset = m.small_offset(text_height);

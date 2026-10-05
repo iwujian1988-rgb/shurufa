@@ -1,0 +1,108 @@
+{
+  "preedit": [
+    {
+      "text": "yin'hang",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 8,
+  "candidates": {
+    "items": [
+      {
+        "text": "银行",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "bank",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "🏦",
+        "kind": "Emoji",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": "银行",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "🏧",
+        "kind": "Emoji",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": "银行",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "引航",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "pilot",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "银行卡",
+        "kind": "Chinese",
+        "syllables": [
+          "yin",
+          "hang",
+          "ka"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "bank card",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 48,
+  "layout": "vertical",
+  "theme": "light",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

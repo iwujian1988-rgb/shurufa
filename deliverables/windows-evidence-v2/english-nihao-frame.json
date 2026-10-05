@@ -1,0 +1,100 @@
+{
+  "preedit": [
+    {
+      "text": "ni'hao",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 6,
+  "candidates": {
+    "items": [
+      {
+        "text": "你好",
+        "kind": "Chinese",
+        "syllables": [
+          "ni",
+          "hao"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "hello",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "👋",
+        "kind": "Emoji",
+        "syllables": [
+          "ni",
+          "hao"
+        ],
+        "reading": "你好",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "你好好",
+        "kind": "Chinese",
+        "syllables": [
+          "ni",
+          "hao",
+          "hao"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "你好像",
+        "kind": "Chinese",
+        "syllables": [
+          "ni",
+          "hao",
+          "xiang"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "you seem",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "你好久",
+        "kind": "Chinese",
+        "syllables": [
+          "ni",
+          "hao",
+          "jiu"
+        ],
+        "reading": null,
+        "translation": null,
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 9,
+  "layout": "vertical",
+  "theme": "light",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

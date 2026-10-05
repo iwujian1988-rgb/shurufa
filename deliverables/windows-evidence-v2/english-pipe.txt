@@ -1,0 +1,6 @@
+TSF x64: real product COM factory and text service instantiated successfully
+english: nihao -> 你好 | hello | translated commit OK
+english: pingguo -> 苹果 | apple | translated commit OK
+english: xiexie -> 谢谢 | thank you | translated commit OK
+english: yinhang -> 银行 | bank | translated commit OK
+english: 25 real pipe key roundtrips, p50=446us p95=1738us (not end-to-end physical keyboard latency)

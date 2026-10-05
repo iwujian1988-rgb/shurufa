@@ -1,5 +1,7 @@
 # 词伴 PC 版交付方案
 
+最新状态（2026-10-05）：Windows demo.2 已完成法语高频补词、55 条中文日用词读音和简洁候选/设置外观，回归与 Defender 扫描通过。当前记录见本文件末尾的 demo.2 章节；前文旧版状态保留作历史。
+
 实施更新 2026-10-04：已按此方案生成 0.1.0-demo.1 英法双安装器，Windows 11 x64 + x86 TSF。实际路径采用 upstream/crates/ciban-lexicon 和 products/windows.json，避免新增另一份工作区。Rust stable 1.95.0 已完成实际 release 编译。双产品核心/实际 pipe 回归已通过，安装注册、设置实屏、跨应用、升级卸载及正式签名未完成；本文件下方初始源码发现属于实施前记录，不能继续按“未编译”恢复。当前操作入口 ../desktop/windows/BUILD.md，证据 ../deliverables/Windows验收记录.md。
 
 日期：2026-10-04（Asia/Shanghai）。状态：已完成锁定源码检查与 Windows Cargo 工作区元数据检查，尚未编译、安装或验收词伴 Windows 成品。用户本轮要求继续规划 PC 开发，关注最少重复工作、开发效率、交互与交付质量。
@@ -125,3 +127,15 @@ upstream/apps/windows/     在现有平台实现上做必要修改，记录补�
 - 本地依据：upstream/apps/windows/README.md；installer/README.md 与 qingjian.iss；server/build.rs；server/src/assembly/；tsf/src/com/service/launch.rs；qingjian-platform/src/dirs.rs、protocol/codec.rs、config/mod.rs；mobile/native/src/english.rs、french.rs 和 session.rs。
 
 本文件给出可执行路线和验收门槛，不能视为词伴 PC 已编译通过或已经支持所有 Windows 应用。
+## 2026-10-05：Windows 0.1.0-demo.2 法语补词与简洁外观
+
+用户反馈常用词缺少法语、桌面 UI 过于原始，并要求尽量贴近微信输入法的简洁效果。本轮沿用原生 TSF/WinUI，保留词伴身份，改进候选和设置首页，不使用微信名称、图标或素材。
+
+- 补充 877 条有效法语读音记录，静态前千词覆盖 974/1000、前五千词 4566/5000（91.32%），相对上一版前五千增加 644 个词头；原始 91,919 词头中匹配 35,235 个。新增 55 条中文日用词读音，使“保鲜膜”等原先不在中文词库的词可以成为候选。原始中文词条、读音、频率完整保留；新增频率 1000 为项目默认值，非实测频率。
+- 瓶盖 le bouchon、平菇 le pleurote、保鲜膜 le film alimentaire、充电宝 la batterie externe 等通过实际随包 mmap 和后台输入/提交验证。词库补充由 AI 草拟、自查，尚未经过独立法语编辑审核；语境片段加注说明，地名及其余 434 个前五千缺词保留待审，不强行机械翻译。
+- 候选默认五行、浅色背景、细边框、柔和阴影、清晰绿色选中标记；调整字号和间距。每行显示首个常用义，过长时省略，完整译词及第二义快捷提交保留。设置首页突出启用和试打，其他偏好收进展开区。
+- 新安装采用简洁默认值；升级保留用户原有配置，设置首页“使用简洁浅色外观”按钮可应用浅色五行。深色仍可选。
+- 两语言各 74 项 Rust 单元测试通过，安卓核心 10 项通过、1 项忽略。真实随包后台使用隔离测试管道，并核验连接进程 PID，避免误连已安装旧版本。实际 x64 TSF COM factory、候选、译词提交与取消回归通过；离线 PNG 使用实际输入帧和候选转换器。
+- Computer Use 的设置窗口访问审批超时，没有绕过访问限制；渲染图不是系统截图，设置首页实屏、实际安装升级、跨应用输入、32 位宿主及多屏/DPI仍待验收。本轮没有重建 Android APK，官网与一次性下载码不变。
+
+详细记录见 [新版验收记录](../deliverables/Windows法语补词与UI验收记录.md)，测试入口见 [新版测试说明](../deliverables/Windows测试说明-v2.md)。

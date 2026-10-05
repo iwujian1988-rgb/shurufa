@@ -120,9 +120,9 @@ impl Default for GeneralConfig {
     fn default() -> Self {
         Self {
             learning_language: crate::product::LANGUAGE.to_owned(),
-            page_size: MAX_PAGE_SIZE,
+            page_size: if crate::product::IS_CIBAN { 5 } else { MAX_PAGE_SIZE },
             page_keys: PAGE_KEY_OPTIONS[0].to_owned(),
-            theme: ThemeMode::default(),
+            theme: if crate::product::IS_CIBAN { ThemeMode::Light } else { ThemeMode::default() },
             layout: LayoutMode::default(),
             horizontal_grid: false,
             renderer: CandidateRenderer::default(),
@@ -281,7 +281,7 @@ mod tests {
     #[test]
     fn page_size_and_keys_are_sanitized() {
         let mut general = GeneralConfig::default();
-        assert_eq!(general.page_size(), 9);
+        assert_eq!(general.page_size(), if crate::product::IS_CIBAN { 5 } else { 9 });
         assert_eq!(general.page_keys(), ('[', ']'));
         general.page_size = 0;
         general.page_keys = ",.".to_owned();

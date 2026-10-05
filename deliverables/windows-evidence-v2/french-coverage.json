@@ -1,0 +1,21 @@
+{
+  "actualMmapPriorityRecordsPassed": 877,
+  "addedChineseWordReadings": 55,
+  "coveredOriginalChineseWords": 35235,
+  "fixture": "bottle cap / oyster mushroom / cling film / power bank; wrong reading stays unmatched",
+  "independentLanguageReview": false,
+  "scope": "reading-matched coverage; not usage-weighted coverage or independent French accuracy approval",
+  "topByStaticFrequency": [
+    {
+      "covered": 974,
+      "words": 1000
+    },
+    {
+      "covered": 4566,
+      "words": 5000
+    }
+  ],
+  "uniqueOriginalChineseWords": 91919,
+  "upstreamReadingsAndFrequenciesPreserved": true,
+  "version": "fr-2026-10-04-v3"
+}

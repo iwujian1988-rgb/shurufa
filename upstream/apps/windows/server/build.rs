@@ -41,10 +41,11 @@ fn embed_icon() {
     if let Ok(bin) = std::env::var("CIBAN_SDK_BIN") { resource.set_toolkit_path(&bin); }
     resource.set_icon(icon).set("ProductName", name).set("FileDescription", &format!("{name} 输入服务")).set("CompanyName", "Ciban Project");
     if !product.is_empty() {
-        let version = std::env::var("CIBAN_VERSION").unwrap_or_else(|_| "0.1.0-demo.1".into());
+        let version = std::env::var("CIBAN_VERSION").unwrap_or_else(|_| "0.1.0-demo.2".into());
+        let numeric = 0x0000_0001_0000_0000 | version.rsplit('.').next().and_then(|part| part.parse::<u64>().ok()).unwrap_or(0);
         resource.set("FileVersion", &version).set("ProductVersion", &version)
-            .set_version_info(winresource::VersionInfo::FILEVERSION, 0x0000_0001_0000_0001)
-            .set_version_info(winresource::VersionInfo::PRODUCTVERSION, 0x0000_0001_0000_0001);
+            .set_version_info(winresource::VersionInfo::FILEVERSION, numeric)
+            .set_version_info(winresource::VersionInfo::PRODUCTVERSION, numeric);
     }
     println!("cargo:rerun-if-changed={icon}");
     resource.compile().expect("嵌入产品图标与版本信息");

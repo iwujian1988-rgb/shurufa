@@ -42,6 +42,12 @@ impl Component for Settings {
 
     fn update(&mut self, message: Message, context: &ComponentContext<Self>) {
         match message {
+            Message::CompactAppearance => {
+                self.save("general", "page_size", 5i64);
+                self.save("general", "layout", "vertical");
+                self.save("general", "theme", "light");
+                self.notice.succeed("已切换为浅色、每页 5 个候选。正在输入的内容保留，继续打字即可看到新外观。".into());
+            }
             Message::EnableInputMethod => match crate::setup::enable_profile() {
                 Ok(()) => self.notice.succeed("已在系统中启用词伴。按 Win + 空格选择本版本，再回到试打框。".into()),
                 Err(error) => self.notice.fail(error),

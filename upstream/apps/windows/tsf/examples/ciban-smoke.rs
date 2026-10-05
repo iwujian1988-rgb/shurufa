@@ -21,11 +21,21 @@ fn main() {
     // Obtain the Windows session suffix from the canonical product pipe function.
     let selected = qingjian_platform::protocol::default_pipe_name();
     let suffix = selected.split("-session-").nth(1).expect("build smoke example with CIBAN_PRODUCT set");
-    let name = format!(r"\\.\pipe\ciban-{product}-v7-session-{suffix}");
-    let (mut client, _) = EngineClient::open(pipe::connect(&name).expect("shipping server listening"), SessionId(std::process::id() as u64), Some("ciban-smoke.exe".into())).expect("session handshake");
+    let name = env::args().nth(5).unwrap_or_else(|| format!(r"\\.\pipe\ciban-{product}-v7-session-{suffix}"));
+    let stream = pipe::connect(&name).expect("shipping server listening");
+    if let Some(expected) = env::args().nth(6) {
+        use std::os::windows::io::AsRawHandle;
+        use windows::Win32::{Foundation::HANDLE, System::Pipes::GetNamedPipeServerProcessId};
+        let mut actual = 0;
+        unsafe { GetNamedPipeServerProcessId(HANDLE(stream.as_raw_handle()), &mut actual).unwrap(); }
+        assert_eq!(actual, expected.parse::<u32>().unwrap(), "must connect to the exact newly started shipping server PID");
+    }
+    let (mut client, _) = EngineClient::open(stream, SessionId(std::process::id() as u64), Some("ciban-smoke.exe".into())).expect("session handshake");
     client.set_private(true).expect("isolate test input from personal learning");
     let mut elapsed = Vec::new();
-    for (pinyin, chinese) in [("nihao", "你好"), ("pingguo", "苹果"), ("xiexie", "谢谢"), ("yinhang", "银行")] {
+    let mut fixtures = vec![("nihao", "你好"), ("pingguo", "苹果"), ("xiexie", "谢谢"), ("yinhang", "银行")];
+    if product == "french" { fixtures.extend([("pinggai", "瓶盖"), ("pinggu", "平菇"), ("baoxianmo", "保鲜膜"), ("chongdianbao", "充电宝")]); }
+    for (pinyin, chinese) in fixtures {
         client.commit().unwrap();
         let mut last = None;
         for c in pinyin.chars() {
@@ -35,14 +45,18 @@ fn main() {
             assert_eq!(reply.outcome, KeyOutcome::Consumed);
             last = Some(reply);
         }
-        let reply = last.unwrap();
+        let mut reply = last.unwrap();
+        for _ in 0..20 {
+            if reply.frame.candidates.items.iter().any(|c| c.text == chinese) { break; }
+            reply = key(&mut client, 0xdd, Some(']'), KeyModifiers::default());
+        }
         if let Some(output) = env::args().nth(4) {
             std::fs::create_dir_all(&output).unwrap();
             let path = std::path::Path::new(&output).join(format!("{product}-{pinyin}-frame.json"));
             // Frame is the actual shipping-server response, not a reconstructed screenshot.
             std::fs::write(path, serde_json::to_string_pretty(&reply.frame).unwrap()).unwrap();
         }
-        let index = reply.frame.candidates.items.iter().position(|c| c.text == chinese).expect("expected Chinese word on first page");
+        let index = reply.frame.candidates.items.iter().position(|c| c.text == chinese).expect("expected Chinese word within candidate pages");
         let candidate = &reply.frame.candidates.items[index];
         let translation = candidate.translation.as_ref().expect("learning annotation");
         assert_eq!(translation.language, language);

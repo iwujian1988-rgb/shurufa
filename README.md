@@ -1,6 +1,6 @@
 # 英语与法语伴学输入法项目
 
-Windows 0.1.0-demo.1 已生成英法两个安装测试 EXE，适用 Windows 11 x64。支持中文输入旁显示目标译词、快捷译词上屏、双包并存与设置试打；核心与实际后台回归已通过，系统安装和跨应用实测仍待完成。见 [Windows 测试说明](deliverables/Windows测试说明.md)、[验收记录](deliverables/Windows验收记录.md) 和 [Windows 构建入口](desktop/windows/BUILD.md)。当前官网仍提供 Android，PC EXE 为本地交付。
+Windows 0.1.0-demo.2 已生成英法两个安装测试 EXE，适用 Windows 11 x64。新版补充 877 条法语记录与 55 条中文日用词读音；候选面板采用简洁浅色、默认五行、柔和阴影和清晰选中标记，设置首页精简并提供一键应用新外观。实际后台、词库及离线渲染回归通过；系统安装、设置窗口和跨应用实测仍待完成。见 [新版测试说明](deliverables/Windows测试说明-v2.md)、[补词与 UI 验收记录](deliverables/Windows法语补词与UI验收记录.md) 和 [Windows 构建入口](desktop/windows/BUILD.md)。当前官网仍提供 Android，PC EXE 为本地交付。
 
 当前迭代为 0.5.0-demo：九宫格改为大号 ABC、DEF 等字母组，优化候选复用、按需加载和解码查询。英语同机固定测试候选首次绘制 p95 约从 181ms 降至 71ms；此为试打页测试，不代表所有应用。两包已构建、覆盖安装，最新证据见 deliverables/九宫格字母与性能验收记录.md。英语/法语词库内容沿用 0.4，尚未独立语言校审。
 

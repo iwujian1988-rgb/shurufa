@@ -1,0 +1,108 @@
+{
+  "preedit": [
+    {
+      "text": "ping'guo",
+      "kind": "Typed"
+    }
+  ],
+  "preedit_mode": "both",
+  "cursor": 8,
+  "candidates": {
+    "items": [
+      {
+        "text": "苹果",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "apple",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "🍏",
+        "kind": "Emoji",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": "苹果",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "🍎",
+        "kind": "Emoji",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": "苹果",
+        "translation": null,
+        "aux_code": null
+      },
+      {
+        "text": "平果",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "Pingguo",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      },
+      {
+        "text": "苹果派",
+        "kind": "Chinese",
+        "syllables": [
+          "ping",
+          "guo",
+          "pai"
+        ],
+        "reading": null,
+        "translation": {
+          "language": "English",
+          "senses": [
+            {
+              "part_of_speech": null,
+              "text": "apple pie",
+              "reading": null,
+              "fresh": false
+            }
+          ]
+        },
+        "aux_code": null
+      }
+    ]
+  },
+  "highlight": 0,
+  "page": 0,
+  "page_count": 21,
+  "layout": "vertical",
+  "theme": "light",
+  "aux_code_show": false,
+  "sentence": null,
+  "notice": null
+}

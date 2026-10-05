@@ -265,6 +265,15 @@ fn grant_appcontainer_log_access() {
 fn serve(mut router: Router) {
     use qingjian_windows_server::ipc::{Work, pipe};
     use qingjian_windows_server::ui::UiHandle;
+    // Developer smoke tests may run alongside an installed product. Never connect
+    // to an existing user's backend or relax the same-session pipe security check.
+    let args: Vec<String> = std::env::args().collect();
+    let test_pipe = args.iter().position(|arg| arg == "--test-pipe").map(|index| {
+        let name = args.get(index + 1).expect("--test-pipe requires a local test pipe name");
+        let suffix = name.strip_prefix(r"\\.\pipe\ciban-smoke-").expect("isolated local smoke pipe prefix");
+        assert!(!suffix.is_empty() && suffix.chars().all(|c| c.is_ascii_alphanumeric() || c == '-'), "invalid test pipe suffix");
+        name.clone()
+    });
     grant_appcontainer_log_access();
     // 工人循环的活：各连接的消息 + 状态条上的操作（UI 线程投进来）。
     let (work_tx, work_rx) = std::sync::mpsc::channel::<Work>();
@@ -272,14 +281,16 @@ fn serve(mut router: Router) {
     let on_status = Box::new(move |event| {
         let _ = status_events.send(Work::Status(event));
     });
-    match UiHandle::spawn(on_status) {
-        Ok(ui) => {
+    match if test_pipe.is_some() { None } else { Some(UiHandle::spawn(on_status)) } {
+        Some(Ok(ui)) => {
             router.set_candidate_sink(Box::new(ui.clone()));
             router.set_status_sink(Box::new(ui));
         }
-        Err(error) => tracing::error!(%error, "UI 线程启动失败，将不显示候选框 / 状态条"),
+        Some(Err(error)) => tracing::error!(%error, "UI 线程启动失败，将不显示候选框 / 状态条"),
+        None => {}, // Isolated backend test does not inject test candidates onto the user's desktop.
     }
-    if let Err(error) = pipe::serve_pipe(&qingjian_platform::protocol::default_pipe_name(), &mut router, work_tx, work_rx) {
+    let name = test_pipe.unwrap_or_else(qingjian_platform::protocol::default_pipe_name);
+    if let Err(error) = pipe::serve_pipe(&name, &mut router, work_tx, work_rx) {
         tracing::error!(%error, "命名管道服务退出");
         std::process::exit(1);
     }

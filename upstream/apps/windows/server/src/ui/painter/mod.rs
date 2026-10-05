@@ -114,9 +114,12 @@ impl Painter {
 }
 
 /// 两个窗口都用渲染器画阴影（分层窗口没有系统阴影），参数与 macOS 面板一致。
-const SHADOW: Shadow = Shadow::mac_panel();
+const SHADOW: Shadow = if qingjian_platform::product::IS_CIBAN {
+    Shadow { blur: 6.0, offset_y: 2.0, color: qingjian_render::Color::gray(0, 38) }
+} else { Shadow::mac_panel() };
 
 fn theme(dark: bool) -> Theme {
+    if qingjian_platform::product::IS_CIBAN { return Theme::ciban(dark); }
     if dark { Theme::dark() } else { Theme::light() }
 }
 

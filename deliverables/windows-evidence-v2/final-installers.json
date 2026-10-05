@@ -1,0 +1,14 @@
+[
+  {
+    "file": "ciban-english-0.1.0-demo.2-windows-x64-setup.exe",
+    "bytes": 38062515,
+    "sha256": "B8F4C4FC682F07DC2B0D749477D5037FB9AD4CE5BDE94CA4D3B07BE860CDD410",
+    "authenticode": "NotSigned"
+  },
+  {
+    "file": "ciban-french-0.1.0-demo.2-windows-x64-setup.exe",
+    "bytes": 36495973,
+    "sha256": "0B3A13D668B282F6F69C83E8AA3FC6AD6A74E4EBE988EAE4CC7667D697AA27C9",
+    "authenticode": "NotSigned"
+  }
+]

@@ -78,6 +78,13 @@ impl RenderData {
         self.highlight = frame.highlight;
         self.footer =
             (frame.page_count > 1).then(|| format!("{}/{}", frame.page + 1, frame.page_count));
+        if qingjian_platform::product::IS_CIBAN && !self.rows.is_empty() {
+            let language = if qingjian_platform::product::LANGUAGE == "fr" { "法语" } else { "英语" };
+            self.footer = Some(match self.footer.take() {
+                Some(pages) => format!("{language}  ·  {pages}"),
+                None => language.to_owned(),
+            });
+        }
         self.sentence = frame.sentence.clone();
         self.notice = frame.notice.clone();
     }

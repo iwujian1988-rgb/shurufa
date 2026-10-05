@@ -1,5 +1,6 @@
 //! 打包固定发布数据及本项目法语示例，不改写上游词条。
 use qingjian_core::Language;
+use qingjian_dictionary::Dictionary;
 use qingjian_format::Metadata;
 use qingjian_translate::Glossary;
 use std::collections::HashSet;
@@ -17,9 +18,29 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         fs::create_dir_all(path)?;
     }
     let source = root.join(".cache/runtime-data/data/generated");
-    for name in ["dict.qj", "lm.qj", "english.tsv"] {
+    for name in ["lm.qj", "english.tsv"] {
         fs::copy(source.join(name), common.join(name))?;
     }
+    // Add missing daily Chinese headwords too; a translation alone cannot make
+    // an absent word appear in the input engine. Never change an upstream entry.
+    let dictionary = Dictionary::from_path(source.join("dict.qj"))?;
+    let additions = fs::read_to_string(root.join("data/french-release/chinese-additions.tsv"))?;
+    let additional_count = additions.lines().filter(|line| !line.is_empty() && !line.starts_with('#')).count();
+    let mut combined = String::new();
+    for entry in dictionary.entries() {
+        combined.push_str(&format!("{}\t{}\t{}\n", entry.text, entry.pinyin, entry.frequency));
+    }
+    combined.push_str(&additions);
+    let merged = Dictionary::parse(&combined)?;
+    if merged.len() != dictionary.len() + additional_count { return Err("Chinese supplement must add unique readings without replacing upstream records".into()); }
+    let mut metadata = dictionary.metadata().cloned().unwrap_or_default();
+    metadata.name = "词伴中文词库（含日用补充）".into();
+    metadata.license = if metadata.license.is_empty() { "GPL-3.0-or-later".into() } else { format!("({}) AND GPL-3.0-or-later", metadata.license) };
+    metadata.attribution.push_str("；词伴日用词补充（AI，GPL-3.0-or-later）");
+    metadata.source.push_str(" ; data/french-release/chinese-additions.tsv");
+    metadata.entries = merged.len() as u64;
+    metadata.generator = "ciban pack-assets; upstream entries preserved".into();
+    merged.write_qj(&common.join("dict.qj"), &metadata)?;
     fs::copy(source.join("glossary-en.qj"), english.join("glossary.qj"))?;
     let english_lessons = Glossary::from_path(
         Language::English,
@@ -90,7 +111,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 license: license.to_owned(),
                 attribution: attribution.to_owned(),
                 source: format!("data/french-release/{input}"),
-                version: "fr-2026-10-04-v2".to_owned(),
+                version: serde_json::from_str::<serde_json::Value>(&fs::read_to_string(root.join("data/french-release/manifest.json"))?)?["version"]
+                    .as_str().ok_or("French data manifest version missing")?.to_owned(),
                 entries: table.len() as u64,
                 generator: "ciban pack-assets 0.3.0".to_owned(),
             },

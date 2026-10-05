@@ -534,6 +534,8 @@ impl Config {
 fn product_template() -> String {
     if !crate::product::IS_CIBAN { return TEMPLATE.to_owned(); }
     TEMPLATE.replace("learning_language = \"en\"", &format!("learning_language = {:?}", crate::product::LANGUAGE))
+        .replace("page_size = 9", "page_size = 5")
+        .replace("theme = \"system\"", "theme = \"light\"")
         .replace("input_log = true", "input_log = false")
         .replace("check = true", "check = false")
 }

@@ -55,11 +55,13 @@ pub(crate) fn view(settings: &Settings, context: &mut ViewContext<Settings>) -> 
     let english_off = !settings.config.apps.english_candidates_off.is_empty();
     let rows = [
         StackPanel::new().spacing(10.0).children([
-            TextBlock::new().text("边打字，边熟悉新单词").font_size(24.0).text_wrapping(TextWrapping::Wrap).into(),
+            TextBlock::new().text(if qingjian_platform::product::LANGUAGE == "fr" { "打中文，顺手记法语" } else { "打中文，顺手记英语" }).font_size(28.0).text_wrapping(TextWrapping::Wrap).into(),
             Button::new().on_click(context.message(Message::EnableInputMethod)).content("在系统中启用词伴"),
+            Button::new().on_click(context.message(Message::CompactAppearance)).content("使用简洁浅色外观"),
             feedback(&settings.notice),
-            note("按 Win + 空格选择当前词伴输入法，点击下面试打。输入 nihao、pingguo 或 xiexie；候选右侧显示译词。空格选中文，Ctrl + 数字选第一个译词，Shift 切换中英。Esc 取消，[] 翻页。试打文字不会由设置页保存。"),
+            note("先按 Win + 空格选择词伴，再在下面试打。空格选中文，Ctrl + 数字选第一个译词；Shift 切换中英。"),
             TextBox::new().placeholder_text("在这里试打：你好、苹果、谢谢……").accepts_return(true).min_height(100.0).into(),
+            note("英语可试 pingguo，法语还可试 pinggai。随包词义离线查询；没有译文时中文输入照常。试打文字不由设置页保存。"),
         ]).into(),
         field(
             "学习语言",
@@ -171,6 +173,16 @@ pub(crate) fn view(settings: &Settings, context: &mut ViewContext<Settings>) -> 
                 .on_toggled(context.callback(Message::EnglishMode)),
         ),
     ];
+    if qingjian_platform::product::IS_CIBAN {
+        let [introduction, preferences @ ..] = rows;
+        return page("开始使用", StackPanel::new().spacing(24.0).children([
+            introduction,
+            Expander::new().is_expanded(false).slots([
+                SlotView::new(ExpanderSlot::Header, "输入偏好"),
+                SlotView::new(ExpanderSlot::Content, StackPanel::new().spacing(16.0).children(preferences)),
+            ]),
+        ]));
+    }
     page("通用", StackPanel::new().spacing(16.0).children(rows))
 }
 

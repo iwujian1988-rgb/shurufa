@@ -383,6 +383,7 @@ name = "ciban-lexicon"
 version = "0.1.0"
 dependencies = [
  "qingjian-core",
+ "qingjian-dictionary",
  "qingjian-translate",
  "serde_json",
 ]

@@ -68,14 +68,22 @@ impl Theme {
         let scale = |px: i32| (px * dpi as i32) / 96;
         // 负高度 = 字符高度（不含内部行距）。
         let font = |px: i32| create_font(-scale(px), w!("Microsoft YaHei UI"));
-        let palette = if dark {
+        let mut palette = if dark {
             Palette::dark()
         } else {
             Palette::light()
         };
+        if qingjian_platform::product::IS_CIBAN {
+            let colors = qingjian_render::Theme::ciban(dark).colors;
+            let convert = |color: qingjian_render::Color| rgb(color.r, color.g, color.b);
+            palette.text_color = convert(colors.text); palette.gloss_color = convert(colors.gloss);
+            palette.pos_color = convert(colors.pos); palette.fresh_color = convert(colors.fresh);
+            palette.index_color = convert(colors.index); palette.cloud_color = convert(colors.cloud);
+            palette.background = convert(colors.background); palette.highlight = convert(colors.highlight);
+        }
         Self {
-            text_font: font(16),
-            annotation_font: font(12),
+            text_font: font(if qingjian_platform::product::IS_CIBAN { 15 } else { 16 }),
+            annotation_font: font(if qingjian_platform::product::IS_CIBAN { 13 } else { 12 }),
             index_font: font(11),
             symbol_font: create_font(-scale(15), w!("Segoe UI Symbol")),
             text_color: palette.text_color,
@@ -86,10 +94,10 @@ impl Theme {
             cloud_color: palette.cloud_color,
             background: palette.background,
             highlight: palette.highlight,
-            padding: scale(8),
-            row_padding: scale(4),
-            column_gap: scale(8),
-            corner_radius: scale(8),
+            padding: scale(if qingjian_platform::product::IS_CIBAN { 10 } else { 8 }),
+            row_padding: scale(if qingjian_platform::product::IS_CIBAN { 3 } else { 4 }),
+            column_gap: scale(if qingjian_platform::product::IS_CIBAN { 16 } else { 8 }),
+            corner_radius: scale(if qingjian_platform::product::IS_CIBAN { 10 } else { 8 }),
         }
     }
 }

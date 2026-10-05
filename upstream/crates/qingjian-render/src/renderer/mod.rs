@@ -151,12 +151,16 @@ impl Renderer {
         {
             shadow.paint(&mut canvas, content, radius, scale);
         }
+        if let Some(border) = theme.colors.border {
+            canvas.fill_round_rect(margin, margin, content_width, content_height, radius, border);
+        }
+        let outline = if theme.colors.border.is_some() { metrics.px(1.0) } else { 0.0 };
         canvas.fill_round_rect(
-            margin,
-            margin,
-            content_width,
-            content_height,
-            radius,
+            margin + outline,
+            margin + outline,
+            content_width - outline * 2.0,
+            content_height - outline * 2.0,
+            (radius - outline).max(0.0),
             theme.colors.background,
         );
         let mut y = margin + metrics.padding();
